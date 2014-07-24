@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+\section{Allgemeines}
+Ein Graph $G$ wird beschrieben durch $G = (V, E)$.
+
+Ein Graph $K_n = (V, E)$ ist vollständig wenn alle möglichen Kanten für die Knoten V in E enthalten sind.
+
+Ein Knoten hat den Grad $n$ wenn er genau $n$ Nachbarn hat.
+
+Ein Graph $G$ ist genau dann zusammenhängend wenn jeder Knoten direkt oder indirekt mit jedem anderen Verbunden ist.
+
+Ein Graph $C_n = (V, E)$ ist ein Kreisgraph wenn alle Knoten den Grad zwei haben und der Graph zusammenhängend ist.
+\section{Färbung}
+Die Chromatische Zahl ist die kleinste Zahl $\chi(G)$ mit der der Graph $G$ eine zulässige Knotenfärbung mit $\chi$ Farben besitzt.
+
+\subsection{Greedy}
+Für alle Knoten $v \in V$ aus $G = (V, E)$: nehme ausschließlich bekannte Knotenfärbungszahlen aller verbundenen Knoten in eine Menge $N$, Knotenfärbung von v ist die kleinste Zahl aus den natürlichen Zahlen ohne $N$.
+\section{Floyd, Dajkstra, Kruskal}
+TODO
+\section{Planarität}
+Eulersche Polyederformel: ($R$ sei die Anzahl der Regionen inkl. Außenregion)
+\[|V|-|E|+|R|=2\]
+Weiterhin:
+\[|E| \leq 3n -6\]
+\section{Netzwerke}
+\subsection{Minimaler Spannbaum}
+Kruskal, Gewichte aufsteigend betrachten und nur inkludieren wenn neuer Knoten eingebunden wird oder Partitionen verbunden werden.
+\section{Komplexitäten (vereinfacht)}
+\subsection{Abschätzung nach oben}
+\[f \in O(g) \Leftrightarrow \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty \]
+\[f(n) = O(g(n)) \Leftrightarrow f(n) \leq c \cdot g(n)\]
+\subsection{Abschätzung}
+\[f \in \Theta(g) \Leftrightarrow 0 <\lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty \]
+\[f(n) = \Theta(g(n)) \Leftrightarrow c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)\]
+\subsection{Abschätzung nach unten}
+\[f \in \Omega(g) \Leftrightarrow 0 < \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} \]
+\[f(n) = \Omega(g(n)) \Leftrightarrow f(n) \geq c \cdot g(n)\]
+\subsection{Matroide}
+TODO
+\subsection{SAT}
+k-SAT mit $k \geq 3$ sind NP-schwer.
+$SAT \leq 3-SAT \leq Clique$
+\section{Misc}
+$\sum\limits_{v \in V} deg(v) = 2 \cdot |E|$
+\end{document}
