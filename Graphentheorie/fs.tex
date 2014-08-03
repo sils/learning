@@ -1,4 +1,5 @@
 \documentclass[10pt,a4paper]{article}
+\usepackage{a4}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage{amsmath}
@@ -8,25 +9,33 @@
 \newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
 \begin{document}
 \section{Allgemeines}
-Ein Graph $G$ wird beschrieben durch $G = (V, E)$.
+Ein \textbf{Graph} $G$ wird beschrieben durch $G = (V, E)$.
 
-Ein Graph $K_n = (V, E)$ ist vollständig wenn alle möglichen Kanten für die Knoten V in E enthalten sind.
+Ein Graph $K_n = (V, E)$ ist \textbf{vollständig} wenn alle möglichen Kanten für die Knoten V in E enthalten sind.
 
-Ein Knoten hat den Grad $n$ wenn er genau $n$ Nachbarn hat.
+Ein Knoten $x$ hat den \textbf{Grad} $n =: deg(x)$ wenn er genau $n$ Nachbarn hat. Ist $deg(x) = 0$ so ist $x$ ein \textbf{isolierter Knoten}. Ist $deg(x) = 1$ so ist $x$ ein \textbf{Blatt}. 
 
-Ein Graph $G$ ist genau dann zusammenhängend wenn jeder Knoten direkt oder indirekt mit jedem anderen Verbunden ist.
+Ein Graph $G$ ist genau dann \textbf{zusammenhängend} wenn jeder Knoten direkt oder indirekt mit jedem anderen Verbunden ist.
 
-Ein Graph $C_n = (V, E)$ ist ein Kreisgraph wenn alle Knoten den Grad zwei haben und der Graph zusammenhängend ist.
+Ein Graph $C_n = (V, E)$ ist ein \textbf{Kreisgraph} wenn alle Knoten den Grad zwei haben und der Graph zusammenhängend ist.
+
+Eine \textbf{Clique} in einem Graphen $G$ ist ein Subgraph dieses Graphen der isomorph zu einem Graphen $K_n$ ist (für ein beliebiges $n$). Das größtmögliche $n =: \omega(G)$ ist die \textbf{Cliquenzahl}
+
+Der Graph $E_n = (V, \emptyset)$ ist der \textbf{leere Graph}.
+
+Ein \textbf{Matching} ist eine Auswahl an eindeutigen Zuordnungen von Elementen einer Menge.
+
+Eine \textbf{Knotenüberdeckung (Vertex Cover)} für einen Graphen $G = (V, E)$ ist eine Menge $V' \subset V$ wobei es für jedes $e \in E$ ein $v \in V'$ gibt für das $v \in e$.
 \section{Färbung}
-Die Chromatische Zahl ist die kleinste Zahl $\chi(G)$ mit der der Graph $G$ eine zulässige Knotenfärbung mit $\chi$ Farben besitzt.
+\textbf{Chromatische Zahl} ist $\chi(G) := min\lbrace k \in \mathbb{N} : \mbox{G hat k Färbung} \rbrace$.
 
+Ein Graph $G$ ist \textbf{bipartit} wenn $\chi(G) \leq 2$.
 \subsection{Greedy}
 Für alle Knoten $v \in V$ aus $G = (V, E)$: nehme ausschließlich bekannte Knotenfärbungszahlen aller verbundenen Knoten in eine Menge $N$, Knotenfärbung von v ist die kleinste Zahl aus den natürlichen Zahlen ohne $N$.
 \section{Planarität}
 Eulersche Polyederformel: ($R$ sei die Anzahl der Regionen inkl. Außenregion)
 \[|V|-|E|+|R|=2\]
-Weiterhin:
-\[|E| \leq 3n -6\]
+Weiterhin: $|E| \leq 3n -6$
 \section{Netzwerke}
 \subsection{Minimaler Spannbaum}
 Kruskal, Gewichte aufsteigend betrachten und nur inkludieren wenn neuer Knoten eingebunden wird oder Partitionen verbunden werden.
@@ -34,14 +43,12 @@ Kruskal, Gewichte aufsteigend betrachten und nur inkludieren wenn neuer Knoten e
 TODO
 \section{Komplexitäten (vereinfacht)}
 \subsection{Abschätzung nach oben}
-\[f \in O(g) \Leftrightarrow \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty \]
-\[f(n) = O(g(n)) \Leftrightarrow f(n) \leq c \cdot g(n)\]
+$f \in O(g) \Leftrightarrow \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty $ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, $f(n) = O(g(n)) \Leftrightarrow f(n) \leq c \cdot g(n)$
 \subsection{Abschätzung}
 \[f \in \Theta(g) \Leftrightarrow 0 <\lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty \]
 \[f(n) = \Theta(g(n)) \Leftrightarrow c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)\]
 \subsection{Abschätzung nach unten}
-\[f \in \Omega(g) \Leftrightarrow 0 < \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} \]
-\[f(n) = \Omega(g(n)) \Leftrightarrow f(n) \geq c \cdot g(n)\]
+$f \in \Omega(g) \Leftrightarrow 0 < \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}}$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, $f(n) = \Omega(g(n)) \Leftrightarrow f(n) \geq c \cdot g(n)$
 \section{Matroide}
 TODO
 \section{Linear Programming}
