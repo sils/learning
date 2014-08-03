@@ -40,7 +40,10 @@ Weiterhin: $|E| \leq 3n -6$
 \subsection{Minimaler Spannbaum}
 Kruskal, Gewichte aufsteigend betrachten und nur inkludieren wenn neuer Knoten eingebunden wird oder Partitionen verbunden werden.
 \subsection{Floyd, Dajkstra, Kruskal}
-TODO
+\subsubsection{Dajkstra, Kürzeste Pfade bei nichtnegativen Kanten}
+Nehme Knoten mit minimaler Distanz zum Startknoten -> hinzufügen. (Nachbarknoten dieses Knotens ggf. updaten.)
+\subsubsection{Kruskal, Minimaler Spannbaum}
+Aus unbenutzten Kanten die kürzeste wählen, die mit den gewählten keinen Kreis bildet. Wiederholen.
 \section{Komplexitäten (vereinfacht)}
 \subsection{Abschätzung nach oben}
 $f \in O(g) \Leftrightarrow \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty $ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, $f(n) = O(g(n)) \Leftrightarrow f(n) \leq c \cdot g(n)$
@@ -59,4 +62,6 @@ k-SAT mit $k \geq 3$ sind NP-schwer.
 $SAT \leq 3-SAT \leq Clique$
 \section{Misc}
 $\sum\limits_{v \in V} deg(v) = 2 \cdot |E|$
+
+Ungewichtetes Scheduling: Tasks mit größter Penalty auf ihre Deadline oder davor setzen, abwärts.
 \end{document}
