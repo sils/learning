@@ -1,4 +1,4 @@
 learning
 ========
 
-Learning materials for 
+Various learning materials.
