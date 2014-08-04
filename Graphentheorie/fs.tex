@@ -53,7 +53,7 @@ Eulersche Polyederformel: ($R$ sei die Anzahl der Regionen inkl. Außenregion)
 \[|V|-|E|+|R|=2\]
 Weiterhin: $|E| \leq 3n -6$
 
-$2|E| \leq 3|R|$
+$2|E| \geq 3|R|$
 \section{Netzwerke}
 \subsection{Minimaler Spannbaum}
 Kruskal, Gewichte aufsteigend betrachten und nur inkludieren wenn neuer Knoten eingebunden wird oder Partitionen verbunden werden.
@@ -74,10 +74,7 @@ Aus unbenutzten Kanten die kürzeste wählen, die mit den gewählten keinen Krei
 \[f \in \Omega(g) \Leftrightarrow 0 < \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, f(n) = \Omega(g(n)) \Leftrightarrow f(n) \geq c \cdot g(n) \]
 \section{Matroide}
 \[
-M = (E;U) : \emptyset \in U
-\]
-\[\forall A \in U; \forall B \in P(E) : B \subseteq A \Rightarrow B \in U\]
-\[ \forall A;B \in U: |B| < |A| \Rightarrow (\exists x \in A \setminus B : B \cup \lbrace x \rbrace \in U) \]
+M = (E;U) : \emptyset \in U\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\forall A \in U; \forall B \in P(E) : B \subseteq A \Rightarrow B \in U\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, \forall A;B \in U: |B| < |A| \Rightarrow (\exists x \in A \setminus B : B \cup \lbrace x \rbrace \in U) \]
 Unabhängigkeitssystem erfüllt nur die ersten beiden Bedingungen.
 \section{Linear Programming}
 \subsection{LP}
