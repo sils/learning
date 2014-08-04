@@ -21,6 +21,8 @@ Ein Graph $C_n = (V, E)$ ist ein \textbf{Kreisgraph} wenn alle Knoten den Grad z
 
 Eine \textbf{Clique} in einem Graphen $G$ ist ein Subgraph dieses Graphen der isomorph zu einem Graphen $K_n$ ist (für ein beliebiges $n$). Das größtmögliche $n =: \omega(G)$ ist die \textbf{Cliquenzahl}
 
+Eine \textbf{Stabile Menge} in einem Graphen $G$ ist ein Subgraph dieses Graphen der isomorph zu einem Graphen $E_n$ ist (für beliebiges $n$). Das größtmögliche $n =: \alhpa(g)$ ist die \textbf{Stabilitätszahl}
+
 Der Graph $E_n = (V, \emptyset)$ ist der \textbf{leere Graph}.
 
 Ein \textbf{Matching} ist eine Auswahl an eindeutigen Zuordnungen von Elementen einer Menge.
@@ -29,13 +31,22 @@ Eine \textbf{Knotenüberdeckung (Vertex Cover)} für einen Graphen $G = (V, E)$ 
 \section{Färbung}
 \textbf{Chromatische Zahl} ist $\chi(G) := min\lbrace k \in \mathbb{N} : \mbox{G hat k Färbung} \rbrace$.
 
+Für jeden Graphen $G(V,E)$ gilt $\omega(g) \leq \chi(g)$ und
+$\frac{|V|}{\alpha(G)} \leq \chi(g)$.
+
 Ein Graph $G$ ist \textbf{bipartit} wenn $\chi(G) \leq 2$.
+
+Graph ist bipartit $\Leftrightarrow \nexists$ Kreis ungerader Länge in G
 \subsection{Greedy}
 Für alle Knoten $v \in V$ aus $G = (V, E)$: nehme ausschließlich bekannte Knotenfärbungszahlen aller verbundenen Knoten in eine Menge $N$, Knotenfärbung von v ist die kleinste Zahl aus den natürlichen Zahlen ohne $N$.
 \section{Planarität}
+Ein Graph ist genau dann planar, wenn er keine Unterteilung des K_5 oder des K_3,3 besitzt
+
 Eulersche Polyederformel: ($R$ sei die Anzahl der Regionen inkl. Außenregion)
 \[|V|-|E|+|R|=2\]
 Weiterhin: $|E| \leq 3n -6$
+
+$2|E| \leq 3|R|$
 \section{Netzwerke}
 \subsection{Minimaler Spannbaum}
 Kruskal, Gewichte aufsteigend betrachten und nur inkludieren wenn neuer Knoten eingebunden wird oder Partitionen verbunden werden.
