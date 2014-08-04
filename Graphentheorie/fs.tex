@@ -21,7 +21,8 @@ Ein Graph $C_n = (V, E)$ ist ein \textbf{Kreisgraph} wenn alle Knoten den Grad z
 
 Eine \textbf{Clique} in einem Graphen $G$ ist ein Subgraph dieses Graphen der isomorph zu einem Graphen $K_n$ ist (für ein beliebiges $n$). Das größtmögliche $n =: \omega(G)$ ist die \textbf{Cliquenzahl}
 
-Eine \textbf{Stabile Menge} in einem Graphen $G$ ist ein Subgraph dieses Graphen der isomorph zu einem Graphen $E_n$ ist (für beliebiges $n$). Das größtmögliche $n =: \alhpa(g)$ ist die \textbf{Stabilitätszahl}
+Eine \textbf{Stabile Menge} in einem Graphen $G$ ist ein Subgraph dieses Graphen der isomorph zu einem Graphen $E_n$ ist (für beliebiges $n$).
+Das größtmögliche $ n =: \alpha(G) $ ist die \textbf{Stabilitätszahl}.
 
 Der Graph $E_n = (V, \emptyset)$ ist der \textbf{leere Graph}.
 
@@ -37,10 +38,10 @@ $\frac{|V|}{\alpha(G)} \leq \chi(g)$.
 Ein Graph $G$ ist \textbf{bipartit} wenn $\chi(G) \leq 2$.
 
 Graph ist bipartit $\Leftrightarrow \nexists$ Kreis ungerader Länge in G
-\subsection{Greedy}
+\subsection{Greedy (Färbung)}
 Für alle Knoten $v \in V$ aus $G = (V, E)$: nehme ausschließlich bekannte Knotenfärbungszahlen aller verbundenen Knoten in eine Menge $N$, Knotenfärbung von v ist die kleinste Zahl aus den natürlichen Zahlen ohne $N$.
 \section{Planarität}
-Ein Graph ist genau dann planar, wenn er keine Unterteilung des K_5 oder des K_3,3 besitzt
+Ein Graph ist genau dann planar, wenn er keine Unterteilung des $K_5$ oder des $K_{3,3}$ besitzt
 
 Eulersche Polyederformel: ($R$ sei die Anzahl der Regionen inkl. Außenregion)
 \[|V|-|E|+|R|=2\]
