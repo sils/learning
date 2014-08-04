@@ -1,11 +1,17 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
 \newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
 \begin{document}
 \section{Allgemeines}
@@ -60,17 +66,50 @@ Nehme Knoten mit minimaler Distanz zum Startknoten - hinzufügen. (Nachbarknoten
 Aus unbenutzten Kanten die kürzeste wählen, die mit den gewählten keinen Kreis bildet. Wiederholen.
 \section{Komplexitäten (vereinfacht)}
 \subsection{Abschätzung nach oben}
-$f \in O(g) \Leftrightarrow \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty $ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, $f(n) = O(g(n)) \Leftrightarrow f(n) \leq c \cdot g(n)$
+\[f \in O(g) \Leftrightarrow \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty  \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, f(n) = O(g(n)) \Leftrightarrow f(n) \leq c \cdot g(n)\]
 \subsection{Abschätzung}
 \[f \in \Theta(g) \Leftrightarrow 0 <\lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} < \infty \]
 \[f(n) = \Theta(g(n)) \Leftrightarrow c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)\]
 \subsection{Abschätzung nach unten}
-$f \in \Omega(g) \Leftrightarrow 0 < \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}}$ \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, $f(n) = \Omega(g(n)) \Leftrightarrow f(n) \geq c \cdot g(n)$
+\[f \in \Omega(g) \Leftrightarrow 0 < \lim_{x \rightarrow \infty} \abs{\frac{f(x)}{g(x)}} \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, f(n) = \Omega(g(n)) \Leftrightarrow f(n) \geq c \cdot g(n) \]
 \section{Matroide}
-TODO
+\[
+M = (E;U) : \emptyset \in U
+\]
+\[\forall A \in U; \forall B \in P(E) : B \subseteq A \Rightarrow B \in U\]
+\[ \forall A;B \in U: |B| < |A| \Rightarrow (\exists x \in A \setminus B : B \cup \lbrace x \rbrace \in U) \]
+Unabhängigkeitssystem erfüllt nur die ersten beiden Bedingungen.
 \section{Linear Programming}
 \subsection{LP}
+\[max(c^t x)\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+Ax \leq b\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+x \geq 0\]
 \subsection{Dual Problem}
+\[min(b^t y)\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+A^t y \geq c\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+y \geq 0\]
+\subsection{Simplex Algorithmus}
+\[max(2x+3y)\]
+
+\begin{packed_enum}
+\item Schlupfvariablen einfügen ($x-y \leq 2 \Rightarrow x-y+s_1 = 2, s_1\geq 0$) also zur Gleichung transformieren.
+\item Tableau erstellen
+\begin{tabular}{ r | c c c c c c | l }
+    & $x$ & $y$ & $s_1$ & $s_2$ & $s_3$ & $s_4$ \\
+    \hline
+  $b_1$ & 1 & -1 &1&0&0&0 &$s_1$ \\
+  $b_2$ & 5 & 6 &0&1&0&0 &$s_2$\\
+  $b_3$ & 8 & 9 &0&0&1&0 &$s_3$\\
+  $b_4$ & 8 & 9 &0&0&0&1 &$s_4$\\
+  \hline
+      0 & -2 & -3 &0&0&0&0\\
+\end{tabular}
+\item Fertig wenn alle nichtschlupfspalten in der untersten Zeile $\geq 0$ sind.
+\item Nimm Nichtschlupfspalte mit betragsmäßig größter unterer Zelle, nimm die Zelle wo $b_n/x : x > 0$ am kleinsten.
+\item Skaliere $n$te Zeile so dass eben diese Pivotzelle $1$ enthält.
+\item Addiere $n$tn Zeile so zu allen anderen dass diese in der Pivotspalte $0$ enthalten.
+\item Tausche Element ganz rechts in Pivotzeile mit Element ganz oben in Pivotspalte. Wiederholen.
+\end{packed_enum}
 \section{SAT}
 k-SAT mit $k \geq 3$ sind NP-schwer.
 $SAT \leq 3-SAT \leq Clique$
@@ -78,4 +117,6 @@ $SAT \leq 3-SAT \leq Clique$
 $\sum\limits_{v \in V} deg(v) = 2 \cdot |E|$
 
 Ungewichtetes Scheduling: Tasks mit größter Penalty auf ihre Deadline oder davor setzen, abwärts.
+
+Rucksackproblem
 \end{document}
