@@ -1,0 +1,26 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+
+\section{Homogene lineare partielle Differentialgleichungen 1. Ordnung}
+\begin{packed_enum}
+\item Umstellen in Normalform: $\sum\limits_{i = 1}^n a_i(\vec{x}) \cdot u_i = 0$, weitere Beispiele für $n=2$.
+\item Charakteristische DGLs sind zu lösen: $\dot{x}(t) = a_1(x(t), y(t)); \dot{y}(t) = a_2(x(t), y(t))$
+\item Eine der Gleichungen durch Variablen der anderen darstellen: $y = \psi(x, C)$, nach $C$ umstellen $C = \phi(x,y)$
+\item $\Phi(\phi(x,y))$ mit beliebigem $\Phi$ aus $C^1$ ist die Lösung
+\end{packed_enum}
+
+\end{document}
