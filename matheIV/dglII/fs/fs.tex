@@ -19,8 +19,13 @@
 \begin{packed_enum}
 \item Umstellen in Normalform: $\sum\limits_{i = 1}^n a_i(\vec{x}) \cdot u_i = 0$, weitere Beispiele für $n=2$.
 \item Charakteristische DGLs sind zu lösen: $\dot{x}(t) = a_1(x(t), y(t)); \dot{y}(t) = a_2(x(t), y(t))$
-\item Eine der Gleichungen durch Variablen der anderen darstellen: $y = \psi(x, C)$, nach $C$ umstellen $C = \phi(x,y)$
+\begin{packed_enum}
+\item Dabei darf man alle Gleichungen z.B. durch eine andere teilen
+\item Hat man dies getan, erhält man z.B. $\dot{x}(t)=1$ und somit $x(t)=t+c$ und $c=0$ ist zulässig, also $x=t$
+\end{packed_enum}
+\item Eine der Gleichungen durch Variablen der anderen darstellen: $y = \psi(x, C)$, nach $C(\vec{c})$ umstellen $C(\vec{c}) = \phi(x,y)$
 \item $\Phi(\phi(x,y))$ mit beliebigem $\Phi$ aus $C^1$ ist die Lösung
+\item Allgemein: $\Phi(\phi_1({x}), ... , \phi_{n-1}(\vec{x}))$
 \end{packed_enum}
 
 \end{document}
