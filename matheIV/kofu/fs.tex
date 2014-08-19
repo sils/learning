@@ -17,11 +17,17 @@
 \newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
 \begin{document}
 
-KoFu
+\part*{Komplexe Funktionen}
 
 \section{Vorletzte Seite schwarze FS kopieren}
 
 \section{Möbius Transformation}
+Transformation ist gegeben mit $T(z_1)=t_1$, $T(z_2)=t_2$ und $T(z_3)=t_3$.
+\[w = \frac{
+t_1(z-z_2)(z_3-z_1)(t_3-t_2) - t_2(z-z_1)(z_3-z_2)(t_3-t_1)
+}{
+\,\,\,\,\,(z-z_2)(z_3-z_1)(t_3-t_2) - \,\,\,\,\,(z-z_1)(z_3-z_2)(t_3-t_1)
+}\]
 \begin{enumerate}
 \item Zwei Punkte bestimmen die symmetrisch zu beiden Kreisen liegen: $(z_1 - z_0)(\overline{z_2} - \overline{z_0}) = R^2$ fuer alle Gleichungen $|z - z_0| = R$ aufstellen, Gleichungssystem loesen
 \item Transformation bestimmen: $T(a) = 0 \Rightarrow T_1(x) = x - a$, $T(b) = \infty \Rightarrow T_2(x) = \frac{x-a}{x-b}$, $T(c) = d \Rightarrow T(x) = \frac{x-a}{x-b} \cdot e = d$ erfuellen
@@ -49,6 +55,14 @@ Ringe $\rightarrow$ Pole
 \end{enumerate}
 
 \subsection{Residuen}
+Berechnung ohne Laurent:
+\begin{enumerate}
+\item Polstelle 1. Ordnung: $Res(f,a) = \lim\limits_{z\rightarrow a} (z-a)f(z)$
+\item Polstelle n. Ordning: $Res(f,a) = \frac{1}{(n-1)!} \lim\limits_{z\rightarrow a} \left(\frac{d}{dz}\right)^{n-1} (z-a)^n f(z)$
+\item $f(z)=\frac{g(z)}{h(z)} \,\,\,\, g(a) \neq 0, h(a) = 0, h'(a)\neq 0 \Rightarrow Res(f,a)=\frac{g(a)}{h(a)}$
+\end{enumerate}
+
+Mit Laurent:
 $z_k$ seien die Singularitaeten, $Res(f, a_k)$ die dazugehoerigen Residuen wobei der $1$-te Hauptteil wie folgt aussieht: $\frac{Res(f, a_k)}{z-z_0}$
 \begin{itemize}
 \item $\oint\limits_{K} f(z) dz = 2 \pi i \sum\limits_{z_k \neq 0} Res(f, a_k)$ wobei $Res(f, a_k)$ im Kreis
@@ -80,7 +94,7 @@ Eine Abbildung $f$ heisst holomorph wenn sie in jedem Punkt $z_0$ komplex differ
 Cauchy-Riemannsche DGL:
 \[
 \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}
-\]\[
+\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
 \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}
 \]
 
