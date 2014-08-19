@@ -1,0 +1,66 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+
+KoFu
+
+\section{Reihen}
+\subsection{Taylorreihen}
+Siehe Aufg. 16 Anleitung
+Umformen, Geometrische Reihe, Integral reinziehen, Grenzen einsetzen nicht vergessen!
+
+
+\subsection{Laurentreihen}
+\subsubsection{Hauptteil}
+\[
+\frac{a}{z-z_k}
+\]
+\subsubsection{Nebenteil}
+\[
+\frac{z-z_k}{a}
+\]
+
+\section{Kreisintegrale}
+\begin{enumerate}
+\item Singularitaet liegt ausserhalb des Kreises -> integral ist null
+\item Hebbare Singularitaet vorhanden -> integral ist null
+\item Nichthebbare Singularitaet im Kreis:
+\begin{enumerate}
+\item Cauchysche Itegralformel
+\item Verallg. Cauchysche Integralformel
+\end{enumerate}
+\end{enumerate}
+
+\section{•}
+\subsection{Holomorphie}
+Eine Abbildung $f$ heisst holomorph wenn sie in jedem Punkt $z_0$ komplex differenzierbar ist.
+
+Cauchy-Riemannsche DGL:
+\[
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}
+\]\[
+\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}
+\]
+
+\subsection{Harmonie}
+Der Realteil einer Funktion ist harmonisch wenn die Funktion holomorph ist.
+
+Eine Funktion $f=u + iv$ ist harmonisch wenn gilt: $f_{xx} + f_{yy} = 0$
+
+
+\end{document}
