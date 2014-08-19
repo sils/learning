@@ -28,25 +28,46 @@ Umformen, Geometrische Reihe, Integral reinziehen, Grenzen einsetzen nicht verge
 \subsection{Laurentreihen}
 \subsubsection{Hauptteil}
 \[
-\frac{a}{z-z_k}
+ \frac{a}{z-z_k}
 \]
 \subsubsection{Nebenteil}
 \[
-\frac{z-z_k}{a}
+ \frac{z-z_k}{a}
 \]
+
+\subsubsection{Singularitäten}
+Ringe $\rightarrow$ Pole
+\begin{enumerate}
+ \item Hebbar
+ \item n-facher Pol
+ \item Wesentliche Singularität
+\end{enumerate}
+
+\subsection{Residuen}
+$z_k$ seien die Singularitaeten, $Res(f, a_k)$ die dazugehoerigen Residuen.
+\begin{itemize}
+\item $\oint\limits_{K} f(z) dz = 2 \pi i \sum\limits_{z_k \neq 0} Res(f, a_k)$ wobei $Res(f, a_k)$ im Kreis
+\item $\oint\limits_{-\infty}^{\infty} f(z) dz = 2 \pi i \sum\limits_{z_k \neq 0} Res(f, a_k)$ wobei $Im(Res(f, a_k)) \geq 0$
+\item $\oint\limits_{0}^{\infty} f(z) dz = \pi i \sum\limits_{z_k \neq 0} Res(f, a_k)$
+\end{itemize}
+
+\subsection{Partialbruchzerlegung}
+\begin{enumerate}
+\item Residuen berechnen
+\end{enumerate}
 
 \section{Kreisintegrale}
 \begin{enumerate}
-\item Singularitaet liegt ausserhalb des Kreises -> integral ist null
-\item Hebbare Singularitaet vorhanden -> integral ist null
-\item Nichthebbare Singularitaet im Kreis:
-\begin{enumerate}
-\item Cauchysche Itegralformel
-\item Verallg. Cauchysche Integralformel
-\end{enumerate}
+ \item Singularitaet liegt ausserhalb des Kreises - integral ist null
+ \item Hebbare Singularitaet vorhanden - integral ist null
+ \item Nichthebbare Singularitaet im Kreis:
+ \begin{enumerate}
+  \item Cauchysche Itegralformel
+  \item Verallg. Cauchysche Integralformel
+ \end{enumerate}
 \end{enumerate}
 
-\section{•}
+\section{Funktionseigenschaften}
 \subsection{Holomorphie}
 Eine Abbildung $f$ heisst holomorph wenn sie in jedem Punkt $z_0$ komplex differenzierbar ist.
 
@@ -56,6 +77,8 @@ Cauchy-Riemannsche DGL:
 \]\[
 \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}
 \]
+
+Holomorphie impliziert harmonie.
 
 \subsection{Harmonie}
 Der Realteil einer Funktion ist harmonisch wenn die Funktion holomorph ist.
