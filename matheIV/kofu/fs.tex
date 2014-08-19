@@ -19,6 +19,14 @@
 
 KoFu
 
+\section{Vorletzte Seite schwarze FS kopieren}
+
+\section{Möbius Transformation}
+\begin{enumerate}
+\item Zwei Punkte bestimmen die symmetrisch zu beiden Kreisen liegen: $(z_1 - z_0)(\overline{z_2} - \overline{z_0}) = R^2$ fuer alle Gleichungen $|z - z_0| = R$ aufstellen, Gleichungssystem loesen
+\item Transformation bestimmen: $T(a) = 0 \Rightarrow T_1(x) = x - a$, $T(b) = \infty \Rightarrow T_2(x) = \frac{x-a}{x-b}$, $T(c) = d \Rightarrow T(x) = \frac{x-a}{x-b} \cdot e = d$ erfuellen
+\end{enumerate}
+
 \section{Reihen}
 \subsection{Taylorreihen}
 Siehe Aufg. 16 Anleitung
@@ -26,14 +34,11 @@ Umformen, Geometrische Reihe, Integral reinziehen, Grenzen einsetzen nicht verge
 
 
 \subsection{Laurentreihen}
-\subsubsection{Hauptteil}
-\[
- \frac{a}{z-z_k}
-\]
-\subsubsection{Nebenteil}
-\[
- \frac{z-z_k}{a}
-\]
+\begin{enumerate}
+\item Bestimme Singularitaeten
+\item Hebe Hebbare Singularitaeten
+\item In Summe aus Hauptteilen ($ \frac{a}{(z-z_k)^k}$) und Nebenteilen ($ \frac{z-z_k}{a}$) umformen.
+\end{enumerate}
 
 \subsubsection{Singularitäten}
 Ringe $\rightarrow$ Pole
@@ -44,7 +49,7 @@ Ringe $\rightarrow$ Pole
 \end{enumerate}
 
 \subsection{Residuen}
-$z_k$ seien die Singularitaeten, $Res(f, a_k)$ die dazugehoerigen Residuen.
+$z_k$ seien die Singularitaeten, $Res(f, a_k)$ die dazugehoerigen Residuen wobei der $1$-te Hauptteil wie folgt aussieht: $\frac{Res(f, a_k)}{z-z_0}$
 \begin{itemize}
 \item $\oint\limits_{K} f(z) dz = 2 \pi i \sum\limits_{z_k \neq 0} Res(f, a_k)$ wobei $Res(f, a_k)$ im Kreis
 \item $\oint\limits_{-\infty}^{\infty} f(z) dz = 2 \pi i \sum\limits_{z_k \neq 0} Res(f, a_k)$ wobei $Im(Res(f, a_k)) \geq 0$
@@ -54,6 +59,7 @@ $z_k$ seien die Singularitaeten, $Res(f, a_k)$ die dazugehoerigen Residuen.
 \subsection{Partialbruchzerlegung}
 \begin{enumerate}
 \item Residuen berechnen
+\item Fuer alle Residuen: $f = \sum\limits_a \frac{Res(f, a)}{z-a}$
 \end{enumerate}
 
 \section{Kreisintegrale}
