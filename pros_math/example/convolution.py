@@ -50,20 +50,46 @@ class Discretizer(Convoluter):
         Convoluter.__init__(self, sigma, original)
 
     def _aij(self, i, j):
-        n = len(original)
-        return (1 / n) * math.exp(-pow((i - j) / (self.sigma * n), 2))
+        return self._h(i, j)
+        #n = len(original)
+        #return (1 / n) * math.exp(-((i - j)*(i - j) / ((self.sigma * n)*(self.sigma * n))))
 
     def _a(self):
         n = len(original)
         a = numpy.zeros((n, n), dtype=float)
 
+        for i in range(0, len(original)):
+            for j in range(0, len(original)):
+                a[i][j] = self._aij(i,j)
+
+        return numpy.matrix(a)
+
+    def convolute_with_matrix(self):
+        matrix = self._a()
+        vec = matrix * numpy.array(original, ndmin=2).transpose()
+        lst = numpy.asarray(vec).transpose()[0]
+        for i in range(0, len(lst)):
+            lst[i] += (numpy.random.random()-0.5)*0.25
+        return lst
+
+    def deconvolute(self, convoluted):
+        matrix = self._a().I
+        return numpy.asarray(matrix * numpy.array(convoluted, ndmin=2).transpose()).transpose()[0]
+
+
+
 
 if __name__ == "__main__":
     original = get_input()
-    sigma = input("Choose sigma:")
-    conv = Convoluter(int(sigma), original)
-    convoluted = conv.convolute_with_integral()
+    sigma = 1
+    disc = Discretizer(int(sigma), original)
+    convoluted = disc.convolute_with_integral()
+    convoluted2 = disc.convolute_with_matrix()
 
+    a = disc._a()
+    print("A IS:\n{}\n\n\nInverse is:\n{}\n\n\n".format(a, a.I))
     plt.plot(original)
     plt.plot(convoluted)
+    plt.plot(convoluted2)
+    plt.plot(disc.deconvolute(convoluted2))
     plt.show()
