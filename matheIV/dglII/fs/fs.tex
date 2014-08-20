@@ -31,7 +31,8 @@
 \item Charakteristische DGLs sind zu lösen: $\dot{x}(t) = a_1(x(t), y(t)); \dot{y}(t) = a_2(x(t), y(t))$
 \begin{packed_enum}
 \item Dabei darf man alle Gleichungen z.B. durch eine andere teilen
-\item Hat man dies getan, erhält man z.B. $\dot{x}(t)=1$ und somit $x(t)=t+c$ und $c=0$ ist zulässig, also $x=t$
+\item Hat man dies getan, erhält man z.B. $\dot{x}(t)=1$ und somit $x(t)=t+c$
+\item $c=0$ kann zulaessig sein wenn Anfangswert gegeben ist, also $x=t$ in diesem Fall
 \end{packed_enum}
 \item Eine der Gleichungen durch Variablen der anderen darstellen: $y = \psi(x, C)$, nach $C(\vec{c})$ umstellen $C(\vec{c}) = \phi(x,y)$
 \item $\Phi(\phi(x,y))$ mit beliebigem $\Phi$ aus $C^1$ ist die Lösung
@@ -41,11 +42,15 @@
 \subsection{Quasilineare partielle inhomogene Differentialgleichungen 1. Ordnung}
 So sieht sie aus: $\sum\limits_{i=1}^n a_i(\vec{x}, u)\cdot u_{x_i} = b(\vec{x}, u)$
 
-Lösen mit erweiterter quasilinearer homogener DGL: $\left( \sum\limits_{i=1}^n a_i(\vec{x}, u)\cdot U_{x_i} \right) + b(\vec{x}, u)\cdot U_u = 0$ und $U = 0$
+Lösen mit erweiterter quasilinearer homogener DGL: $\left( \sum\limits_{i=1}^n a_i(\vec{x}, u)\cdot U_{x_i} \right) + b(\vec{x}, u)\cdot U_u = 0$
 
 Dann wie homogene lineare partielle Differentialgleichungen 1. Ordnung lösen.
 
+Dann $U = 0$, Nach dem Satz über implizite Funktionen ergibt sich:
+
 Zum Schluss eine Basis als Funktion der anderen Basis darstellen, nach $u$ umformen und $\psi(...)$ passend aussuchen.
+
+Wir erhalten als allgemeine Loesung eine implizite Gleichung mit beliebige $C^1$ Funktion $\Phi$.
 
 \subsection{Anfangswertaufgaben}
 $u(\vec{x}) = \Phi(\phi_1({x}), ... , \phi_{n-1}(\vec{x}))$
