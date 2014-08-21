@@ -77,7 +77,7 @@ b & c \\
 TODO
 $
 
-TODO typen und kriterien aufschreiben. Fuer $n=2$ immer det nehmen, ultrahyperbolisch gibts nur in hoehreren Dimensionen.
+TODO typen und kriterien aufschreiben. Für $n=2$ immer det nehmen, ultrahyperbolisch gibts nur in höheren Dimensionen.
 
 3 Dim: $au_{xx}+2bu_{xy}+2cu_{xz}+2du_{yz}+eu_{yy}+fu_{zz}+gu_x +hu_y+iu_z+ju=k$
 
@@ -95,6 +95,24 @@ b\\e\\d\\
 e\\d\\f\\
 \end{pmatrix}\right)\nabla u + ju = k$
 
+\subsubsection{Wärmeleitungsgleichung}
+So sieht sie aus: $v_t = v_{xx} + g(x)$ mit einer beliebigen $C^1$ Funktion $g(x)$. $v_h(x,t)$ löst $0 = v_t - v_{xx}$.
+
+Löse nun homogene Gleichung mit inhomogener Anfangsbedingung: Fourier! :)
+\[v_h(x,t) = \sum\limits_{k=1}^{\infty} b_k \cdot sin\left(\frac{k \pi x}{z} \right) e^{-\frac{t k^2 \pi^2}{z^2}}
+\,\,\,\,\,\,\,\,\,\,\,\,\,
+T=2\cdot z
+\,\,\,\,\,\,\,\,\,\,\,\,\,
+b_k = \frac{2}{T} \int\limits_0^T f(x) \cdot sin\left( \frac{k \pi x}{z}\right) \mbox{ mit } f(x) = \mbox{ Anfangsbedingung}
+\]
+
+Koeffizientenvergleich d. Anfangsbedingung mit Summenansatz hilfreich!
+
+Nun Inhomogenität lösen: Inhomogene Gleichung mit homogener Randbedingung und Anfangsbedingung: $\omega = \pi / z$
+
+$v_p(x,t) \xrightarrow{Ansatz} v_p(x,t) = \sum\limits_{k=1}^{\infty} v_k(t) sin \left( k \omega x \right)$ und $v_k(0) = 0$.
+
+In DGL einsetzen. $\sum\limits_{k=1}^{\infty} \left(\dot{v}_k(t) + k^2 \omega^2 v_k(t) \right) sin(k \omega x) = g(x)$
 \pagebreak
 \section{Polarkoordination}
 \subsection{Produktansatz in Polarkoordinaten}
@@ -104,4 +122,15 @@ x = r\,cos\phi, y=r\,sin\phi \mbox{ mit } sin(2\phi)=2sin\phi cos\phi \mbox{ und
 \]
 
 TODO: Herleitung kann in der Klausur uebersprungen werden. Wegkuerzen!
+
+\section{Dirichlet Problem}
+Kreis: $u(r, \phi) = A_0 + \sum\limits_{k=1}^\infty A_k r^k cos(k \phi) + B_k r^k sin(k \phi)$
+
+Halbkreis: $u(r, \phi) = \sum\limits_{k=1}^\infty A_k r^k sin(k \phi)$
+
+Kreisring: $u(r, \phi) = A_0 + B_0 ln|r| \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) cos(k \phi) + \left(B_k r^k + D_k r^{-k} \right) sin(k \phi)$
+
+Halbkreisring: $u(r, \phi) = \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) sin(k \phi)$
+
+
 \end{document}

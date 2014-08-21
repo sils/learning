@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -68,9 +69,13 @@ class Discretizer(Convoluter):
         matrix = self._a()
         vec = matrix * numpy.array(original, ndmin=2).transpose()
         lst = numpy.asarray(vec).transpose()[0]
-        for i in range(0, len(lst)):
-            lst[i] += (numpy.random.random()-0.5)*0.25
+        self.randomize(lst)
         return lst
+
+    def randomize(self, lst):
+        off = 0 #numpy.random.random() - 0.5
+        for i in range(0, len(lst)):
+            lst[i] += (numpy.random.random()-0.5)*0.000009 + off
 
     def deconvolute(self, convoluted):
         matrix = self._a().I
@@ -81,13 +86,11 @@ class Discretizer(Convoluter):
 
 if __name__ == "__main__":
     original = get_input()
-    sigma = 1
+    sigma = 3
     disc = Discretizer(int(sigma), original)
     convoluted = disc.convolute_with_integral()
     convoluted2 = disc.convolute_with_matrix()
 
-    a = disc._a()
-    print("A IS:\n{}\n\n\nInverse is:\n{}\n\n\n".format(a, a.I))
     plt.plot(original)
     plt.plot(convoluted)
     plt.plot(convoluted2)
