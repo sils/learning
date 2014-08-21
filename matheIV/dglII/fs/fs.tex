@@ -128,9 +128,12 @@ Kreis: $u(r, \phi) = A_0 + \sum\limits_{k=1}^\infty A_k r^k cos(k \phi) + B_k r^
 
 Halbkreis: $u(r, \phi) = \sum\limits_{k=1}^\infty A_k r^k sin(k \phi)$
 
-Kreisring: $u(r, \phi) = A_0 + B_0 ln|r| \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) cos(k \phi) + \left(B_k r^k + D_k r^{-k} \right) sin(k \phi)$
+Kreisring: $u(r, \phi) = A_0 + B_0 ln|r| + \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) cos(k \phi) + \left(B_k r^k + D_k r^{-k} \right) sin(k \phi)$
 
 Halbkreisring: $u(r, \phi) = \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) sin(k \phi)$
+
+\section{d'Alembertsche Loesungsformel}
+Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{6}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $
 
 
 \end{document}
