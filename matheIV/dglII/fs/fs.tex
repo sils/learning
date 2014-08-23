@@ -130,15 +130,12 @@ Nun Inhomogenität lösen: Inhomogene Gleichung mit homogener Randbedingung und 
 $v_p(x,t) \xrightarrow{Ansatz} v_p(x,t) = \sum\limits_{k=1}^{\infty} v_k(t) sin \left( k \omega x \right)$ und $v_k(0) = 0$.
 
 In DGL einsetzen. $\sum\limits_{k=1}^{\infty} \left(\dot{v}_k(t) + k^2 \omega^2 v_k(t) \right) sin(k \omega x) = g(x)$
-\pagebreak
+
 \section{Polarkoordination}
 \subsection{Produktansatz in Polarkoordinaten}
-\includegraphics[scale=0.6]{ununderstandable}
 \[
 x = r\,cos\phi, y=r\,sin\phi \mbox{ mit } sin(2\phi)=2sin\phi cos\phi \mbox{ und } cos(3\phi)=4cos^3\phi - 3cos \phi
 \]
-
-TODO: Herleitung kann in der Klausur uebersprungen werden. Wegkuerzen!
 
 \section{Dirichlet Problem}
 Der Produktansatz $u(r, \phi) = R(r) \cdot \Phi(\phi)$ ergibt:
@@ -159,6 +156,6 @@ $sin(\alpha \pm \beta) = sin(\alpha)\cdot cos(\beta) \pm sin(\beta)\cdot cos(\al
 
 Da $u$ harmonisch und nicht konstant ist, werden die Extremwerte nur auf dem Rand angenommen.
 \section{d'Alembertsche Loesungsformel}
-Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{6}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $
+Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{2c}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $
 
 \end{document}
