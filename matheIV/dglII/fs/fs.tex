@@ -158,4 +158,13 @@ Da $u$ harmonisch und nicht konstant ist, werden die Extremwerte nur auf dem Ran
 \section{d'Alembertsche Loesungsformel}
 Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{2c}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $
 
+\subsection{Inhomogen}
+Zuerst inhomogene Gleichung mit homogenen Anfangsdaten loesen $w$ sei diese Teilloesung:
+
+$w_{tt} - c^2 w_{xx} = f(x,t)$ und $w(x,0)=0, w_t(x,0)=0$
+
+\[w(x,t) = \frac{1}{2c} \int\limits_0^t \int\limits_{x-c(t-\tau)}^{x+c(t-\tau)} f(\xi, \tau) d\xi d\tau\]
+
+Dann homogene Gleichung mit inhomogenen Anfangsdaten loesen, superponieren.
+
 \end{document}
