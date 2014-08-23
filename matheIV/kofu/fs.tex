@@ -39,6 +39,11 @@ $\frac{z_0-z_1}{z_0-z_2} : \frac{z_3-z_1}{z_3-z_2} \in R$
 
 \section{Reihen}
 \subsection{Taylorreihen}
+\[
+f(x) = A \int\limits_{start}^{end} \frac{1}{b - \xi} d\xi = \frac{A}{b+z_0} \int\limits_{start}^{end} \frac{1}{1- \frac{\xi - z_0}{b+z_0}} = A \sum\limits_{n=0}^\infty \frac{1}{(b+z_0)^{n+1}} \cdot \int\limits_{start}^{end} (\xi-z_0)^n d\xi
+\]
+Radius: $|\xi-z_0| < |b+z_0| = r$
+
 Siehe Aufg. 16 Anleitung
 Umformen, Geometrische Reihe, Integral reinziehen, Grenzen einsetzen nicht vergessen!
 
@@ -86,14 +91,14 @@ $z_k$ seien die Singularitaeten, $Res(f, a_k)$ die dazugehoerigen Residuen wobei
  \item Hebbare Singularitaet vorhanden - integral ist null
  \item Nichthebbare Singularitaet im Kreis:
  \begin{enumerate}
-  \item Cauchysche Itegralformel
+  \item Cauchysche Itegralformel $2 \pi i \cdot f(z_0) = \int \frac{f(z)}{z-z_0} dz$
   \item Verallg. Cauchysche Integralformel
  \end{enumerate}
 \end{enumerate}
 
 \section{Funktionseigenschaften}
 \subsection{Holomorphie}
-Eine Abbildung $f$ heisst holomorph wenn sie in jedem Punkt $z_0$ komplex differenzierbar ist.
+Eine Abbildung $f$ heisst holomorph wenn sie in jedem Punkt $z_0$ komplex differenzierbar ist. Dabei ist $f(z) = u(z) + v(z)i$ mit $u$ und $v$ reelle Funktionen.
 
 Cauchy-Riemannsche DGL:
 \[

@@ -98,7 +98,7 @@ e\\d\\f\\
 \subsubsection{Wärmeleitungsgleichung}
 So sieht sie aus: $v_t = v_{xx} + g(x)$ mit einer beliebigen $C^1$ Funktion $g(x)$. $v_h(x,t)$ löst $0 = v_t - v_{xx}$.
 
-Löse nun homogene Gleichung mit inhomogener Anfangsbedingung: Fourier! :)
+Löse nun homogene Gleichung mit inhomogener Anfangsbedingung, wenn Anfangsbedingung homogen diesen Schritt auslassen: Fourier! :)
 \[v_h(x,t) = \sum\limits_{k=1}^{\infty} b_k \cdot sin\left(\frac{k \pi x}{z} \right) e^{-\frac{t k^2 \pi^2}{z^2}}
 \,\,\,\,\,\,\,\,\,\,\,\,\,
 T=2\cdot z
@@ -133,7 +133,9 @@ Kreisring: $u(r, \phi) = A_0 + B_0 ln|r| + \sum\limits_{k=1}^\infty \left(A_k r^
 Halbkreisring: $u(r, \phi) = \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) sin(k \phi)$
 
 \section{d'Alembertsche Loesungsformel}
-Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{6}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $
+Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{2c}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $ mit $u_0 = u(x,0)$ und $v_0 = u_t(x,0)$.
+
+Abhängigkeitsbereich: $A = x_0 - c t_0 $ bis $ x_0 + c t_0$ Bestimmtheitsbereiche: $x_0$ und $t_0$ aus Intervall bestimmen.
 
 
 \end{document}
