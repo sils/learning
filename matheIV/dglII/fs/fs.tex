@@ -74,10 +74,27 @@ a & b \\
 b & c \\
 \end{matrix}
 \right)
-TODO
+TODO$
+
+elliptisch: Alle $\lambda_i \neq 0$ gleiches Vorzeichen
+
+parabolisch: $\exists k : \lambda_k = 0$
+
+hyperbolisch: $\exists! i : \lambda_i$ hat verschiedenes Vorzeichen von allen anderen $\lambda$.
+
+ultrahyperbolisch: erst ab n=4: alle anderen Faelle
+
+Wenn det:$
+\begin{matrix}
+> 0: \mbox{ elliptisch\ \ \ \ \ } \\
+= 0: \mbox{ parabolisch\ } \\
+< 0: \mbox{ hyperbolisch} \\
+\end{matrix}
 $
 
-TODO typen und kriterien aufschreiben. Für $n=2$ immer det nehmen, ultrahyperbolisch gibts nur in höheren Dimensionen.
+Für $n=2$ immer det nehmen, ultrahyperbolisch gibts nur in höheren Dimensionen.
+
+Für $n=3$ nach einer spalte/zeile entwickeln und det(Rest) nehmen. Produkt der EW ist det, reicht aus.
 
 3 Dim: $au_{xx}+2bu_{xy}+2cu_{xz}+2du_{yz}+eu_{yy}+fu_{zz}+gu_x +hu_y+iu_z+ju=k$
 
@@ -124,13 +141,20 @@ x = r\,cos\phi, y=r\,sin\phi \mbox{ mit } sin(2\phi)=2sin\phi cos\phi \mbox{ und
 TODO: Herleitung kann in der Klausur uebersprungen werden. Wegkuerzen!
 
 \section{Dirichlet Problem}
+Der Produktansatz $u(r, \phi) = R(r) \cdot \Phi(\phi)$ ergibt:
+\begin{itemize}
+\item
 Kreis: $u(r, \phi) = A_0 + \sum\limits_{k=1}^\infty A_k r^k cos(k \phi) + B_k r^k sin(k \phi)$
-
+\item
 Halbkreis: $u(r, \phi) = \sum\limits_{k=1}^\infty A_k r^k sin(k \phi)$
-
+\item
 Kreisring: $u(r, \phi) = A_0 + B_0 ln|r| \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) cos(k \phi) + \left(B_k r^k + D_k r^{-k} \right) sin(k \phi)$
-
+\item
 Halbkreisring: $u(r, \phi) = \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) sin(k \phi)$
+\end{itemize}
 
+Karthesischisierung: $x = cos(\phi)*r$, $y = r sin(\phi)$, $r = \sqrt{x^2 + y^2}$
+
+$sin(\alpha \pm \beta) = sin(\alpha)\cdot cos(\beta) \pm sin(\beta)\cdot cos(\alpha)$ und $cos(\alpha \pm \beta) = cos(\alpha)\cdot cos(\beta) \mp sin(\alpha)\cdot sin(\beta)$
 
 \end{document}
