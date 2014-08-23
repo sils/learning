@@ -74,10 +74,27 @@ a & b \\
 b & c \\
 \end{matrix}
 \right)
-TODO
+TODO$
+
+elliptisch: Alle $\lambda_i \neq 0$ gleiches Vorzeichen
+
+parabolisch: $\exists k : \lambda_k = 0$
+
+hyperbolisch: $\exists! i : \lambda_i$ hat verschiedenes Vorzeichen von allen anderen $\lambda$.
+
+ultrahyperbolisch: erst ab n=4: alle anderen Faelle
+
+Wenn det:$
+\begin{matrix}
+> 0: \mbox{ elliptisch\ \ \ \ \ } \\
+= 0: \mbox{ parabolisch\ } \\
+< 0: \mbox{ hyperbolisch} \\
+\end{matrix}
 $
 
-TODO typen und kriterien aufschreiben. Für $n=2$ immer det nehmen, ultrahyperbolisch gibts nur in höheren Dimensionen.
+Für $n=2$ immer det nehmen, ultrahyperbolisch gibts nur in höheren Dimensionen.
+
+Für $n=3$ nach einer spalte/zeile entwickeln und det(Rest) nehmen. Produkt der EW ist det, reicht aus.
 
 3 Dim: $au_{xx}+2bu_{xy}+2cu_{xz}+2du_{yz}+eu_{yy}+fu_{zz}+gu_x +hu_y+iu_z+ju=k$
 
@@ -113,29 +130,42 @@ Nun Inhomogenität lösen: Inhomogene Gleichung mit homogener Randbedingung und 
 $v_p(x,t) \xrightarrow{Ansatz} v_p(x,t) = \sum\limits_{k=1}^{\infty} v_k(t) sin \left( k \omega x \right)$ und $v_k(0) = 0$.
 
 In DGL einsetzen. $\sum\limits_{k=1}^{\infty} \left(\dot{v}_k(t) + k^2 \omega^2 v_k(t) \right) sin(k \omega x) = g(x)$
-\pagebreak
+
 \section{Polarkoordination}
 \subsection{Produktansatz in Polarkoordinaten}
-\includegraphics[scale=0.6]{ununderstandable}
 \[
 x = r\,cos\phi, y=r\,sin\phi \mbox{ mit } sin(2\phi)=2sin\phi cos\phi \mbox{ und } cos(3\phi)=4cos^3\phi - 3cos \phi
 \]
 
-TODO: Herleitung kann in der Klausur uebersprungen werden. Wegkuerzen!
-
 \section{Dirichlet Problem}
+Der Produktansatz $u(r, \phi) = R(r) \cdot \Phi(\phi)$ ergibt:
+\begin{itemize}
+\item
 Kreis: $u(r, \phi) = A_0 + \sum\limits_{k=1}^\infty A_k r^k cos(k \phi) + B_k r^k sin(k \phi)$
-
+\item
 Halbkreis: $u(r, \phi) = \sum\limits_{k=1}^\infty A_k r^k sin(k \phi)$
-
+\item
 Kreisring: $u(r, \phi) = A_0 + B_0 ln|r| + \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) cos(k \phi) + \left(B_k r^k + D_k r^{-k} \right) sin(k \phi)$
-
+\item
 Halbkreisring: $u(r, \phi) = \sum\limits_{k=1}^\infty \left(A_k r^k + C_k r^{-k} \right) sin(k \phi)$
+\end{itemize}
 
+Karthesischisierung: $x = cos(\phi)*r$, $y = r sin(\phi)$, $r = \sqrt{x^2 + y^2}$
+
+$sin(\alpha \pm \beta) = sin(\alpha)\cdot cos(\beta) \pm sin(\beta)\cdot cos(\alpha)$ und $cos(\alpha \pm \beta) = cos(\alpha)\cdot cos(\beta) \mp sin(\alpha)\cdot sin(\beta)$
+
+Da $u$ harmonisch und nicht konstant ist, werden die Extremwerte nur auf dem Rand angenommen.
 \section{d'Alembertsche Loesungsformel}
 Fuer: $u_{tt} = c^2 u_{xx}$ ist $u(x,t) = \frac{1}{2}u_0(x+ct) + u_0(x-ct) + \frac{1}{2c}\int\limits_{x-ct}^{x+ct} v_0\left(\xi\right) d \xi $ mit $u_0 = u(x,0)$ und $v_0 = u_t(x,0)$.
 
 Abhängigkeitsbereich: $A = x_0 - c t_0 $ bis $ x_0 + c t_0$ Bestimmtheitsbereiche: $x_0$ und $t_0$ aus Intervall bestimmen.
+\subsection{Inhomogen}
+Zuerst inhomogene Gleichung mit homogenen Anfangsdaten loesen $w$ sei diese Teilloesung:
 
+$w_{tt} - c^2 w_{xx} = f(x,t)$ und $w(x,0)=0, w_t(x,0)=0$
+
+\[w(x,t) = \frac{1}{2c} \int\limits_0^t \int\limits_{x-c(t-\tau)}^{x+c(t-\tau)} f(\xi, \tau) d\xi d\tau\]
+
+Dann homogene Gleichung mit inhomogenen Anfangsdaten loesen, superponieren.
 
 \end{document}
