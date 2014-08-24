@@ -23,7 +23,11 @@
 
 \section{Allgemeines}
 \subsection{Reihen}
-Geometrische Reihe: $\frac{1}{1-q} = \sum\limits_{k=0}^\infty q^k$
+Geometrische Reihe: $\frac{1}{1-q} = \sum\limits_{k=0}^\infty q^k\ \  |\ \  e^x = \sum\limits_{n=0}^\infty \frac{x^n}{n!} = 1+x+\frac{x^2}{2!} ... \ \ |\ \ sin(x)=\sum\limits_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!} = \frac{x}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!}...$
+
+$cos(x)=\sum\limits_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = \frac{x^0}{0!} - \frac{x^2}{2!} + \frac{x^4}{4!}...
+ \ \ |\ \ sinh(x)=\sum\limits_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}
+  \ \ |\ \ cosh(x)=\sum\limits_{n=0}^\infty \frac{x^{2n}}{(2n)!}$
 
 \subsection{Trigonometrie}
 \[e^{iz} = cos(z)+i sin(z)\ \ \ \ \ \ \ \ \ e^z = e^x(cos(y)+i sin(y))\]
@@ -49,7 +53,7 @@ Ist das Punktepaar $((0,0), (\infty, 0))$ symmetrisch so geht der Kreis im Bildr
 \subsection{Konforme Funktion}
 \[T(z) = k \frac{z-z1}{z-z2} \mbox{ mit } k \in R\setminus \lbrace 0 \rbrace\]
 
-Konformitaet: $f'(z) \neq 0$
+Wobei $T(z_1)=0, T(z_2)=\infty$. Konformitaet: $f'(z) \neq 0$
 
 \section{Reihen}
 \subsection{Taylorreihen}
@@ -101,7 +105,7 @@ $z_k$ seien die Singularitäten, $Res(f, a_k)$ die dazugehörigen Residuen wobei
  \item Hebbare Singularität vorhanden - integral ist null
  \item Nichthebbare Singularität im Kreis:
  \begin{enumerate}
-  \item Cauchysche Itegralformel $2 \pi i \cdot f(z_0) = \int \frac{f(z)}{z-z_0} dz$
+  \item Cauchysche Itegralformel $2 \pi i \cdot f(z_0) = \int \frac{f(z)}{(z-z_0)^n} dz$
   \item Verallg. Cauchysche Integralformel
  \end{enumerate}
 \end{enumerate}
@@ -120,6 +124,8 @@ Cauchy-Riemannsche DGL:
 Schreibe: Da $u$ und $v$ stetig partiell differenzierbar sind ist $f$ holomorph.
 
 Eine reelle Funktion muss konstant sein um holomorph zu sein.
+
+Folgende Funktionen sind holomorph: polynomisch, trigonomisch, exponential, potenzreihen, rational.
 
 Holomorphie impliziert harmonie.
 
