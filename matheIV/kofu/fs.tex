@@ -30,7 +30,14 @@ $cos(x)=\sum\limits_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = \frac{x^0}{0!} - 
   \ \ |\ \ cosh(x)=\sum\limits_{n=0}^\infty \frac{x^{2n}}{(2n)!}$
 
 \subsection{Trigonometrie}
-\[e^{iz} = cos(z)+i sin(z)\ \ \ \ \ \ \ \ \ e^z = e^x(cos(y)+i sin(y))\]
+\[e^{iz} = cos(z)+i sin(z)
+\ \ |\ \ e^z = e^x(cos(y)+i sin(y))
+\ \ |\ \ cos(ix)=cosh(x)
+\ \ |\ \ cosh(ix)=cos(x)\]
+\[sin(x)=\frac{1}{2r}\left(e^{ix} - e^{-ix} \right)
+\ \ |\ \ cosh(x)=\frac{e^x + e^{-x}}{2}
+\ \ |\ \ sinh(x)=\frac{e^x - e^{-x}}{2}
+\]
 
 \section{Möbius Transformation}
 \subsection{Bestimmen}
@@ -68,6 +75,12 @@ Radius: $|$Entwicklungspunkt $ - $ Singularität$|$ - Kreise!
 \item Hebe Hebbare Singularitäten
 \item In Summe aus Hauptteilen ($ \frac{a}{(z-z_k)^k}$) und Nebenteilen ($ \frac{z-z_k}{a}$) umformen.
 \end{enumerate}
+
+\[
+f(x)= \frac{A}{\xi - b}
+= \frac{A}{\xi - z_0} \cdot \frac{1}{1 -\frac{(b-z_0)}{\xi - z_0}}
+= \frac{A}{\xi - z_0} \cdot \sum\limits_{k=0}^\infty \left(\frac{b-z_0}{\xi - z_0}\right) ^k
+\]
 
 \subsubsection{Singularitäten}
 Ringe $\rightarrow$ Pole
