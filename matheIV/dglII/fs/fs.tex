@@ -57,9 +57,6 @@ $u(\vec{x}) = \Phi(\phi_1({x}), ... , \phi_{n-1}(\vec{x}))$
 
 Anfangsfunktion: $u_0(s) := u(x(s), y(s))$ auf der Kurve $c(s) := (x(s), y(s))^T$.
 
-\subsection{Burgersgleichung}
-TODO
-
 \subsection{Lineare inhomogene partielle Differentialgleichungen 2. Ordnung}
 \[
 \sum\limits_{i,j=1}^n a_{ij}(\vec{x})u_{x_ix_j} + \sum\limits_{i=1}^n b_i(\vec{x}) u_{x_i} + f(\vec{x})u = g(\vec{x})
@@ -67,14 +64,16 @@ TODO
 
 Für $n=2$ und $\vec{x}=(x,y)$: $au_{xx} +2bu_{xy}+cu_{yy} + du_x+eu_y+fu=g$
 
-Matrix: $
-\left(
-\begin{matrix}
+Vektor/Matrix Schreibweise: $\nabla^T
+\begin{pmatrix}
 a & b \\
 b & c \\
-\end{matrix}
-\right)
-TODO$
+\end{pmatrix}
+\nabla u + \left( d-\nabla^T \begin{pmatrix}
+a\\b\\
+\end{pmatrix}, e-\nabla^T \begin{pmatrix}
+b\\c\\
+\end{pmatrix}\right) \nabla u + fu = g$
 
 elliptisch: Alle $\lambda_i \neq 0$ gleiches Vorzeichen
 
@@ -178,5 +177,15 @@ $v^*(x,t) = \sum\limits_{k=1}^\infty \left( A_k cos(k t) + B_k sin( k t) \right)
 $v^{**}(x,t) = \sum\limits_{k=1}^\infty v_k(t) sin(k x)$
 
 \section{Transformation}
-\includegraphics[scale=0.3]{trafo}
+\includegraphics[scale=0.4]{trafo}
+
+\section{Fourier}
+\[
+f(z) = \sum\limits_{k=0}^\infty a_k cos(k \omega z) + b_k sin(k \omega z) \mbox{ mit } a_k = \frac{4}{T} \int\limits_{0}^{\frac{T}{2}} u_0(x) cos(k \omega x) dx
+ \mbox{ unt } b_k = \frac{4}{T} \int\limits_{0}^{\frac{T}{2}} u_0(x) sin(k \omega x) dx
+\]
+
+\section{Wellengleichungen}
+\[ \mbox{Produktansatz: } u(x,t)=\sum\limits_{k=1}^\infty \left( a_k cos(kt) + b_k sin(kt) \right) sin(kt) \]
+
 \end{document}
