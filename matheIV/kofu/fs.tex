@@ -8,6 +8,7 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 
+\setlength{\parindent}{0pt}
 \newenvironment{packed_enum}{
 \begin{enumerate}
   \setlength{\itemsep}{1pt}
@@ -18,8 +19,6 @@
 \begin{document}
 
 \part*{Komplexe Funktionen}
-
-\section{Vorletzte Seite schwarze FS kopieren}
 
 \section{Allgemeines}
 \subsection{Reihen}
@@ -94,6 +93,7 @@ Ringe $\rightarrow$ Pole
 Berechnung ohne Laurent:
 \begin{enumerate}
 \item Polstelle 1. Ordnung: $Res(f,a) = \lim\limits_{z\rightarrow a} (z-a)f(z)$
+\item Polstelle 2. Ordnung: $Res(f,a) = \lim\limits_{z\rightarrow a} \frac{d}{dz}\left((z-a)^2 f(z)\right)$
 \item Polstelle n. Ordnung: $Res(f,a) = \frac{1}{(n-1)!} \lim\limits_{z\rightarrow a} \left(\frac{d}{dz}\right)^{n-1} (z-a)^n f(z)$
 \item $f(z)=\frac{g(z)}{h(z)} \,\,\,\, g(a) \neq 0, h(a) = 0, h'(a)\neq 0 \Rightarrow Res(f,a)=\frac{g(a)}{h(a)}$
 \end{enumerate}
@@ -120,8 +120,9 @@ $z_k$ seien die Singularitäten, $Res(f, a_k)$ die dazugehörigen Residuen wobei
  \item Hebbare Singularität vorhanden - integral ist null
  \item Nichthebbare Singularität im Kreis:
  \begin{enumerate}
-  \item Cauchysche Itegralformel $2 \pi i \cdot f(z_0) = \int \frac{f(z)}{(z-z_0)^n} dz$
-  \item Verallg. Cauchysche Integralformel
+  \item Cauchysche Itegralformel
+  $ 2 \pi i \cdot f(z_0) = \int\limits_c \frac{f(z)}{z-z_0} dz$
+  \item Verallg. Cauchysche Integralformel $\frac{2 \pi i}{n!} \cdot f^n(z_0) = \int\limits_c \frac{f(z)}{(z-z_0)^{n+1}} dz$
  \end{enumerate}
 \end{enumerate}
 
@@ -149,7 +150,6 @@ Der Realteil einer Funktion ist harmonisch wenn die Funktion holomorph ist.
 
 Eine Funktion $f=u + iv$ ist harmonisch wenn gilt: $f_{xx} + f_{yy} = 0$
 
-\includegraphics[scale=0.3]{kalk1}
-
-\includegraphics[scale=0.5]{kalk2}
+\includegraphics[scale=0.25]{kalk1}
+\includegraphics[scale=0.4]{kalk2}
 \end{document}
