@@ -1,0 +1,77 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+
+\section{Kombinatorik}
+Anzahl der Möglichkeiten:
+\begin{packed_enum}
+\item Mit Reihenfolge: (Variation)
+\begin{packed_enum}
+\item $k$ aus $n$ mit zurücklegen: $n^k$
+\item $k$ aus $n$ ohne zurücklegen: $k! \binom{n}{k}$
+\end{packed_enum}
+\item Ohne Reihenfolge: (Kombination)
+\begin{packed_enum}
+\item $k$ aus $n$ mit zurücklegen: $\binom {n+k-1}{k}$
+\item $k$ aus $n$ ohne zurücklegen: $\binom{n}{k}$
+\end{packed_enum}
+\item Ohne Reihenfolge: (Permutation)
+\begin{packed_enum}
+\item $n$ ohne gleiche Elemente: $n!$
+\item $n$ ohne zurücklegen: $\frac{n!}{\prod (k_i !)}$ mit $k_i$ Anzahl der Elemente $i$.
+\end{packed_enum}
+\end{packed_enum}
+
+\section{Wahrscheinlichkeit}
+
+\subsection{Elementarereignis}
+Schliessen sich gegenseitig aus. Ein einelementiges Versuchsergebnis ist ein Elementarereignis. Z.B. $\omega_1 =$ Kopf $, \omega_2 =$Zahl.
+\subsection{Ereignisraum}
+Menge aller möglichen Ereignisse: $\Omega = \omega_1 \cup \omega_2$. Werfen zweier Münzen: $\Omega_2 = \Omega \times \Omega$
+
+\subsection{Bernoulli/Laplace}
+Endlich viele Ereignisse: $P = \frac{\sum \mbox{Erfolgsmoeglichkeiten}}{\sum \mbox{Alle Moeglichkeiten}}$. Auch Gegenereignis betrachten!!!
+\subsection{nach von Mises}
+Statistischer Wahrscheinlichkeitsbegriff: $P(A)=\lim\limits_{n \rightarrow \infty} H(A,n)=\lim\limits_{n \rightarrow \infty} \frac{n_A}{n}$ mit $H(A,n)$ relative Wahrscheinlichkeit von $A$, also $n_A$ Anzahl der Versuche wo $A$ eintritt und $n$ Gesamtanzahl der Versuche.
+\subsection{nach Kolmogorov}
+Massaxiom: $P(A) \geq 0$, Normierungsaxiom: $P(\Omega)=1$, Additivitaetsaxiom: $P(A \cup B) = P(A) + P(B)$ mit $A \cap B = \emptyset$. Bertrands Paradoxon.
+
+\subsection{Bayes Law}
+\[P(A|B)= \frac{P(B|A) \cdot P(A)}{P(B)}\]
+
+\section{Funktionen}
+\subsection{Verteilungsfunktion}
+$F_X(c) = P(X \leq c) = \int f_X(c) dc$ wobei $f(c)$ die Wahrscheinlichkeitsdichtefunktion ist.
+
+\subsection{Exponentialverteilungsfunktion}
+$f_\lambda(x) =
+\begin{cases}
+\lambda e^{-\lambda x} & \mbox{für } x \geq 0 \\
+0 & \mbox{für } x < 0
+\end{cases}
+$ hat den Erwartungswert $\dfrac{1}{\lambda}$. Dazugehörige Verteilungsfunktion: $F_X(x) = \begin{cases}
+1-e^{-\lambda x} & \mbox{für } x \geq 0 \\
+0 & \mbox{für } x < 0
+\end{cases}$
+
+\subsubsection{Bedingte Wahrscheinlichkeit}
+\[c, d \in \mathbb{R},
+P(x > c | x > d) = \dfrac{P(x>c \cap x > d)}{P(x > d)}, c>d \Rightarrow \left\{ x > c \right\} \subset
+\left\{ x > d \right\} \Rightarrow P(x > c | x > d) = \dfrac{P(x>c)}{P(x > d)}\]
+Im Falle der Exponantialfunktion: $\frac{P(x>c)}{P(x > d)} = F_X(c-d)$
+\end{document}
