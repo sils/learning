@@ -54,11 +54,37 @@ Massaxiom: $P(A) \geq 0$, Normierungsaxiom: $P(\Omega)=1$, Additivitaetsaxiom: $
 \subsection{Bayes Law}
 \[P(A|B)= \frac{P(B|A) \cdot P(A)}{P(B)}\]
 
+\subsection{Erwartungswert}
+$E\left\{X\right\}$ ist eine lineare Operation. Ausserdem ist $E\left\{X\cdot Y\right\} = E\left\{X\right\} \cdot E\left\{Y\right\}$ wenn X und Y stochastisch unabhängig.
+
+\subsection{Varianz}
+Nichtlinear. Fuer statistisch unabhaengige $X_i$: $Var\left\{ \sum\limits_{i=1}^N \left\{X_i\right\}\right\} = \sum\limits_{i=1}^N Var\left\{X_i\right\}$
+
 \section{Funktionen}
 \subsection{Verteilungsfunktion}
 $F_X(c) = P(X \leq c) = \int f_X(c) dc$ wobei $f(c)$ die Wahrscheinlichkeitsdichtefunktion ist.
 
-\subsection{Exponentialverteilungsfunktion}
+Erwartungswert: $E\left\{ X \right\} = \int\limits_{-\infty}^\infty x\cdot f(x) dx$. Varianz: $Var\left\{ X \right\} = E\left\{ (X-E\left\{ X \right\})^2 \right\}$
+
+\subsection{Poissionverteilung}
+$f_X(k) = \dfrac{A^k e^{-A}}{k!}$
+
+\subsection{Gleichverteilung}
+$f_X(x) = \begin{cases}
+1 \over {b-a} & \mbox{für } x \in \left[a,b\right] \\
+0 & \mbox{sonst}
+\end{cases}$ und
+$F_X(x) = \begin{cases}
+0 & \mbox{für } x \leq a \\
+\frac{x-a}{b-a} & \mbox{für } a \leq x \leq b \\
+1 & \mbox{für } b \leq x \\
+\end{cases}$
+
+\subsection{Normalverteilung}
+$f_X(x)=\dfrac{e^{-\frac{1}{2} \left( \frac{x- \mu}{\sigma} \right)^2}}{\sqrt{2 \pi} \sigma}$ und
+$F_X(x)=\int\limits_{-\infty}^x \dfrac{e^{-\frac{1}{2} \left( \frac{u- \mu}{\sigma} \right)^2}}{\sqrt{2 \pi} \sigma} du$. Standard-NV hat Varianz $\sigma^2 = 1$ und Erwartungswert $\mu = 0$.
+
+\subsection{Exponentialverteilung}
 $f_\lambda(x) =
 \begin{cases}
 \lambda e^{-\lambda x} & \mbox{für } x \geq 0 \\
@@ -74,4 +100,23 @@ $ hat den Erwartungswert $\dfrac{1}{\lambda}$. Dazugehörige Verteilungsfunktion
 P(x > c | x > d) = \dfrac{P(x>c \cap x > d)}{P(x > d)}, c>d \Rightarrow \left\{ x > c \right\} \subset
 \left\{ x > d \right\} \Rightarrow P(x > c | x > d) = \dfrac{P(x>c)}{P(x > d)}\]
 Im Falle der Exponantialfunktion: $\frac{P(x>c)}{P(x > d)} = F_X(c-d)$
+
+\section{Zweidimensionaler Kram}
+\subsection{Verbundverteilungsfunktion}
+\[x \in \left[a,b\right], y \in \left[c,d\right]\ \ \ 
+F_{X,Y}(x,y) = \int\limits_{-\infty}^x
+\int\limits_{-\infty}^y f_{X,Y}(s,t) dt ds \ \ \ \ \ F_{\vec{X}} =
+\begin{cases}
+0 & x \leq a, y\leq c \\
+F_{X,Y}(x,y) & a \leq x \leq b, c\leq y\leq d \\
+F_{X,Y}(b,y) & b \leq x, c\leq y\leq d \\
+F_{X,Y}(x,d) & a \leq x \leq b, d\leq y \\
+1 & b \leq x, d\leq y \\
+\end{cases}
+\]
+\subsection{Randdichteverteilung}
+\[f_X(x) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y) dy\ \ \ \ \ \ \ \ f_Y(y) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y) dx\]
+
+\subsection{Misc}
+$X$ und $Y$ sind statistisch unabhängig $ \Leftrightarrow F_{X,Y}(x,y) = F_X(x)\cdot F_Y(y)$.
 \end{document}
