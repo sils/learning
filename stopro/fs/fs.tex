@@ -214,6 +214,11 @@ dann $P(|X-\mu| \geq k) \leq \frac{\sigma^2}{k^2}$
 und $P(|X-\mu| \geq k\cdot \sigma) \leq \frac{1}{k^2}$
 
 \subsection{Charakteristische Funktion}
+Diskret: $\Phi_X(j\omega) = \sum\limits_{k=1}^\infty e^{j \omega x_k} P(X = x_k)$
+
+Kontinuierlich: $\Phi_X(j\omega) = \int\limits_{-\infty}^\infty e^{j\omega x} f_X(x)dx$ Char. Funktionen fuer versch. Verteilungen bei Maike abschreiben!
+
+$\Phi(0)=1$
 
 \subsection{Misc}
 $X$ und $Y$ sind statistisch unabhängig $ \Leftrightarrow F_{X,Y}(x,y) = F_X(x)\cdot F_Y(y)$.
@@ -225,4 +230,11 @@ F_{X,Y}(b,d)
 +F_{X,Y}(a,c)$
 
 Erwartungswert fuer jede Dimension einzeln normal ueber Randdichteverteilungsfunktionen berechnen.
+
+\section{Weird Stuff}
+\subsection{Leistungsdichtespektrum}
+$S_{XX}(j\omega) = Fourier(r_{XX}(\tau)) = $ r nehmen und $\phi(t)=1$.
+
+\subsection{Leistung}
+$P=r_{XX}(0)=\int\limits_{-\infty}^\infty S_{XX}(f) df$
 \end{document}
