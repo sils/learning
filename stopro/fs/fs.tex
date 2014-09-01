@@ -57,14 +57,57 @@ Massaxiom: $P(A) \geq 0$, Normierungsaxiom: $P(\Omega)=1$, Additivitaetsaxiom: $
 \subsection{Erwartungswert}
 $E\left\{X\right\}$ ist eine lineare Operation. Ausserdem ist $E\left\{X\cdot Y\right\} = E\left\{X\right\} \cdot E\left\{Y\right\}$ wenn X und Y stochastisch unabhängig.
 
+\subsection{Moment}
+Das $k$-te Moment ist $m_k = E\left\{X^k\right\}
+=
+\int\limits_{-\infty}^\infty
+  x^k
+  \cdot
+  f_X(x)
+dx$.
+
+Das $k$-te zentrierte Moment ist $z_k =
+E\left\{
+  (x -
+  E\left\{
+    X
+   \right\}
+  )^k
+\right\}
+=
+\int\limits_{-\infty}^\infty
+  (x -
+  E\left\{
+    X
+   \right\}
+  )^k
+  \cdot
+  f_X(x)
+dx$.
+
 \subsection{Varianz}
 Nichtlinear. Fuer statistisch unabhaengige $X_i$: $Var\left\{ \sum\limits_{i=1}^N \left\{X_i\right\}\right\} = \sum\limits_{i=1}^N Var\left\{X_i\right\}$
+
+Diskret: $Var(X)=\sum (x-\mu)^2 P(X=x)$
+
+$Var\left\{ X \right\}  = Cov(X,X) = E\left\{ (X-E\left\{ X \right\})^2 \right\}$
 
 \section{Funktionen}
 \subsection{Verteilungsfunktion}
 $F_X(c) = P(X \leq c) = \int f_X(c) dc$ wobei $f(c)$ die Wahrscheinlichkeitsdichtefunktion ist.
 
 Erwartungswert: $E\left\{ X \right\} = \int\limits_{-\infty}^\infty x\cdot f(x) dx$. Varianz: $Var\left\{ X \right\} = E\left\{ (X-E\left\{ X \right\})^2 \right\}$
+
+\subsection{Bernoulli/Alternativverteilung}
+$F_{X_i}(k)=
+\begin{cases}
+  p     & k=1\\
+  (1-p) & k=0\\
+\end{cases}$ dann ist $\mu_{X_i} = p$ und $ \sigma_{X_i}^2 = p\cdot (1-p)$
+
+\subsection{Binomialverteilung}
+$Z_n=\sum X_i, B_{n,p}(k) = f_Z(k)=\binom{n}{k} p^k (1-p)^{n-k}$
+dabei ist $\mu = N\cdot p$ und $\sigma^2 = Var\left\{Z_n\right\}=n \cdot Var\left\{X_i\right\}= N \cdot p \cdot (1-p)$
 
 \subsection{Poissionverteilung}
 $f_X(k) = \dfrac{A^k e^{-A}}{k!}$
@@ -101,7 +144,7 @@ P(x > c | x > d) = \dfrac{P(x>c \cap x > d)}{P(x > d)}, c>d \Rightarrow \left\{ 
 \left\{ x > d \right\} \Rightarrow P(x > c | x > d) = \dfrac{P(x>c)}{P(x > d)}\]
 Im Falle der Exponantialfunktion: $\frac{P(x>c)}{P(x > d)} = F_X(c-d)$
 
-\section{Zweidimensionaler Kram}
+\section{Mehrdimensionaler Kram}
 \subsection{Verbundverteilungsfunktion}
 \[x \in \left[a,b\right], y \in \left[c,d\right]\ \ \ 
 F_{X,Y}(x,y) = \int\limits_{-\infty}^x
@@ -117,6 +160,69 @@ F_{X,Y}(x,d) & a \leq x \leq b, d\leq y \\
 \subsection{Randdichteverteilung}
 \[f_X(x) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y) dy\ \ \ \ \ \ \ \ f_Y(y) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y) dx\]
 
+\subsection{Kovarianz/Unkorreliertheit}
+\[
+Cov\left\{X,Y\right\} :=
+E\left\{(X- E\left\{X\right\})
+	    (Y- E\left\{Y\right\})\right\}
+=
+E\left\{X,Y\right\}
+	    - E\left\{X\right\}E\left\{Y\right\}
+\ \ \ \ \ \ \ \ \ 
+E\left\{U \cdot V\right\} =
+\int\limits_{-\infty}^\infty
+  \int\limits_{-\infty}^\infty
+    x \cdot y \cdot f(x,y)
+  dx
+dy\]
+statistische Unabhaengigkeit $\Rightarrow Cov\left\{X,Y\right\} = 0$.
+
+\[
+Var
+  \left\{
+    \sum\limits_{i=1}^n
+      a_i X_i
+  \right\}
+=
+\sum\limits_{i=1}^n
+  a_i^2
+  Var
+  \left\{
+    X_i
+  \right\}
++
+\sum\limits_{i=1}^n
+  \sum\limits_{j=1, j \neq i}^n
+    a_i a_j
+    Cov
+    \left\{
+      X_i, X_j
+    \right\}
+\]
+
+\subsection{Stochastische Unabhängigkeit}
+$A$ und $B$ sind stochastisch Unabhängig $\Leftrightarrow P(A \cap B) = P(A)\cdot P(B)$.
+
+\subsection{Eindimensional Summieren}
+Sei $Z = \sum X_i$ so ist $f_Z(z) = (\prod f_{X_i})(z)$. (Faltung!)
+
+Faltung der Rechteckfunktion mit sich selbst ist die dreiecksfunktion.
+
+\subsection{Tschebyscheff Ungleichung}
+Erwartungswert $\mu=E\left\{X\right\}$ und Varianz $\sigma^2$ sowie $k \in \mathbb{R}$,
+dann $P(|X-\mu| \geq k) \leq \frac{\sigma^2}{k^2}$
+und $P(|X-\mu| \geq k\cdot \sigma) \leq \frac{1}{k^2}$
+
+\subsection{Charakteristische Funktion}
+
 \subsection{Misc}
 $X$ und $Y$ sind statistisch unabhängig $ \Leftrightarrow F_{X,Y}(x,y) = F_X(x)\cdot F_Y(y)$.
+
+$P(a \leq x\leq b, c\leq y\leq d) =
+F_{X,Y}(b,d)
+-F_{X,Y}(a,d)
+-F_{X,Y}(b,c)
++F_{X,Y}(a,c)$
+
+Erwartungswert fuer jede Dimension einzeln normal ueber Randdichteverteilungsfunktionen berechnen.
 \end{document}
