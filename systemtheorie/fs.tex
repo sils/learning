@@ -99,9 +99,22 @@ Leistungssignale haben unendliche Energie.
 P_x = \lim\limits_{T \rightarrow \infty} \frac{1}{2T} \int\limits_{-T}^T \left| x(t) \right|^2 dt
 \]
 
+\section{Abtastung}
+\subsection{Abtastbarkeit}
+Ein Signal kann nur perfekt abtastbar sein wenn die Funktion im Frequenzbereich bandbegrenzt ist.
+
+perfekt abtastbar $\Leftrightarrow f_s = \frac{1}{T_s} \geq 2B$
+
+\subsection{Nu aber zur Sache}
+Abtastfrequenz $f_s$. Dann low-pass filter vorweg: $rect\left(\frac{f}{f_s}\right)$ ($f_g = f_s \over 2$).
+
+\section{Laplace}
+$H(s) = \frac{Y(s)}{X(s)}$
+
 \section{Verschiedenes}
 \subsection{Trigonometrie}
 \[sin(-t) = -sin(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, cos(-t) = cos(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, \int\limits_{- \frac{T}{2}}^{\frac{T}{2}} sin^2(t) dt = \frac{1}{2}\]
+
 
 
 \end{document}
