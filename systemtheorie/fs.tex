@@ -40,12 +40,26 @@ b & t > t_0\\
 1+t & -1 \leq t \leq 0\\
 \end{cases} \]
 
-\subsection{dirac}
+\subsection{dirac Impuls}
+\subsubsection{Normal}
 \[ \delta(a\cdot (t-t_0)) = \frac{1}{|a|} \delta(t-t_0) =
 \begin{cases}
 \neq 0 & t=t_0\\
 0 & t \neq t_0\\
-\end{cases}\,\,\,\,\,\,,\,\,\,\,\,\,\, \delta(-t)=\delta(t) \]
+\end{cases}\,\,\,\,\,\,,\,\,\,\,\,\,\, \delta(-t)=\delta(t)
+\,\,\,\,\,\,,\,\,\,\,\,\,\,\int\limits_{-\infty}^\infty \delta(t) dt = 1 \]
+
+Sifting bzw. Siebung: $\delta(t-t_0)\cdot f(t) = f(t_0)\cdot \delta(t-t_0) \,\,\,\,\,\,,\,\,\,\,\,\,\,
+\int\limits_{-\infty}^\infty \delta(t-t_0)\cdot f(t) dt  =
+\begin{cases}
+f(t) & t = t_0 \\
+0 & sonst \\
+\end{cases}$
+
+\subsubsection{Impulssequenz}
+\[
+w_T(t) = \sum\limits_{k=-\infty}^\infty \delta(t-kT)
+\]
 
 \subsection{si}
 \[
@@ -72,9 +86,22 @@ $x_R$ sei der Realteil, $x_I$ sei der Imaginaerteil.
 \[x(t) = x^*(t) \Rightarrow x_R(t) = x_e(t) \mbox{ und } j\cdot x_I(t) = x_o(t)\]
 \[x(t) = -x^*(t) \Rightarrow x_R(t) = x_o(t) \mbox{ und } j\cdot x_I(t) = x_e(t)\]
 
+\section{Leistung und Energie von Signalen}
+Fuer eine Funktion $x(t)$.
+\subsection{Energie}
+Energiesignale haben keine ($0$) Leistung.
+\[
+E_x = \int\limits_{-\infty}^\infty \left| x(t) \right|^2 dt
+\]
+\subsection{Leistung}
+Leistungssignale haben unendliche Energie.
+\[
+P_x = \lim\limits_{T \rightarrow \infty} \frac{1}{2T} \int\limits_{-T}^T \left| x(t) \right|^2 dt
+\]
+
 \section{Verschiedenes}
 \subsection{Trigonometrie}
-\[sin(-t) = -sin(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, cos(-t) = cos(t)\]
+\[sin(-t) = -sin(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, cos(-t) = cos(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, \int\limits_{- \frac{T}{2}}^{\frac{T}{2}} sin^2(t) dt = \frac{1}{2}\]
 
 
 \end{document}
