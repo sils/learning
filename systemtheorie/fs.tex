@@ -1,0 +1,80 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+\section{Funktionen}
+\subsection{Rect}
+\[ a\cdot rect\left(\frac{t-t_0}{2T}\right) = \begin{cases}
+a & |t-t_0| < T \\
+a\over 2 & |t-t_0| = T \\
+0 & sonst \\
+\end{cases} \]
+
+\subsection{step}
+\[b\cdot\epsilon(a\cdot (t-t_0)) = b\cdot\epsilon(t-t_0) =
+\begin{cases}
+0 & t < t_0 \\
+b \over 2 & t=t_0\\
+b & t > t_0\\
+\end{cases}\]
+
+\subsection{tri}
+\[\Lambda(t) =
+\begin{cases}
+0& |t|>1\\
+1-t & 0 \leq t \leq 1\\
+1+t & -1 \leq t \leq 0\\
+\end{cases} \]
+
+\subsection{dirac}
+\[ \delta(a\cdot (t-t_0)) = \frac{1}{|a|} \delta(t-t_0) =
+\begin{cases}
+\neq 0 & t=t_0\\
+0 & t \neq t_0\\
+\end{cases}\,\,\,\,\,\,,\,\,\,\,\,\,\, \delta(-t)=\delta(t) \]
+
+\subsection{si}
+\[
+si(t) = \frac{sin(t)}{t}\,\,\,\,\,\,,\,\,\,\,\,\,\, si(0) = 1\,\,\,\,\,\,,\,\,\,\,\,\,\, \int\limits_{-\infty}^\infty si(t) dt= \int\limits_{-\infty}^\infty si^2(t) dt = \pi
+\]
+
+\subsection{ramp}
+\[ \rho(t) = \epsilon(t)\cdot t \]
+
+\subsection{sgn}
+\[ sgn(x) = \frac{x}{|x|} = 2 \epsilon(t) -1 \,\,\,\,\,\,,\,\,\,\,\,\,\, |x(t)| = sgn(x(t)) \cdot x(t) \]
+
+\section{Symmetrien}
+\[x(t) = x_e(t) + x_o(t)\]
+\subsection{Gerade}
+\[ x_e(t) = x_e(-t) = \frac{x(t)+x(-t)}{2}
+\]
+\subsection{Ungerade}
+\[ x_o(t) = -x_o(-t) = \frac{x(t)-x(-t)}{2}
+\]
+
+\subsection{Komplex}
+$x_R$ sei der Realteil, $x_I$ sei der Imaginaerteil.
+\[x(t) = x^*(t) \Rightarrow x_R(t) = x_e(t) \mbox{ und } j\cdot x_I(t) = x_o(t)\]
+\[x(t) = -x^*(t) \Rightarrow x_R(t) = x_o(t) \mbox{ und } j\cdot x_I(t) = x_e(t)\]
+
+\section{Verschiedenes}
+\subsection{Trigonometrie}
+\[sin(-t) = -sin(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, cos(-t) = cos(t)\]
+
+
+\end{document}
