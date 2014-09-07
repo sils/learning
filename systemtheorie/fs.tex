@@ -83,20 +83,22 @@ si(t) = \frac{sin(t)}{t}\,\,\,\,\,\,,\,\,\,\,\,\,\, si(0) = 1\,\,\,\,\,\,,\,\,\,
 
 \subsection{Komplex}
 $x_R$ sei der Realteil, $x_I$ sei der Imaginaerteil.
-\[x(t) = x^*(t) \Rightarrow x_R(t) = x_e(t) \mbox{ und } j\cdot x_I(t) = x_o(t)\]
-\[x(t) = -x^*(t) \Rightarrow x_R(t) = x_o(t) \mbox{ und } j\cdot x_I(t) = x_e(t)\]
+
+Konjugiert gerades Signal: $\,\,\,\,\,\, x(t) = \,\,\,\,\,x^*(-t) \Rightarrow x_R(t) = x_e(t) \mbox{ und } j\cdot x_I(t) = x_o(t)$
+
+Konjugiert ungerades Signal: $x(t) = -x^*(-t) \Rightarrow x_R(t) = x_o(t) \mbox{ und } j\cdot x_I(t) = x_e(t)$
 
 \section{Leistung und Energie von Signalen}
 Fuer eine Funktion $x(t)$.
 \subsection{Energie}
 Energiesignale haben keine ($0$) Leistung.
 \[
-E_x = \int\limits_{-\infty}^\infty \left| x(t) \right|^2 dt
+E_x = \int\limits_{-\infty}^\infty \left| x(t) \right|^2 dt = r_{xx}^E (0)
 \]
 \subsection{Leistung}
 Leistungssignale haben unendliche Energie.
 \[
-P_x = \lim\limits_{T \rightarrow \infty} \frac{1}{2T} \int\limits_{-T}^T \left| x(t) \right|^2 dt
+P_x = \lim\limits_{T \rightarrow \infty} \frac{1}{2T} \int\limits_{-T}^T \left| x(t) \right|^2 dt = r_{xx}^P(0)
 \]
 
 \section{Abtastung}
@@ -111,10 +113,27 @@ Abtastfrequenz $f_s$. Dann low-pass filter vorweg: $rect\left(\frac{f}{f_s}\righ
 \section{Laplace}
 $H(s) = \frac{Y(s)}{X(s)}$
 
+\section{Korrelation}
+\[
+r_{xy}^E(\tau) = \langle x(t), y(t+\tau) \rangle
+\]
+\[
+r_{xy}^P(\tau) = \lim\limits_{T \rightarrow \infty} \frac{1}{2T} \int\limits_{-T}^T x^*(t)y(t+\tau) dt
+\]
+
+\subsection{Autocorrelation}
+$r_{xx}$.
+
 \section{Verschiedenes}
 \subsection{Trigonometrie}
-\[sin(-t) = -sin(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, cos(-t) = cos(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, \int\limits_{- \frac{T}{2}}^{\frac{T}{2}} sin^2(t) dt = \frac{1}{2}\]
+\[sin(-t) = -sin(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, cos(-t) = cos(t) \,\,\,\,\,\,,\,\,\,\,\,\,\, \int\limits_{- \frac{T}{2}}^{\frac{T}{2}} sin^2(t) dt = \frac{1}{2}
+\,\,\,\,\,\,,\,\,\,\,\,\,\,
+2sin(x) cos(x) = sin(2x)\,\,\,\,\,\,,\,\,\,\,\,\,\,
+2 sin^2(x) = 1-cos(2x)\]
 
+\subsection{Orthogonalitaet}
+Zwei Signale $x(t)$ und $y(t)$ sind genau dann Orthogonal wenn: $\langle x(t), y(t)\rangle =
+\int\limits_{-\infty}^\infty x^*(t)y(t) dt = \sum\limits_{k=-\infty}^\infty x^*(k) y(k) = 0$
 
 
 \end{document}
