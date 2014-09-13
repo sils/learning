@@ -1,5 +1,5 @@
 \documentclass[11pt]{beamer}
-\usetheme{Pittsburgh}
+%\usetheme{Pittsburgh}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
@@ -23,12 +23,20 @@
 \tableofcontents
 \end{frame}
 
-\begin{frame}{Test title}
-content
+\begin{frame}{Barcode Reader}
+Demonstration/Grafik
 \end{frame}
 
-\begin{frame}{Test title}
-content2
+\begin{frame}{Modellierung des Barcode Readers}
+\[g(s) = \int\limits_{0}^1 f(t) \cdot h(s-t) dt = \int\limits_{0}^1 f(t) \cdot e^{-\left(s-t \over \varsigma\right)^2} dt, \, \, \, \, \, \, 0 \leq s \leq 1 \]
+\end{frame}
+
+\begin{frame}{Barcode Reader: Faltung}
+Entspricht einer Faltung $\rightarrow$ Invers: Dekonvolution (Entfaltung) 
+\end{frame}
+
+\begin{frame}{}
+
 \end{frame}
 
 \end{document}
