@@ -190,7 +190,7 @@ g_{BC}(s) & = \int\limits_{-1}^2 K(s,  t) f_{BC}(t) dt \notag \\
 
 
 \begin{frame}{Matrixstruktur ausnutzen}
-Zurück zum Diskreten 
+Zurück zum Diskreten!
 \end{frame}
 
 
@@ -215,7 +215,7 @@ Zurück zum Diskreten
 
 \begin{frame}{A ist eine Toeplitz Matrix}
 \[
-h[i-j] := a_{ij}
+h[i-j] := a_{ij} (= K(s_i, t_j))
 \]
 \[
 (x \star h)[i] = \sum\limits_{j=0}^{N-1} x[j] \cdot h[i-j] = b[i]
@@ -234,7 +234,26 @@ b[N-1] & h[N-1] & h[N-2] & \cdots & h[0]  \\
 
 
 \begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen}
-Korrekturterme notwendig: 
+Korrekturterme notwendig.
+
+Reflektierende Grenzbedingungen - Erinnerung:
+
+\[K_{BC} = K(s, -t) + K(s,  t) + K(s, 2-t)\]
+
+Also: was fehlt in der Matrix?
+\end{frame}
+
+
+\begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen}
+Korrekturterme notwendig.
+
+Reflektierende Grenzbedingungen - Erinnerung:
+
+\[K_{BC} = K(s, -t) + K(s,  t) + K(s, 2-t)\]
+
+Also: was fehlt in der Matrix?
+
+$A_l$ und $A_r$!
 \end{frame}
 
 
