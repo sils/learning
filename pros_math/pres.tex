@@ -156,6 +156,30 @@ Häufig sind Annahmen nötig:
 
 
 \begin{frame}{Grenzbedingungen (3)}
+\[
+f_{BC}(t) = \begin{cases}
+f(-t), & -1 < t < 0,\\
+f(t),  & 0 \leq t \leq 1,\\
+f(2-t),& 1 < t < 2.\\
+\end{cases}
+\]
+\end{frame}
+
+
+\begin{frame}{Grenzbedingungen (4)}
+\begin{align}
+g_{BC}(s) & = \int\limits_{-1}^2 K(s,  t) f_{BC}(t) dt \notag \\
+          & = \int\limits_{-1}^0 K(s,  t) f_{BC}(t) dt
+            + \int\limits_{ 0}^1 K(s,  t) f_{BC}(t) dt
+            + \int\limits_{ 1}^2 K(s,  t) f_{BC}(t) dt \notag \\
+          & = \int\limits_{ 0}^1 K(s, -t) f     (t) dt
+            + \int\limits_{ 0}^1 K(s,  t) f     (t) dt
+            + \int\limits_{0 }^1 K(s,2-t) f     (t) dt \notag
+\end{align}
+\end{frame}
+
+
+\begin{frame}{Grenzbedingungen (3)}
 \includegraphics[scale=0.38]{boundary_conditions} 
 \end{frame}
 
