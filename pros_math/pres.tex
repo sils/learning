@@ -1,7 +1,7 @@
 \documentclass[11pt]{beamer}
 %\usetheme{Pittsburgh}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage[german]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{tikz}
@@ -113,9 +113,9 @@ Modell basiert auf Annahmen über Daten. Annahmen erfüllt?
 % TODO this should be more circular
 \begin{tikzpicture}[node distance = 2cm, auto]
 \node [cloud] (orig) {$f(t)$};
-\node [block, right of=orig] (model) {Modell};
-\node [cloud, right of=model] (blurred) {$g(s)$};
-\node [block, below of=model] (inversemodel) {Inverses Modell};
+\node [block, above right of=orig] (model) {Modell};
+\node [cloud, below right of=model] (blurred) {$g(s)$};
+\node [block, below left of=blurred] (inversemodel) {Inverses Modell};
 
 \path [line] (orig) -- (model);
 \path [line] (model) -- (blurred);
@@ -132,15 +132,31 @@ Kann das Modell anhand des Modells selbst geprüft werden?
 
 \begin{center}
 
-\includegraphics[scale=0.5]{InverseCrime.PNG} 
+\includegraphics[scale=0.5]{InverseCrime} 
 
 \end{center}
 
 \end{frame}
 
 
-\begin{frame}{Grenzbedingungen}
+\begin{frame}{Grenzbedingungen (1)}
+Was passiert ausserhalb der Grenzen im Originalsignal?
 
+Wie wird das gegebene Signal dadurch beeinflusst?
+\end{frame}
+
+
+\begin{frame}{Grenzbedingungen (2)}
+Häufig sind Annahmen nötig:
+\begin{itemize}
+\item Originalfunktion null ausserhalb der Grenzen?
+\item Originalfunktion verhält sich ähnlich wie innerhalb?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Grenzbedingungen (3)}
+\includegraphics[scale=0.38]{boundary_conditions} 
 \end{frame}
 
 
