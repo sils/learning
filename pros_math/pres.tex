@@ -179,12 +179,22 @@ g_{BC}(s) & = \int\limits_{-1}^2 K(s,  t) f_{BC}(t) dt \notag \\
 \end{frame}
 
 
-\begin{frame}{Grenzbedingungen (3)}
+\begin{frame}{Grenzbedingungen (5)}
+ \[K_{BC} = K(s, -t) + K(s,  t) + K(s, 2-t)\]
+\end{frame}
+
+
+\begin{frame}{Grenzbedingungen (6)}
 \includegraphics[scale=0.38]{boundary_conditions} 
 \end{frame}
 
 
-\begin{frame}{Toeplitz Matrix}
+\begin{frame}{Matrixstruktur ausnutzen}
+Zurück zum Diskreten 
+\end{frame}
+
+
+\begin{frame}{A ist eine Toeplitz Matrix}
 \[
 h[i-j] := a_{ij}
 \]
@@ -202,5 +212,29 @@ b[N-1] & h[N-1] & h[N-2] & \cdots & h[0]  \\
 \end{array}
 \]
 \end{frame}
+
+\begin{frame}{Toeplitz Zyklische Matrizen}
+\[
+\begin{pmatrix}
+{\color{red} 1} & {\color{blue} 2} & {\color{green} 4} & 6\\
+{\color{yellow} 0}  & {\color{red} 1} & {\color{blue} 2} & {\color{green} 4} \\
+{\color{cyan} 3} & {\color{yellow} 0} & {\color{red} 1} & {\color{blue} 2}\\
+5 & {\color{cyan} 3} & {\color{yellow} 0} & {\color{red} 1}\\
+\end{pmatrix}
+
+\begin{pmatrix}
+{\color{red}    1} & {\color{blue}   2} & {\color{green}  4} & 6\\
+{\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2} & {\color{green} 4} \\
+{\color{green}  4} & {\color{yellow} 0} & {\color{red}    1} & {\color{blue} 2}\\
+{\color{blue}   2} & {\color{green}  4} & {\color{yellow} 0} & {\color{red} 1}\\
+\end{pmatrix}
+\]
+\end{frame}
+
+
+\begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen}
+Korrekturterme notwendig: 
+\end{frame}
+
 
 \end{document}
