@@ -15,6 +15,7 @@
 %\institute{} 
 \date{19.09.2014} 
 %\subject{}
+%\setcounter{tocdepth}{1}
 \begin{document}
 % Styles for diagram
 \tikzstyle{decision} = [diamond, draw, 
@@ -35,6 +36,7 @@
 \end{frame}
 
 
+\section{Barcode Reader}
 \begin{frame}{Barcode Reader}
 \begin{center}
 \includegraphics[scale=0.5]{Barcode_example.PNG} 
@@ -49,6 +51,7 @@
 \end{frame}
 
 
+\subsection{Modellierung}
 \begin{frame}{Modellierung des Barcode Readers (1)}
 \begin{center}
 \includegraphics[scale=0.5]{Barcode_g.PNG} 
@@ -83,6 +86,7 @@ a_{ij} = K(s_i, t_j) = \frac{1}{n} e^{-\left(i-j \over \varsigma n\right)^2}, \,
 \end{frame}
 
 
+\subsection{Rekonstruktion}
 \begin{frame}{Barcode Reader: Rekonstruktion}
 \begin{center}
 \includegraphics[scale=0.5]{Barcode_TSVD.PNG} 
@@ -90,6 +94,7 @@ a_{ij} = K(s_i, t_j) = \frac{1}{n} e^{-\left(i-j \over \varsigma n\right)^2}, \,
 \end{frame}
 
 
+\section{Data Model Mismatch}
 \begin{frame}{Data Model Mismatch (1)}
 
 Modell basiert auf Annahmen über Daten. Annahmen erfüllt?
@@ -109,6 +114,7 @@ Modell basiert auf Annahmen über Daten. Annahmen erfüllt?
 \end{frame}
 
 
+\section{Inverse Crime}
 \begin{frame}{Inverse Crime (1)}
 \begin{center}
 \begin{tikzpicture}[
@@ -150,6 +156,7 @@ Kann das Modell anhand des Modells selbst geprüft werden?
 \end{frame}
 
 
+\section{Grenzbedingungen}
 \begin{frame}{Grenzbedingungen (1)}
 Was passiert ausserhalb der Grenzen im Originalsignal?
 
@@ -157,16 +164,20 @@ Wie wird das gegebene Signal dadurch beeinflusst?
 \end{frame}
 
 
+\subsection{Mögliche Ansätze}
 \begin{frame}{Grenzbedingungen (2)}
 Häufig sind Annahmen nötig:
 \begin{itemize}
 \item Originalfunktion null ausserhalb der Grenzen?
 \item Originalfunktion verhält sich ähnlich wie innerhalb?
+
+$\rightarrow$ Reflektierende Grenzbedingung.
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Grenzbedingungen (3)}
+\subsection{Reflektierende Grenzbedingung}
+\begin{frame}{Reflektierende Grenzbedingung (1)}
 \[
 f_{BC}(t) = \begin{cases}
 f(-t), & -1 < t < 0,\\
@@ -177,7 +188,7 @@ f(2-t),& 1 < t < 2.\\
 \end{frame}
 
 
-\begin{frame}{Grenzbedingungen (4)}
+\begin{frame}{Reflektierende Grenzbedingung (2)}
 \begin{align}
 g_{BC}(s) & = \int\limits_{-1}^2 K(s,  t) f_{BC}(t) dt \notag \\
           & = \int\limits_{-1}^0 K(s,  t) f_{BC}(t) dt
@@ -190,16 +201,17 @@ g_{BC}(s) & = \int\limits_{-1}^2 K(s,  t) f_{BC}(t) dt \notag \\
 \end{frame}
 
 
-\begin{frame}{Grenzbedingungen (5)}
+\begin{frame}{Reflektierende Grenzbedingung (3)}
  \[K_{BC} = K(s, -t) + K(s,  t) + K(s, 2-t)\]
 \end{frame}
 
 
-\begin{frame}{Grenzbedingungen (6)}
+\begin{frame}{Reflektierende Grenzbedingung (4)}
 \includegraphics[scale=0.38]{boundary_conditions} 
 \end{frame}
 
 
+\section{Diskretisierung}
 \begin{frame}{Matrix}
 Zurück zum Diskreten!
 \end{frame}
@@ -244,7 +256,7 @@ b[N-1] & h[N-1] & h[N-2] & \cdots & h[0]  \\
 \end{frame}
 
 
-\begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen}
+\begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen (1)}
 Korrekturterme notwendig.
 
 Reflektierende Grenzbedingungen - Erinnerung:
@@ -258,7 +270,7 @@ $A^l$ und $A^r$!
 \end{frame}
 
 
-\begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen}
+\begin{frame}{Matrix: Berücksichtigung von Grenzbedingungen (2)}
 Beispielhaft für $A^l$:
 \[
 a^l_{ij} = K(s_i, -t_j) = \frac{1}{n} e^{-\left(i+j-1 \over \varsigma n\right)^2}, \,\,\,\,\, i,j = 1, ..., n
@@ -272,6 +284,7 @@ $A_{BC} = A + A^l + A^r$
 \end{frame}
 
 
+\section{Zweidimensionale Faltung}
 \begin{frame}{Zweidimensionale Faltung - Ein Beispiel}
 \begin{center}
 \includegraphics[scale=1]{Burger_unblurred} 
@@ -296,6 +309,7 @@ Mit $\textbf{s} = (s_1,s_2)$ und $\textbf{t} = (t_1,t_2)$
 \end{frame}
 
 
+\section{Fazit}
 \begin{frame}{Fazit}
 \begin{itemize}
 \item Benötigte Grundlagen:
