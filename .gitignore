@@ -2,3 +2,12 @@
 *.log
 *.synctex.gz
 *.orig
+*.pyc
+*.out
+*.toc
+*.snm
+*.dvi
+*.pdf
+*.nav
+*~
+.idea
