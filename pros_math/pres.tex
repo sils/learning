@@ -5,7 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows,positioning,shapes,patterns}
 \usepackage{amssymb}
 \author{Jonas Ackermann and Lasse Schuirmann}
 \title{Discrete Inverse Problems - Solving Real Problems}
@@ -110,18 +110,29 @@ Modell basiert auf Annahmen über Daten. Annahmen erfüllt?
 
 
 \begin{frame}{Inverse Crime (1)}
-% TODO this should be more circular
-\begin{tikzpicture}[node distance = 2cm, auto]
-\node [cloud] (orig) {$f(t)$};
-\node [block, above right of=orig] (model) {Modell};
-\node [cloud, below right of=model] (blurred) {$g(s)$};
-\node [block, below left of=blurred] (inversemodel) {Inverses Modell};
+\begin{center}
+\begin{tikzpicture}[
+    pre/.style={=stealth',semithick},
+    post/.style={->,shorten >=1pt,>=stealth',semithick}
+    ]
 
-\path [line] (orig) -- (model);
-\path [line] (model) -- (blurred);
-\path [line] (blurred) -- (inversemodel);
-\path [line] (inversemodel) -- (orig);
+\node[draw] (origin) {$f(t)$};
+
+\node[right=of origin](dummy){};
+
+\node[draw, below=of dummy](Inverse){Inverses Modell};
+\node[draw, above=of dummy](Modell){Modell};   
+\node[draw,right=of dummy](blurred){$g(s)$};
+
+ \draw[post,rounded corners=5pt] (Modell)-|(blurred)  ;   
+ \draw[post,rounded corners=5pt] (blurred)|-(Inverse)  ;   
+ \draw[post,rounded corners=5pt] (origin) |- (Modell);
+  \draw[post,rounded corners=5pt] (Inverse) -| (origin);
+
 \end{tikzpicture}
+\end{center}
+
+
 
 Kann das Modell anhand des Modells selbst geprüft werden?
 \end{frame}
