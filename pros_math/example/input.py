@@ -15,4 +15,4 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 def get_input():
-    return [0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1]
+    return [1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,0,0,0,1,1,1]
