@@ -60,7 +60,7 @@
 
 
 \begin{frame}{Modellierung des Barcode Readers (2)}
-\[g(s) = \int\limits_{0}^1 f(t) \cdot h(s-t) dt = \int\limits_{0}^1 f(t) \cdot e^{-\left(s-t \over \varsigma\right)^2} dt, \, \, \, \, \, \, 0 \leq s \leq 1 \]
+\[g(s) = \int\limits_{0}^1 f(t) \cdot K(s,t) dt = \int\limits_{0}^1 f(t) \cdot e^{-\left(s-t \over \varsigma\right)^2} dt, \, \, \, \, \, \, 0 \leq s \leq 1 \]
 \end{frame}
 
 
@@ -73,7 +73,24 @@ Entspricht einer Faltung $\rightarrow$ Invers: Dekonvolution (Entfaltung)
 \end{frame}
 
 
-\begin{frame}{Barcode Reader: Diskretisierung}
+\begin{frame}{Barcode Reader: Diskretisierung (1)}
+
+\begin{center}
+$Ax = b$\\
+
+\mbox{}
+\mbox{}
+\mbox{}
+
+\,\,\,$A$ \^= $K(s,t),$\\
+\,\,\,$x$ \^= $f(t),$\\
+\,\,\,$b$ \^= $g(s)$
+\end{center}
+
+
+\end{frame}
+
+\begin{frame}{Barcode Reader: Diskretisierung (2)}
 \[
 a_{ij} = K(s_i, t_j) = \frac{1}{n} e^{-\left(i-j \over \varsigma n\right)^2}, \,\,\,\,\, i,j = 1, ..., n
 \]
