@@ -419,7 +419,7 @@ g(s) = \int\limits_{0}^{d cos(s)} f(t) \cdot e^{-\mu t} dt, \, \, \, \, \, \, 0 
 \]
 \end{frame}
 
-\begin{frame}{Depth Profiling: Kern}
+\begin{frame}{Depth Profiling: Kern (1)}
 
 \[
 K(s,t) = 
@@ -429,7 +429,12 @@ e^{-\mu t}, \, \, \, \, \, \, 0 \leq t \leq d cos(s)\\
 \end{cases}
 \]
 
-Diskret:
+\end{frame}
+
+
+\begin{frame}{Depth Profiling: Kern (2)}
+
+Diskret mit equidistanten t:
 
 \[
 a_{ij} = 
@@ -439,8 +444,32 @@ a_{ij} =
 \end{cases}
 \]
 
+\begin{center}
+\includegraphics[scale=0.7]{equi_t}
+\end{center}
 
 \end{frame}
+
+\begin{frame}{Depth Profiling: Kern (3)}
+
+Diskretisiert Variablentransformation, $t = sin(t)$, equidistante $\tau$:
+
+\[
+a_{ij} = 
+\begin{cases}
+{\pi \over 2n} e^{-\mu sin(\tau_j}cos(\tau_j), \, \, \, \, \, \, sin(\tau_j) \leq s_i\\
+0, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, sonst
+\end{cases}
+\]
+
+\begin{center}
+\includegraphics[scale=0.7]{equi_tau}
+\end{center}
+
+\end{frame}
+
+
+
 
 \section{Umsetzung}
 \begin{frame}{Umsetzung (1)}
