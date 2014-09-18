@@ -404,10 +404,19 @@ Aber Block-Toeplitz!
 \end{frame}
 
 \begin{frame}{X-Ray Depth Profiling (2)}
-$\cdot$ Qelle sendet Strahl mit Winkel s ins Material\\
-$\cdot$ Dringt bis in Tiefe $d cos(s)$ ein, $d$ abhängig von Energie\\
-$\cdot$ Reflektiert abhängig von Materialparameter $f(t)$\\
-$\cdot$ $t$ beschreibt Tiefe im Material, $0 \leq t \leq d$\\
+\begin{itemize}
+\item Qelle sendet Strahl mit Winkel s ins Material\\
+\item Dringt bis in Tiefe $d cos(s)$ ein, $d$ abhängig von Energie\\
+\item Reflektiert abhängig von Materialparameter $f(t)$\\
+\item $t$ beschreibt Tiefe im Material, $0 \leq t \leq d$\\
+\item Detektor misst reflektiertes $g(s)$, abhängig von Winkel s und Material
+\end{itemize}
+\end{frame}
+
+\begin{frame}{X-Ray Depth Profiling (3)}
+\[
+g(s) = \int\limits_{0}^{d cos(s)} f(t) \cdot e^{-\mu t} dt, \, \, \, \, \, \, 0 \leq s \leq {1\over 2} \pi
+\]
 \end{frame}
 
 
