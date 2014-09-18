@@ -37,14 +37,14 @@
 
 
 \section{Barcode Reader}
-\begin{frame}{Barcode Reader}
+\begin{frame}{Barcode Reader (1)}
 \begin{center}
 \includegraphics[scale=0.5]{Barcode_example.PNG} 
 \end{center}
 \end{frame}
 
 
-\begin{frame}{Barcode Reader}
+\begin{frame}{Barcode Reader (2)}
 \begin{center}
 \includegraphics[scale=0.5]{Barcode_f.PNG} 
 \end{center}
@@ -61,6 +61,11 @@
 
 \begin{frame}{Modellierung des Barcode Readers (2)}
 \[g(s) = \int\limits_{0}^1 f(t) \cdot K(s,t) dt = \int\limits_{0}^1 f(t) \cdot e^{-\left(s-t \over \varsigma\right)^2} dt, \, \, \, \, \, \, 0 \leq s \leq 1 \]
+\end{frame}
+
+
+\begin{frame}
+TODO Point Spread Function
 \end{frame}
 
 
@@ -168,6 +173,8 @@ Modell basiert auf Annahmen über Daten. Annahmen erfüllt?
 \begin{frame}{Data Model Mismatch (2)}
 
 \begin{center}
+
+TODO override 50 and 100 with 1 and 2
 
 \includegraphics[scale=0.5]{DataModel_graph.PNG} 
 
@@ -361,6 +368,7 @@ B_{ij} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} X_{kl}
 
 \begin{frame}
 TODO rearrange
+TODO big matrix, use toeplitz and so on
 \end{frame}
 
 
