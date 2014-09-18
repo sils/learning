@@ -307,8 +307,13 @@ $A_{BC} = A + A^l + A^r$
 \end{frame}
 
 
-\section{Zweidimensionale Faltung}
-\begin{frame}{Zweidimensionale Faltung - Ein Beispiel}
+\begin{frame}
+TODO: Hankel und Toeplitz
+\end{frame}
+
+
+\section{Image Deblurring}
+\begin{frame}{Image Deblurring}
 \begin{center}
 \includegraphics[scale=1]{Burger_unblurred} 
 
@@ -318,7 +323,7 @@ $A_{BC} = A + A^l + A^r$
 \end{frame}
 
 
-\begin{frame}{Zweidimensionale Faltung - Theorie}
+\begin{frame}{Image Deblurring - Theorie}
 \[
 \int\limits_0^1
   \int\limits_0^1
@@ -329,6 +334,9 @@ s \in [0,1] \times [0,1].
 \]
 
 Mit $\textbf{s} = (s_1,s_2)$ und $\textbf{t} = (t_1,t_2)$
+\linebreak
+
+Zweidimensionale Faltung!
 \end{frame}
 
 
@@ -343,13 +351,17 @@ Mit $\textbf{s} = (s_1,s_2)$ und $\textbf{t} = (t_1,t_2)$
 
 
 
-\begin{frame}{Zweidimensionale Faltung - Diskret}
+\begin{frame}{Image Deblurring - Diskret}
 \[
 B_{ij} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} X_{kl}
 \mbox{ mit } i, j = 1, ..., N
 \]
 \end{frame}
 
+
+\begin{frame}
+TODO rearrange
+\end{frame}
 
 
 \section{Umsetzung}
