@@ -73,6 +73,7 @@ Entspricht einer Faltung $\rightarrow$ Invers: Dekonvolution (Entfaltung)
 \end{frame}
 
 
+\subsection{Diskretisierung}
 \begin{frame}{Barcode Reader: Diskretisierung (1)}
 
 \begin{center}
@@ -103,17 +104,54 @@ a_{ij} = K(s_i, t_j) = \frac{1}{n} e^{-\left(i-j \over \varsigma n\right)^2}, \,
 \end{frame}
 
 
-\subsection{Rekonstruktion}
-\begin{frame}{Barcode Reader: Rekonstruktion}
-\begin{center}
-\includegraphics[scale=0.5]{Barcode_TSVD.PNG} 
-\end{center}
+\begin{frame}{Diskretisierung (3)}
+\[
+(x \star h)[i] = \sum\limits_{j=0}^{N-1} x[j] \cdot h[i-j] = b[i]
+\]
+\linebreak 
+\[
+\begin{array}{c|cccc}
+b[i] \symbol{92} x[j] & x[0] & x[1] & ... & x[N-1]  \\
+\hline
+b[0]     & h[0] & h[-1] & \cdots & h[-N+1] \\
+b[1]     & h[1] & h[0] & \cdots & h[-N+2]  \\
+\vdots  & \vdots & \vdots & \ddots & \vdots \\
+b[N-1] & h[N-1] & h[N-2] & \cdots & h[0]  \\
+\end{array}
+\]
+\end{frame}
+
+
+\begin{frame}{Matrixeigenschaften}
+\[
+\begin{pmatrix}
+{\color{red}    1} & {\color{blue}   2} & {\color{green}  4} &                6 \\
+{\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2} & {\color{green} 4}\\
+{\color{cyan}   3} & {\color{yellow} 0} & {\color{red}    1} & {\color{blue}  2}\\
+                5  & {\color{cyan}   3} & {\color{yellow} 0} & {\color{red}   1}\\
+\end{pmatrix}
+\,\,\,\,\,\,\,\,\,
+\begin{pmatrix}
+{\color{red}    1} & {\color{blue}   2} & {\color{green}  4} & {\color{yellow} 0}\\
+{\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2} & {\color{green}  4}\\
+{\color{green}  4} & {\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2}\\
+{\color{blue}   2} & {\color{green}  4} & {\color{yellow} 0} & {\color{red}    1}\\
+\end{pmatrix}
+\]
 \end{frame}
 
 
 \begin{frame}
 \begin{center}
 Demo time!
+\end{center}
+\end{frame}
+
+
+\subsection{Rekonstruktion}
+\begin{frame}{Barcode Reader: Rekonstruktion}
+\begin{center}
+\includegraphics[scale=0.5]{Barcode_TSVD.PNG} 
 \end{center}
 \end{frame}
 
@@ -235,48 +273,9 @@ g_{BC}(s) & = \int\limits_{-1}^2 K(s,  t) f_{BC}(t) dt \notag \\
 \end{frame}
 
 
-\section{Diskretisierung}
+\subsection{Diskretisierung}
 \begin{frame}{Matrix}
 Zurück zum Diskreten!
-\end{frame}
-
-
-\begin{frame}{Toeplitz und Zyklische Matrizen}
-\[
-\begin{pmatrix}
-{\color{red}    1} & {\color{blue}   2} & {\color{green}  4} &                6 \\
-{\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2} & {\color{green} 4}\\
-{\color{cyan}   3} & {\color{yellow} 0} & {\color{red}    1} & {\color{blue}  2}\\
-                5  & {\color{cyan}   3} & {\color{yellow} 0} & {\color{red}   1}\\
-\end{pmatrix}
-\,\,\,\,\,\,\,\,\,
-\begin{pmatrix}
-{\color{red}    1} & {\color{blue}   2} & {\color{green}  4} & {\color{yellow} 0}\\
-{\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2} & {\color{green}  4}\\
-{\color{green}  4} & {\color{yellow} 0} & {\color{red}    1} & {\color{blue}   2}\\
-{\color{blue}   2} & {\color{green}  4} & {\color{yellow} 0} & {\color{red}    1}\\
-\end{pmatrix}
-\]
-\end{frame}
-
-
-\begin{frame}{A ist eine Toeplitz Matrix}
-\[
-h[i-j] := a_{ij} (= K(s_i, t_j))
-\]
-\[
-(x \star h)[i] = \sum\limits_{j=0}^{N-1} x[j] \cdot h[i-j] = b[i]
-\]
-\[
-\begin{array}{c|cccc}
-b[i]/x[j] & x[0] & x[1] & ... & x[N-1]  \\
-\hline
-b[0]     & h[0] & h[-1] & \cdots & h[-N+1] \\
-b[1]     & h[1] & h[0] & \cdots & h[-N+2]  \\
-\vdots  & \vdots & \vdots & \ddots & \vdots \\
-b[N-1] & h[N-1] & h[N-2] & \cdots & h[0]  \\
-\end{array}
-\]
 \end{frame}
 
 
