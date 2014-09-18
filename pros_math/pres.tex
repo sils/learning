@@ -370,17 +370,28 @@ B_{ij} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} X_{kl}
 \end{frame}
 
 
-\begin{frame}{Image Deblurring - Rearranging}
+\begin{frame}{Image Deblurring - Rearranging (1)}
 Fold two dimensions into one: $m = fold(i, j) = i \cdot N + j$.
 
 \[
 b_{fold(i, j)} = B_{ij} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} x_{fold(k, l)} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} X_{kl}
 \]
+\[
+A_{fold(i,j),fold(k,l)} = P_{i-j, k-l}
+\]
 
-Mit $i, j = 1, ..., N$ also $k = 1, ..., N^2$.
+Mit $i, j, k, l = 1, ..., N$ also $m = 1, ..., N^2$.
+\end{frame}
 
-TODO rearrange
-TODO big matrix, use toeplitz and so on
+
+\begin{frame}{Image Deblurring - Rearranging (2)}
+Also:
+\[ Ax = b \]
+
+Achtung: A ist riesig!
+\pause
+
+Aber Toeplitz!
 \end{frame}
 
 
