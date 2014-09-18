@@ -413,12 +413,34 @@ Aber Block-Toeplitz!
 \end{itemize}
 \end{frame}
 
-\begin{frame}{X-Ray Depth Profiling (3)}
+\begin{frame}{Depth Profiling: Modell}
 \[
 g(s) = \int\limits_{0}^{d cos(s)} f(t) \cdot e^{-\mu t} dt, \, \, \, \, \, \, 0 \leq s \leq {1\over 2} \pi
 \]
 \end{frame}
 
+\begin{frame}{Depth Profiling: Kern}
+
+\[
+K(s,t) = 
+\begin{cases}
+e^{-\mu t}, \, \, \, \, \, \, 0 \leq t \leq d cos(s)\\
+0, \, \, \, \, \, \, \, \, \, \, \, \,  d cos(s) \leq t \leq d
+\end{cases}
+\]
+
+Diskret:
+
+\[
+a_{ij} = 
+\begin{cases}
+{1 \over n} e^{-\mu t_j}, \, \, \, \, \, \, t_j \leq d cos(s_i)\\
+0, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, sonst
+\end{cases}
+\]
+
+
+\end{frame}
 
 \section{Umsetzung}
 \begin{frame}{Umsetzung (1)}
