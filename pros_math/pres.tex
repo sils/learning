@@ -315,7 +315,9 @@ $A_{BC} = A + A^l + A^r$
 
 
 \begin{frame}
-TODO: Hankel und Toeplitz
+\begin{center}
+Hankel-Plus-Toeplitz Matrix
+\end{center}
 \end{frame}
 
 
@@ -366,7 +368,15 @@ B_{ij} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} X_{kl}
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}{Image Deblurring - Rearranging}
+Fold two dimensions into one: $m = fold(i, j) = i \cdot N + j$.
+
+\[
+b_{fold(i, j)} = B_{ij} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} x_{fold(k, l)} = \sum\limits_{k, l = 1}^N P_{i-k,j-l} X_{kl}
+\]
+
+Mit $i, j = 1, ..., N$ also $k = 1, ..., N^2$.
+
 TODO rearrange
 TODO big matrix, use toeplitz and so on
 \end{frame}
