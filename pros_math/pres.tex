@@ -451,8 +451,17 @@ a_{ij} =
 \end{frame}
 
 \begin{frame}{Depth Profiling: Kern (3)}
+Modell angepasst, $t = sin(t)$:
 
-Diskretisiert Variablentransformation, $t = sin(t)$, equidistante $\tau$:
+\[
+g(s) = \int\limits_{0}^{arcsin(d cos(s))} f(t) \cdot e^{-\mu sin(\tau)}cos(\tau) d\tau, \, \, \, \, \, \, 0 \leq s \leq {1\over 2} \pi
+\]
+\end{frame}
+
+
+\begin{frame}{Depth Profiling: Kern (3)}
+
+Diskretisiert, equidistante $\tau$:
 
 \[
 a_{ij} = 
@@ -467,6 +476,34 @@ a_{ij} =
 \end{center}
 
 \end{frame}
+
+\begin{frame}{Depth Profiling: Rekonstruktion}
+
+Mit künstlichem f(t):
+
+\[f(t) = e^{(-30(t-0.25)^2)}+0.4e^{(-30(t-0.5)^2)}+0.5e^{(-50(t-0.75)^2)}
+\]
+
+
+\end{frame}
+
+\begin{frame}{Depth Profiling: Auflösung}
+
+Mit wenig Rauschen:
+
+\includegraphics[scale=0.5]{depth_low_noise}
+
+\end{frame}
+
+
+\begin{frame}{Depth Profiling: Auflösung}
+
+Mit viel Rauschen:
+
+\includegraphics[scale=0.5]{depth_high_noise}
+
+\end{frame}
+
 
 
 
