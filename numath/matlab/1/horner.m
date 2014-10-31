@@ -4,10 +4,9 @@ function [ yval ] = horner(c, xdata, xval)
     end
     
     % Allocate space now for performance
-    yval = zeros(length(xval));
+    yval = zeros(1, length(xval));
 
     for i = length(xdata):-1:1
-        yval = yval .* (xval - xdata(i)) + c(i);
+        yval = yval .* (xval - ones(1, length(xval)) * xdata(i)) + c(i);
     end
 end
-
