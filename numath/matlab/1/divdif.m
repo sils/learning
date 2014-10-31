@@ -9,13 +9,13 @@ function c = divdif(xdata, ydata)
         return;
     end
 
-    
-    j = length(xdata)
-    i=1
-    ipo = divdif(xdata(i+1:j),   ydata(i+1:j));
-    imo = divdif(xdata(i:j-1), ydata(i:j-1));
-    c = [(ipo(length(ipo)) ...
-          -  imo(length(imo))) ...
-          ./ (xdata(j) - xdata(i))];
+    for j = 2:length(xdata)
+        i=1
+        ipo = divdif(xdata(i+1:j),   ydata(i+1:j));
+        imo = divdif(xdata(i:j-1), ydata(i:j-1));
+        c = [c, (ipo(length(ipo)) -  imo(length(imo))) ...
+              ./ (xdata(j) - xdata(i))];
+    end
+
     return;
 end
