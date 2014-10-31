@@ -1,7 +1,6 @@
 function c = divdif(xdata, ydata)
     if length(xdata) ~= length(ydata)
-        c = 'failed';
-        return;
+        error('Length of input arguments must be equal.');
     end
 
     c = [ydata(1)];
