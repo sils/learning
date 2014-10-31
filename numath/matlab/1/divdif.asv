@@ -3,12 +3,18 @@ function c = divdif(xdata, ydata)
         c = 'failed';
         return;
     end
-    
+
+    c = ydata(1);
     if length(xdata) == 1
-        c = ydata(1);
         return;
     end
-    
-    c = divdif(xdata(2:length(xdata)),   ydata(2:length(xdata))) ...
-      - divdif(xdata(1:length(xdata)-1), ydata(1:length(xdata)-1)) ...
+
+    i=1;
+    for j=2:length(xdata)
+        ipo = divdif(xdata(i+1:j),   ydata(i+1:j));
+        jmo = divdif(xdata(i:j-1), ydata(i:j-1));
+        thisc = (ipo(length(ipo))-jmo(length(jmo)) ./ (xdata(j)-xdata(i)));
+        c = [c, thisc];
+    end;
+    return;
 end

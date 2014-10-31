@@ -4,16 +4,17 @@ function c = divdif(xdata, ydata)
         return;
     end
 
-    c = [ydata(1)];
+    c = ydata(1);
     if length(xdata) == 1
         return;
     end
 
-    
-    j = length(xdata)
-    i=1
-    c = [(divdif(xdata(i+1:j),   ydata(i+1:j)) ...
-          -  divdif(xdata(i:j-1), ydata(i:j-1))) ...
-          ./ (xdata(j) - xdata(i))];
+    i=1;
+    for j=2:length(xdata)
+        ipo = divdif(xdata(i+1:j),   ydata(i+1:j));
+        jmo = divdif(xdata(i:j-1), ydata(i:j-1));
+        thisc = (ipo(length(ipo))-jmo(length(jmo)) ./ (xdata(j)-xdata(i)));
+        c = [c, thisc];
+    end;
     return;
 end
