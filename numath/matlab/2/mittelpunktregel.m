@@ -5,7 +5,7 @@ function [ result ] = mittelpunktregel(a, b, n, f)
 
   
   result = 0;
-  for int_start = a:part_size:b
+  for int_start = a:part_size:b-part_size
     result = result + f(int_start+half_part_size);
   end
 
