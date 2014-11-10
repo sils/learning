@@ -40,9 +40,9 @@ function [] = testQuadrature()
   hold on
   
   semilogy(x, gauss);
-  semilogy(x, mittelpunkt);
-  semilogy(x, simpson);
-  semilogy(x, trapez);
+  semilogy(x, mittelpunkt, 'r');
+  semilogy(x, simpson, 'g');
+  semilogy(x, trapez, 'k');
   
   legend('Gauss', 'Mittelpunkt', 'Simpson', 'Trapez');
   
