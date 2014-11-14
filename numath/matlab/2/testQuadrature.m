@@ -43,26 +43,38 @@ function [] = testQuadrature()
   end
   % TODO achsenbeschriftungen, aufhuebschen
   figure;
+  
+  % Execute semilogy before hold to trick a stupid matlab bug
+  % (Damn thing works well with octave though...)
+  semilogy(x, gauss);
+  
   hold on
   
-  semilogy(x, gauss);
   semilogy(x, mittelpunkt, 'r');
   semilogy(x, simpson, 'g');
   semilogy(x, trapez, 'k');
   
   legend('Gauss', 'Mittelpunkt', 'Simpson', 'Trapez');
+  xlabel('i')
+  ylabel('error')
   
   hold off
   
+  
+  
   figure;
-  hold on
   
   semilogy(gausstimes, gauss);
+  
+  hold on
+  
   semilogy(mittelpunkttimes, mittelpunkt, 'r');
   semilogy(simpsontimes, simpson, 'g');
   semilogy(trapeztimes, trapez, 'k');
   
   legend('Gauss', 'Mittelpunkt', 'Simpson', 'Trapez');
+  xlabel('calculation time (s)')
+  ylabel('error')
   
   hold off
 
