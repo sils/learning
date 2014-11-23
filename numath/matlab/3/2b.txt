@@ -1,0 +1,4 @@
+For n=1, the condition of the Hilbert Matrix is 1 (see plot "HilbertConditions.pdf"). 
+This implies an error of 0. Looking at the Errors plot, you can see that for n->1, the plot approaches 10e-16.
+We can therefore assume an eps of around in that general range. The real eps according to Matlab is 2.2204e-16, which 
+reinforces this idea.
