@@ -16,9 +16,9 @@ function [] = testHilbert()
         b = H * v;
         x = H \ b;
 
-        errors(n, 1) = norm(x-v,  2   ) / norm(v,  2   ) % euclidic
-        errors(n, 1) = norm(x-v,  inf ) / norm(v,  inf ) % infinity
-        errors(n, 1) = norm(x-v, 'fro') / norm(v, 'fro') % frobenius
+        errors(n, 1) = norm(x-v,  2   ) / norm(v,  2   ); % euclidic
+        errors(n, 1) = norm(x-v,  inf ) / norm(v,  inf ); % infinity
+        errors(n, 1) = norm(x-v, 'fro') / norm(v, 'fro'); % frobenius
     end
 
     semilogy(conditions(:, 1), 'r');
