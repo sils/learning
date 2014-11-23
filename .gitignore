@@ -7,7 +7,6 @@
 *.toc
 *.snm
 *.dvi
-*.pdf
 *.nav
 *~
 .idea
