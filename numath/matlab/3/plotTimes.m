@@ -29,6 +29,7 @@ function [] = plotTimes(nmax)
     legend('computation via backslash, d=1', 'computation via backslash, d=2', 'computation via backslash, d=3');
     xlabel('n^d');
     ylabel('time in seconds');
+    grid on;
     hold off;
 
     figure;
@@ -40,5 +41,6 @@ function [] = plotTimes(nmax)
     legend('computation via inverse, d=1', 'computation via inverse, d=2', 'computation via inverse, d=3')
     xlabel('n^d');
     ylabel('time in seconds');
+    grid on;
     hold off;
 end

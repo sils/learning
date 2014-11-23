@@ -1,0 +1,13 @@
+//average number of nonzero entries per row:
+
+Poisson matrix, n=64, d=1: 2.97
+Poisson matrix, n=8,  d=2: 4.50
+Poisson matrix, n=4,  d=3: 5.50
+
+Cholesky, n=64, d=1: 1.99
+Cholesky, n=8,  d=2: 8.11
+Cholesky, n=4,  d=3: 13.80
+
+Inverse Cholesky, n=64, d=1: 32.5
+Inverse Cholesky, n=8,  d=2: 32.5
+Inverse Cholesky, n=4,  d=3: 32.5
