@@ -7,9 +7,9 @@ function [] = testHilbert()
     for n = 1:maxn
         H = hilb(n);
 
-        conditions(n, 1) = cond(H, 2);    % euclidic
-        conditions(n, 2) = cond(H, -inf)  % negative infinity
-        conditions(n, 3) = cond(H, 'fro') % frobenius
+        conditions(n, 1) = cond(H, 2);     % euclidic
+        conditions(n, 2) = cond(H, inf);   % infinity
+        conditions(n, 3) = cond(H, 'fro'); % frobenius
     end
 
     semilogy(conditions(:, 1), 'r');
@@ -18,7 +18,7 @@ function [] = testHilbert()
     semilogy(conditions(:, 3), 'b');
 
     grid on;
-    legend('Euclidic', 'Negative Infinity', 'Frobenius');
+    legend('Euclidic', 'Infinity', 'Frobenius');
     xlabel('n');
     ylabel('Conditions');
     hold off;
