@@ -4,8 +4,9 @@
 data <- read.table(file = "messung.txt")
 source("stichprobe.R")
 
-vec1 <- 1:100
-for(m in 1:100){
+n = 100;
+vec1 <- 1:n
+for(m in 1:n){
 	p = stichprobe(10, data);
 	vec1[m] <- var(p);
 	}

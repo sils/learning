@@ -17,3 +17,10 @@ for (n in 1:100){
 plot(1:100, varianz, type = 'l')
 
 # 3.3.6: 
+# Mit zunehmender Stichprobengroesse sinkt die Varianz der
+# Stichprobenmittelwerte.
+
+# Daher ist die Schaetzfunktion erst ab einer Stichprobengroesse von ungefaehr
+# 40 (siehe Plot) eine gute Schaetzung des Mittelwertes.
+
+# Die Messwerte sind unabhaengig voneinander.
