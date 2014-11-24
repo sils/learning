@@ -1,0 +1,4 @@
+1. Wahr
+2. Wahr
+3. Falsch
+4. Falsch
