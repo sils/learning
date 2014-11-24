@@ -11,6 +11,8 @@ for(m in 1:n){
 	vec1[m] <- var(p);
 	}
 
+pdf("3.2.pdf")
 hist(vec1)
+dev.off()
 
 # Die Varianz folgt im Gegensatz zum Mittelwert nicht der Normalverteilung.

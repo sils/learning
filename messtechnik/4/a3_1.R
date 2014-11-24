@@ -12,6 +12,8 @@ for(m in 1:n){
 	vec1[m] <- mean(p);
 	}
 
+pdf("3.1.pdf")
 hist(vec1)
+dev.off()
 
 # aus dem Histogramm erkennbar -> der Mittelwert ist normalverteilt

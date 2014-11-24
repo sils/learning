@@ -14,7 +14,9 @@ for (n in 1:100){
 	varianz[n] = var(mw)
 }
 
+pdf("3.3.pdf")
 plot(1:100, varianz, type = 'l')
+dev.off()
 
 # 3.3.6: 
 # Mit zunehmender Stichprobengroesse sinkt die Varianz der
