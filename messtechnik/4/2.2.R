@@ -17,7 +17,7 @@ x = seq(-2, 2)
 y = seq(0, 2)
 res = outer(x, y, fg)
 
-pdf("2.1.2.pdf")
+pdf("2.1.pdf")
 persp(x, y, res, col = 'blue');
 dev.off()
 
