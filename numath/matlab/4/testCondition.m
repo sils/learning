@@ -8,6 +8,8 @@ function [k] = testCondition(n)
     end
     
     loglog(k);
-    
+    xlabel('n');
+    ylabel('condition');
+    grid on;
    
 end
