@@ -35,5 +35,6 @@ function [] = testCondition(n)
     loglog(exp(x(1))*ns.^x(2));
     legend('conditions','c n^p');
     
+    % p interval goes from 1.474405 to 1.610146.
     fprintf('p interval goes from %f to %f.\n', min(ps), max(ps))
 end

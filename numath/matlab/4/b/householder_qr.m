@@ -1,4 +1,4 @@
-function [H, uu, be]=householder_qr(A)
+function [ H, uu, be ]=householder_qr(A)
     H = A;
     [m, n] = size(A);
     for i = 1:min(m-1, n)
