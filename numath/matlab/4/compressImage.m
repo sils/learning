@@ -9,13 +9,13 @@ function [overallSize] = compressImage(k)
     
     %some crap to check usefulness
     aSize = size(A);
-    uSize = size(U(:,1:k));
-    sSize = size(S(1:k,1:k));
-    vSize = size(V(:,1:k));
+    uSize = size(U(:,1:k))
+    sSize = size(S(1:k,1:k))
+    vSize = size(V(:,1:k))
     
-    overallSize = (uSize(1)*uSize(2))+(sSize(1)*sSize(2))+(vSize(1)*vSize(2))
-    originalSize = (aSize(1))*(aSize(2))
-    overallSize/originalSize
+    overallSize = (uSize(1)*uSize(2))+(sSize(1)*sSize(2))+(vSize(1)*vSize(2));
+    originalSize = (aSize(1))*(aSize(2));
+    overallSize/originalSize;
     
 
 end
