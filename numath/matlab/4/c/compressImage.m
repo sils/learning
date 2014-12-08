@@ -1,6 +1,6 @@
 function [overallSize] = compressImage(k)
    
-    A=imread('beer.jpg');
+    A=imread('original.jpg');
     A_gray = rgb2gray(A); 
     A=A_gray;
     [U,S,V] = svd(double(A));
