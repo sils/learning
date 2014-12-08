@@ -6,6 +6,17 @@ function [ ] = b()
     b1 = [2; 1; 2; 1];
     b2 = [3; 1; 2; 1];
     
-    % This somehow works
+    % ans = [0, 0.8983, 0.6102]
     solve_Lin_Ausgleich(A, b1)
+    % ans = [0, 1.0339, 0.7966]
+    solve_Lin_Ausgleich(A, b2)
+    
+    [H, ~, ~, P] = householder_qr(A);
+    % ans =
+    %
+    %    -0.3162   -0.3162   -3.1623
+    %     2.4290    2.4290    2.0000
+    %          0    0.7450    1.0000
+    %          0    2.2550   -1.0000
+    H*P
 end
