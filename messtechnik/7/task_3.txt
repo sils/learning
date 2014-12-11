@@ -1,0 +1,6 @@
+1. G_spannung = 0.04
+   G_temp     = 0.07
+
+Damit sind beide Geraete Feinmessgeraete.
+
+2.
