@@ -1,0 +1,16 @@
+1. Wir benoetigen einen Hypothesentest der auch den Verlauf der Dichtefunktion
+betrachtet. Chi^2-verteilung Anpassungstest.
+
+Nullhypothese: Die Daten sind normalverteilt
+Alternativhypothese: Die Daten sind nicht normalverteilt
+
+Vorraussetzungen:
+
+* Messwerte sind unabhaengig
+
+2.
+4,9,16,20,16,16,6,8
+
+3.
+http://www.wikiwand.com/de/Chi-Quadrat-Test
+
