@@ -1,0 +1,12 @@
+Toleranzgrenzen geben Grenzen an, in denen 99.73% (mu +- 3sigma) der Messwerte
+liegen muessen.
+
+3.63+3.4+3.34+3.57+3.34+3.61+3.47+3.45+3.46+3.64+3.61+3.46+3.6+3.57+3.41 = 52.56
+Mittelwert: 3.504
+Toleranzfeldmitte: 3.4
+Abweichung: 0.104
+Standardabweichung: 0.1056138519
+
+TODO diagramm (LASSE)
+
+Prozessfaehigkeitsindex: (x_max - x_min)/6sigma
