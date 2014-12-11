@@ -4,9 +4,16 @@ liegen muessen.
 3.63+3.4+3.34+3.57+3.34+3.61+3.47+3.45+3.46+3.64+3.61+3.46+3.6+3.57+3.41 = 52.56
 Mittelwert: 3.504
 Toleranzfeldmitte: 3.4
-Abweichung: 0.104
+Abweichung: deltaxdach = 0.104
 Standardabweichung: 0.1056138519
 
 TODO diagramm (LASSE)
 
-Prozessfaehigkeitsindex: (x_max - x_min)/6sigma
+Prozessfaehigkeitsindex: (x_max - x_min)/6sigma = 0.6312303307
+
+c_p > 1 bedeutet dass es weniger als 0.27% Ausschuss gibt.
+
+Prozessbrauchbarkeitsindex: c_p_k = c_p*(1-deltaxdach/(x_max-x_min)) = 0.4671104447
+
+Ausschussrate: p = 0.5-erf(3 c_p_k/sqrt(2))/2 = 0.0805575077
+
