@@ -162,7 +162,10 @@ Also:
 
 Mit $Var(U) = \sigma_U^2$ ergibt sich für die Varianz $1 + \Delta U = 1.0001$ und $1 + \Delta T = 1.02$. Dann ist der Fehler des Terms $\frac{U \cdot F}{R \cdot T}$ durch $\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R} \approx 0.98 \cdot \frac{U \cdot F}{T \cdot R}$ bestimmt, also ein Fehler von ungefähr $2\%$.
 
-Es gelte nun $g = \frac{U \cdot F}{R \cdot T}$. Also $\exp(g) = pH - 7$ und $\Delta g = 0.02$. Nun ist der Fehler für $\exp(g)$ gegeben durch $\Delta pH = exp(g) \cdot (1 + \Delta g) - 1 = exp\left(\frac{U \cdot F}{R \cdot T}\right) \cdot 1.02 -1$ \hfill$\square$
+Es gelte nun $g = \frac{U \cdot F}{R \cdot T}$. Also $\exp(g) = pH - 7$ und $\Delta g = 0.02$. Nun ist der relative Fehler für $\exp(g)$ gegeben durch $\Delta pH = exp(g) \cdot (1 + \Delta g) - 1 = exp\left(\frac{U \cdot F}{R \cdot T}\right) \cdot 1.02 -1$.
+\begin{flushright}
+$\square$
+\end{flushright}
 
 \subsection*{3.3. Maximaler Relativer Fehler}
 TODO Fehlerfortpflanzung...
