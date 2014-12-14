@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
 \usepackage[table]{xcolor}
+\usepackage{hyperref}
 \setlength{\parskip}{3mm}
 \setlength{\parindent}{0cm}
 \DeclareMathOperator\erf{erf}
@@ -26,7 +27,6 @@
 \maketitle
 \pagebreak
 
-% See http://www.this-page-intentionally-left-blank.org/
 \blankpage
 
 \section*{Aufgabe 1}
@@ -145,10 +145,22 @@ p \approx \frac{1 - \erf\left(\frac{3 c_{pk}}{\sqrt{2}}\right)}{2} \approx 0.08
 \pagebreak
 \section*{Aufgabe 3}
 \subsection*{3.1. Genauigkeitsklasse}
-TODO Feinmessgeräte.
+Die Genauigkeit $G = \left| \frac{\Delta x_{max}}{u_e} \right|$ ist der maximale Fehler relativ zu dem gegebenen Messbereich. Dieser Wert ist für beide Geräte mit $4\%$ und $7\%$ gegeben. Da also für beide Geräte $G < 0.1$ gilt, fallen beide in die Kategorie der Feinmessgeräte.
 
 \subsection*{3.2. Varianz}
-TODO Fehlerfortpflanzung...
+Stellt man den gegebenen Zusammenhang um, erhält man:
+
+\[
+\frac{U \cdot F}{R \cdot T} = \ln(pH - 7) \Rightarrow \exp\left(\frac{U \cdot F}{R \cdot T}\right) = pH - 7
+\]
+
+Also:
+
+\[
+\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R} = \ln(pH - 7) \Rightarrow \exp\left(\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R}\right) = pH - 7
+\]
+
+Mit $Var(U) = \sigma_U^2$ ergibt sich für die Varianz $1 + \Delta U = 1.0001$ und $1 + \Delta T = 1.02$. Dann ist der Fehler des Terms $\frac{U \cdot F}{R \cdot T}$ durch $\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R} \approx 0.98 \cdot \frac{U \cdot F}{T \cdot R}$ bestimmt, also ein Fehler von ungefähr $2\%$.
 
 \subsection*{3.3. Maximaler Relativer Fehler}
 TODO Fehlerfortpflanzung...
