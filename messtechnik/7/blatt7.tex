@@ -10,6 +10,7 @@
 \usepackage[table]{xcolor}
 \setlength{\parskip}{3mm}
 \setlength{\parindent}{0cm}
+\DeclareMathOperator\erf{erf}
 \author{Maike Meier and Lasse Schuirmann}
 \title{Messtechnik und Messdatenverarbeitung - Blatt 7}
 \newcommand*{\blankpage}{
@@ -121,14 +122,35 @@ Die Standardabweichung der gegebenen Daten ist $\sigma \approx 0.1$.
 
 Die Abweichung des Mittelwerts $\hat{x}$ von der Toleranzfeldmitte ist $\Delta \hat{x} \approx 3.3$.
 
-\subsection*{2.3 Visualisierung}
+\subsection*{2.3. Visualisierung}
 
 \includegraphics[scale=0.40]{2_3_diag}
 
-\subsection*{2.4}
+\subsection*{2.4. Prozessfähigkeitsindex}
 
-\subsection*{2.5}
+Der Prozessfähigkeitsindex ist $c_p = \frac{x_{max} - x_{min}}{6\sigma} \approx 0.63$.
 
-\subsection*{2.6}
+Wenn $c_p \geq 1$ und $c_{pk} \geq 1$ gibt es weniger als $0.27\%$ Ausschuss.
+
+\subsection*{2.5. Prozessbrauchbarkeitsindex}
+Der Prozessbrauchbarkeitsindex ist $c_{pk} = c_p \left(1-\frac{\Delta \hat{x}}{\Delta x_s}\right) \approx 0.47$.
+
+\subsection*{2.6. Ausschuss}
+Der Ausschuss beträgt:
+
+\[
+p \approx \frac{1 - \erf\left(\frac{3 c_{pk}}{\sqrt{2}}\right)}{2} \approx 0.08
+\]
+
+\pagebreak
+\section*{Aufgabe 3}
+\subsection*{3.1. Genauigkeitsklasse}
+TODO Feinmessgeräte.
+
+\subsection*{3.2. Varianz}
+TODO Fehlerfortpflanzung...
+
+\subsection*{3.3. Maximaler Relativer Fehler}
+TODO Fehlerfortpflanzung...
 
 \end{document}
