@@ -29,7 +29,7 @@
 \blankpage
 
 \section*{Aufgabe 1}
-\subsection*{1.1}
+\subsection*{1.1. Welcher Test}
 Um eine Ablösung des Sensors zu detektieren, kann der $\chi^2$-Verteilung Anpassungstest durchgeführt werden. (Die Normalverteilung lässt sich ab ca. $n=30$ durch eine $\chi^2$-Verteilung approximieren.)
 
 Eine Voraussetzung für diesen Test ist, dass die Messwerte statistisch unabhängig sind und eine große Stichprobe vorhanden ist.
@@ -49,7 +49,7 @@ Der Test kann wie folgt durchgeführt werden:
 \item Nullhypothese annehmen oder ablehnen
 \end{enumerate}
 
-\subsection*{1.2}
+\subsection*{1.2. Klasseneinteilung}
 \scalebox{0.78}{
  \begin{tabular}{|r|c|c|c|c|c|c|c|c|}
  \hline
@@ -71,7 +71,7 @@ Das Nebenstehende Diagramm ist eine Visualisierung der Obenstehenden Tabelle. (H
 Da jede Klasse nicht zu wenige Elemente enthält, das Diagramm aber aussagekräftig scheint, ist diese Einteilung bei dieser Stichprobenmenge sinnvoll.
 \end{minipage}
 
-\subsection*{1.3}
+\subsection*{1.3. Erwartete Häufigkeiten}
 Die $p_i$s können mithilfe der gegebenen Daten aus einer Normalverteilung errechnet werden. Die gegebene Normalverteilungsfunktion ist im folgenden Diagramm dargestellt:
 
 \includegraphics[scale=0.7]{1_3_normvert}
@@ -80,7 +80,7 @@ Ermittelt man die Werte der Dichtefunktion zu den gegebenen Klassengrenzen (mit 
 
 \includegraphics[scale=0.7]{1_3_dichte_vs_data}
 
-\tiny (Alle Datenpunkte bis auf der des Graphen für $n p_i$ stellen wieder die obere Grenze für die Klasse dar. Der Ausnahmepunkt ist der Klasse $38 - \infty$ zuzuordnen, die in unserer Stichprobe keine Werte $> 39$ enthält.)\normalsize
+\tiny (Alle Datenpunkte bis auf der letzte des Graphen für $n p_i$ stellen wieder die obere Grenze für die Klasse dar. Der Ausnahmepunkt ist der Klasse $38 - \infty$ zuzuordnen, die in unserer Stichprobe keine Werte $> 39$ enthält.)\normalsize
 
 Die dazugehörige Tabelle ist (Werte abgerundet [Informatiker] auf die erste Stelle nach dem Komma):
 
@@ -93,13 +93,12 @@ Die dazugehörige Tabelle ist (Werte abgerundet [Informatiker] auf die erste Ste
  $p_i$ & $4.6$ & $8.4$ & $14.7$ & $19.2$ & $18.5$ & $13.2$ & $7.0$ & $3.5$ \\
  \hline
  \end{tabular}}
-\subsection*{1.4}
+\subsection*{1.4. Prüfgröße und Vertrauensniveau}
 \[
-\chi^2 \approx \sum\limits_{i=1}^8 \frac{(n_i -n p_i)^2}{n p_i} = 6,28 (= 0,18+0,04+0,1+0,02+0,36+0,56+0,15+4,86)
-)
+\chi^2 \approx \sum\limits_{i=1}^8 \frac{(n_i -n p_i)^2}{n p_i} \approx 6,27 (= 0,18+0,04+0,1+0,02+0,36+0,56+0,15+4,86)
 \]
 
-Also mit $\mu = 36.44$:
+Also mit $\mu \approx 36.44$:
 
 \[
 P(6.28) = \int\limits_{30.16}^{42.72} \mathcal{N}(x) dx \approx 1
@@ -109,6 +108,27 @@ P(6.28) = \int\limits_{30.16}^{42.72} \mathcal{N}(x) dx \approx 1
 
 Damit gilt $P > 1-\alpha$ für übliche $\alpha$ und die Nullhypothese wird abgelehnt.
 
-\subsection*{1.5}
+\subsection*{1.5. Interpretation}
 Die Ergebnisse, wie auch Anfangs die Diagramme, legen klar dar, dass es sich nicht um eine Normalverteilte Größe handelt. Es ist also sehr Wahrscheinlich, dass sich der Sensor von dem Probanden gelöst hat.
+
+\pagebreak
+\section*{Aufgabe 2}
+\subsection*{2.1. Toleranzgrenzen}
+Toleranzgrenzen sind die Grenzen in denen ungefähr $99.73\%$ ($\mu \pm 3\sigma$) aller Messwerte liegen müssen.
+
+\subsection*{2.2. Standardabweichung und Toleranzfeldmittenabweichung}
+Die Standardabweichung der gegebenen Daten ist $\sigma \approx 0.1$.
+
+Die Abweichung des Mittelwerts $\hat{x}$ von der Toleranzfeldmitte ist $\Delta \hat{x} \approx 3.3$.
+
+\subsection*{2.3 Visualisierung}
+
+\includegraphics[scale=0.40]{2_3_diag}
+
+\subsection*{2.4}
+
+\subsection*{2.5}
+
+\subsection*{2.6}
+
 \end{document}
