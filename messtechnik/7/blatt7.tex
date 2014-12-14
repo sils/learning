@@ -70,9 +70,11 @@ Die $p_i$s können mithilfe der gegebenen Daten aus einer Normalverteilung errec
 
 \includegraphics[scale=0.7]{1_3_normvert}
 
-Ermittelt man die Werte der Dichtefunktion zu den gegebenen Klassengrenzen erhält man folgendes Diagramm:
+Ermittelt man die Werte der Dichtefunktion zu den gegebenen Klassengrenzen (mit $n$ multipliziert) erhält man folgendes Diagramm:
 
 \includegraphics[scale=0.7]{1_3_dichte_vs_data}
+
+\tiny (Alle Datenpunkte bis auf der des Graphen für $n p_i$ stellen wieder die obere Grenze für die Klasse dar. Der Ausnahmepunkt ist der Klasse $38 - \infty$ zuzuordnen, die in unserer Stichprobe keine Werte $> 39$ enthält.)\normalsize
 
 Die dazugehörige Tabelle ist (Werte abgerundet [Informatiker] auf die erste Stelle nach dem Komma):
 
@@ -86,6 +88,11 @@ Die dazugehörige Tabelle ist (Werte abgerundet [Informatiker] auf die erste Ste
  \hline
  \end{tabular}}
 \subsection*{1.4}
+
+\[
+\chi^2 \approx \sum\limits_{i=1}^8 \frac{(n_i -n p_i)^2}{n p_i} = 6,28 (= 0,18+0,04+0,1+0,02+0,36+0,56+0,15+4,86)
+)
+\]
 \subsection*{1.5}
 
 \end{document}
