@@ -30,7 +30,7 @@
 
 \section*{Aufgabe 1}
 \subsection*{1.1}
-Um eine Ablösung des Sensors zu detektieren, kann der $\chi^2$-verteilung Anpassungstest durchgeführt werden.
+Um eine Ablösung des Sensors zu detektieren, kann der $\chi^2$-Verteilung Anpassungstest durchgeführt werden. (Die Normalverteilung lässt sich ab ca. $n=30$ durch eine $\chi^2$-Verteilung approximieren.)
 
 Eine Voraussetzung für diesen Test ist, dass die Messwerte statistisch unabhängig sind und eine große Stichprobe vorhanden ist.
 
@@ -39,8 +39,14 @@ Der Test kann wie folgt durchgeführt werden:
 \begin{enumerate}
 \item Voraussetzungen sicherstellen
 \item Klassen festlegen, Häufigkeiten $n_i$ bestimmen
-\item Null- und Alternativhypothese aufstellen (ist normalverteilt/ist nicht normalverteilt)
+\item Null- und Alternativhypothese aufstellen:
+\begin{itemize}
+ \item[$H_0$] Die Daten sind normalverteilt
+ \item[$H_1$] Die Daten sind nicht normalverteilt
+\end{itemize}
 \item Signifikanzniveau wählen
+\item $\chi^2 \approx \sum\limits_{i=1}^8 \frac{(n_i -n p_i)^2}{n p_i}$ berechnen
+\item Nullhypothese annehmen oder ablehnen
 \end{enumerate}
 
 \subsection*{1.2}
@@ -88,11 +94,21 @@ Die dazugehörige Tabelle ist (Werte abgerundet [Informatiker] auf die erste Ste
  \hline
  \end{tabular}}
 \subsection*{1.4}
-
 \[
 \chi^2 \approx \sum\limits_{i=1}^8 \frac{(n_i -n p_i)^2}{n p_i} = 6,28 (= 0,18+0,04+0,1+0,02+0,36+0,56+0,15+4,86)
 )
 \]
-\subsection*{1.5}
 
+Also mit $\mu = 36.44$:
+
+\[
+P(6.28) = \int\limits_{30.16}^{42.72} \mathcal{N}(x) dx \approx 1
+\]
+
+\tiny Die Differenz des realen Ergebnis' zu $1$ ist außerhalb der double Rechnergenauigkeit.\normalsize
+
+Damit gilt $P > 1-\alpha$ für übliche $\alpha$ und die Nullhypothese wird abgelehnt.
+
+\subsection*{1.5}
+Die Ergebnisse, wie auch Anfangs die Diagramme, legen klar dar, dass es sich nicht um eine Normalverteilte Größe handelt. Es ist also sehr Wahrscheinlich, dass sich der Sensor von dem Probanden gelöst hat.
 \end{document}
