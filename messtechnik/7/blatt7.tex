@@ -160,14 +160,21 @@ Also:
 \frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R} = \ln(pH - 7) \Rightarrow \exp\left(\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R}\right) = pH - 7
 \]
 
-Mit $Var(U) = \sigma_U^2$ ergibt sich für die Varianz $1 + \Delta U = 1.0001$ und $1 + \Delta T = 1.02$. Dann ist der Fehler des Terms $\frac{U \cdot F}{R \cdot T}$ durch $\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R} \approx 0.98 \cdot \frac{U \cdot F}{T \cdot R}$ bestimmt, also ein Fehler von ungefähr $2\%$.
+Mit $Var(U) = \sigma_U^2$ ergibt sich für die Varianz $1 + \Delta U = 1.0001$ und $1 + \Delta T = 1.02$. Dann ist die Varianz des Terms $\frac{U \cdot F}{R \cdot T}$ durch $\frac{(1 + \Delta U) \cdot U \cdot F}{(1 + \Delta T) \cdot T \cdot R} \approx 0.98 \cdot \frac{U \cdot F}{T \cdot R}$ bestimmt, also eine Varianz von ungefähr $2\%$.
 
-Es gelte nun $g = \frac{U \cdot F}{R \cdot T}$. Also $\exp(g) = pH - 7$ und $\Delta g = 0.02$. Nun ist der relative Fehler für $\exp(g)$ gegeben durch $\Delta pH = exp(g) \cdot (1 + \Delta g) - 1 = exp\left(\frac{U \cdot F}{R \cdot T}\right) \cdot 1.02 -1$.
+Es gelte nun $g = \frac{U \cdot F}{R \cdot T}$. Also $\exp(g) = pH - 7$ und $\Delta g = 0.02$. Nun ist die Varianz für $\exp(g)$ gegeben durch $\Delta pH = exp(g) \cdot (1 + \Delta g) - 1 = exp\left(\frac{U \cdot F}{R \cdot T}\right) \cdot 1.02 -1$.
 \begin{flushright}
 $\square$
 \end{flushright}
 
 \subsection*{3.3. Maximaler Relativer Fehler}
-TODO Fehlerfortpflanzung...
+Wie bereits in Teilaufgabe 3.1 angenommen ergeben sich die maximalen relativen Fehler von Spannungs- und Temperaturmessung zu $4\%$ beziehungsweise $7\%$. 
+
+Normalerweise gibt sich der relative Gesamtfehler durch Addition der einzelnen relativen Fehler. Aufgrund der beteiligten Exponentialfunktion lässt sich dies hier aber nicht einfach übertragen. Wir wählen daher außerdem den gleichen Ansatz wie in Teilaufgabe 3.2.
+
+$\Delta g = 0,04 + 0,07 =0.11 $.
+ 
+Somit folgt $\Delta pH = exp(g) \cdot (1 + \Delta g) - 1 = exp\left(\frac{U \cdot F}{R \cdot T}\right) \cdot 1.11 -1$.
+
 
 \end{document}
