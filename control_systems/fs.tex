@@ -1,0 +1,240 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+
+\section{Kombinatorik}
+Anzahl der Möglichkeiten:
+\begin{packed_enum}
+\item Mit Reihenfolge: (Variation)
+\begin{packed_enum}
+\item $k$ aus $n$ mit zurücklegen: $n^k$
+\item $k$ aus $n$ ohne zurücklegen: $k! \binom{n}{k}$
+\end{packed_enum}
+\item Ohne Reihenfolge: (Kombination)
+\begin{packed_enum}
+\item $k$ aus $n$ mit zurücklegen: $\binom {n+k-1}{k}$
+\item $k$ aus $n$ ohne zurücklegen: $\binom{n}{k}$
+\end{packed_enum}
+\item Ohne Reihenfolge: (Permutation)
+\begin{packed_enum}
+\item $n$ ohne gleiche Elemente: $n!$
+\item $n$ ohne zurücklegen: $\frac{n!}{\prod (k_i !)}$ mit $k_i$ Anzahl der Elemente $i$.
+\end{packed_enum}
+\end{packed_enum}
+
+\section{Wahrscheinlichkeit}
+
+\subsection{Elementarereignis}
+Schliessen sich gegenseitig aus. Ein einelementiges Versuchsergebnis ist ein Elementarereignis. Z.B. $\omega_1 =$ Kopf $, \omega_2 =$Zahl.
+\subsection{Ereignisraum}
+Menge aller möglichen Ereignisse: $\Omega = \omega_1 \cup \omega_2$. Werfen zweier Münzen: $\Omega_2 = \Omega \times \Omega$
+
+\subsection{Bernoulli/Laplace}
+Endlich viele Ereignisse: $P = \frac{\sum \mbox{Erfolgsmoeglichkeiten}}{\sum \mbox{Alle Moeglichkeiten}}$. Auch Gegenereignis betrachten!!!
+\subsection{nach von Mises}
+Statistischer Wahrscheinlichkeitsbegriff: $P(A)=\lim\limits_{n \rightarrow \infty} H(A,n)=\lim\limits_{n \rightarrow \infty} \frac{n_A}{n}$ mit $H(A,n)$ relative Wahrscheinlichkeit von $A$, also $n_A$ Anzahl der Versuche wo $A$ eintritt und $n$ Gesamtanzahl der Versuche.
+\subsection{nach Kolmogorov}
+Massaxiom: $P(A) \geq 0$, Normierungsaxiom: $P(\Omega)=1$, Additivitaetsaxiom: $P(A \cup B) = P(A) + P(B)$ mit $A \cap B = \emptyset$. Bertrands Paradoxon.
+
+\subsection{Bayes Law}
+\[P(A|B)= \frac{P(B|A) \cdot P(A)}{P(B)}\]
+
+\subsection{Erwartungswert}
+$E\left\{X\right\}$ ist eine lineare Operation. Ausserdem ist $E\left\{X\cdot Y\right\} = E\left\{X\right\} \cdot E\left\{Y\right\}$ wenn X und Y stochastisch unabhängig.
+
+\subsection{Moment}
+Das $k$-te Moment ist $m_k = E\left\{X^k\right\}
+=
+\int\limits_{-\infty}^\infty
+  x^k
+  \cdot
+  f_X(x)
+dx$.
+
+Das $k$-te zentrierte Moment ist $z_k =
+E\left\{
+  (x -
+  E\left\{
+    X
+   \right\}
+  )^k
+\right\}
+=
+\int\limits_{-\infty}^\infty
+  (x -
+  E\left\{
+    X
+   \right\}
+  )^k
+  \cdot
+  f_X(x)
+dx$.
+
+\subsection{Varianz}
+Nichtlinear. Fuer statistisch unabhaengige $X_i$: $Var\left\{ \sum\limits_{i=1}^N \left\{X_i\right\}\right\} = \sum\limits_{i=1}^N Var\left\{X_i\right\}$
+
+Diskret: $Var(X)=\sum (x-\mu)^2 P(X=x)$
+
+$Var\left\{ X \right\}  = Cov(X,X) = E\left\{ (X-E\left\{ X \right\})^2 \right\}$
+
+\section{Funktionen}
+\subsection{Verteilungsfunktion}
+$F_X(c) = P(X \leq c) = \int f_X(c) dc$ wobei $f(c)$ die Wahrscheinlichkeitsdichtefunktion ist.
+
+Erwartungswert: $E\left\{ X \right\} = \int\limits_{-\infty}^\infty x\cdot f(x) dx$. Varianz: $Var\left\{ X \right\} = E\left\{ (X-E\left\{ X \right\})^2 \right\}$
+
+\subsection{Bernoulli/Alternativverteilung}
+$F_{X_i}(k)=
+\begin{cases}
+  p     & k=1\\
+  (1-p) & k=0\\
+\end{cases}$ dann ist $\mu_{X_i} = p$ und $ \sigma_{X_i}^2 = p\cdot (1-p)$
+
+\subsection{Binomialverteilung}
+$Z_n=\sum X_i, B_{n,p}(k) = f_Z(k)=\binom{n}{k} p^k (1-p)^{n-k}$
+dabei ist $\mu = N\cdot p$ und $\sigma^2 = Var\left\{Z_n\right\}=n \cdot Var\left\{X_i\right\}= N \cdot p \cdot (1-p)$
+
+\subsection{Poissionverteilung}
+$f_X(k) = \dfrac{A^k e^{-A}}{k!}$
+
+\subsection{Gleichverteilung}
+$f_X(x) = \begin{cases}
+1 \over {b-a} & \mbox{für } x \in \left[a,b\right] \\
+0 & \mbox{sonst}
+\end{cases}$ und
+$F_X(x) = \begin{cases}
+0 & \mbox{für } x \leq a \\
+\frac{x-a}{b-a} & \mbox{für } a \leq x \leq b \\
+1 & \mbox{für } b \leq x \\
+\end{cases}$
+
+\subsection{Normalverteilung}
+$f_X(x)=\dfrac{e^{-\frac{1}{2} \left( \frac{x- \mu}{\sigma} \right)^2}}{\sqrt{2 \pi} \sigma}$ und
+$F_X(x)=\int\limits_{-\infty}^x \dfrac{e^{-\frac{1}{2} \left( \frac{u- \mu}{\sigma} \right)^2}}{\sqrt{2 \pi} \sigma} du$. Standard-NV hat Varianz $\sigma^2 = 1$ und Erwartungswert $\mu = 0$.
+
+\subsection{Exponentialverteilung}
+$f_\lambda(x) =
+\begin{cases}
+\lambda e^{-\lambda x} & \mbox{für } x \geq 0 \\
+0 & \mbox{für } x < 0
+\end{cases}
+$ hat den Erwartungswert $\dfrac{1}{\lambda}$. Dazugehörige Verteilungsfunktion: $F_X(x) = \begin{cases}
+1-e^{-\lambda x} & \mbox{für } x \geq 0 \\
+0 & \mbox{für } x < 0
+\end{cases}$
+
+\subsubsection{Bedingte Wahrscheinlichkeit}
+\[c, d \in \mathbb{R},
+P(x > c | x > d) = \dfrac{P(x>c \cap x > d)}{P(x > d)}, c>d \Rightarrow \left\{ x > c \right\} \subset
+\left\{ x > d \right\} \Rightarrow P(x > c | x > d) = \dfrac{P(x>c)}{P(x > d)}\]
+Im Falle der Exponantialfunktion: $\frac{P(x>c)}{P(x > d)} = F_X(c-d)$
+
+\section{Mehrdimensionaler Kram}
+\subsection{Verbundverteilungsfunktion}
+\[x \in \left[a,b\right], y \in \left[c,d\right]\ \ \ 
+F_{X,Y}(x,y) = \int\limits_{-\infty}^x
+\int\limits_{-\infty}^y f_{X,Y}(s,t) dt ds \ \ \ \ \ F_{\vec{X}} =
+\begin{cases}
+0 & x \leq a, y\leq c \\
+F_{X,Y}(x,y) & a \leq x \leq b, c\leq y\leq d \\
+F_{X,Y}(b,y) & b \leq x, c\leq y\leq d \\
+F_{X,Y}(x,d) & a \leq x \leq b, d\leq y \\
+1 & b \leq x, d\leq y \\
+\end{cases}
+\]
+\subsection{Randdichteverteilung}
+\[f_X(x) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y) dy\ \ \ \ \ \ \ \ f_Y(y) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y) dx\]
+
+\subsection{Kovarianz/Unkorreliertheit}
+\[
+Cov\left\{X,Y\right\} :=
+E\left\{(X- E\left\{X\right\})
+	    (Y- E\left\{Y\right\})\right\}
+=
+E\left\{X,Y\right\}
+	    - E\left\{X\right\}E\left\{Y\right\}
+\ \ \ \ \ \ \ \ \ 
+E\left\{U \cdot V\right\} =
+\int\limits_{-\infty}^\infty
+  \int\limits_{-\infty}^\infty
+    x \cdot y \cdot f(x,y)
+  dx
+dy\]
+statistische Unabhaengigkeit $\Rightarrow Cov\left\{X,Y\right\} = 0$.
+
+\[
+Var
+  \left\{
+    \sum\limits_{i=1}^n
+      a_i X_i
+  \right\}
+=
+\sum\limits_{i=1}^n
+  a_i^2
+  Var
+  \left\{
+    X_i
+  \right\}
++
+\sum\limits_{i=1}^n
+  \sum\limits_{j=1, j \neq i}^n
+    a_i a_j
+    Cov
+    \left\{
+      X_i, X_j
+    \right\}
+\]
+
+\subsection{Stochastische Unabhängigkeit}
+$A$ und $B$ sind stochastisch Unabhängig $\Leftrightarrow P(A \cap B) = P(A)\cdot P(B)$.
+
+\subsection{Eindimensional Summieren}
+Sei $Z = \sum X_i$ so ist $f_Z(z) = (\prod f_{X_i})(z)$. (Faltung!)
+
+Faltung der Rechteckfunktion mit sich selbst ist die dreiecksfunktion.
+
+\subsection{Tschebyscheff Ungleichung}
+Erwartungswert $\mu=E\left\{X\right\}$ und Varianz $\sigma^2$ sowie $k \in \mathbb{R}$,
+dann $P(|X-\mu| \geq k) \leq \frac{\sigma^2}{k^2}$
+und $P(|X-\mu| \geq k\cdot \sigma) \leq \frac{1}{k^2}$
+
+\subsection{Charakteristische Funktion}
+Diskret: $\Phi_X(j\omega) = \sum\limits_{k=1}^\infty e^{j \omega x_k} P(X = x_k)$
+
+Kontinuierlich: $\Phi_X(j\omega) = \int\limits_{-\infty}^\infty e^{j\omega x} f_X(x)dx$ Char. Funktionen fuer versch. Verteilungen bei Maike abschreiben!
+
+$\Phi(0)=1$
+
+\subsection{Misc}
+$X$ und $Y$ sind statistisch unabhängig $ \Leftrightarrow F_{X,Y}(x,y) = F_X(x)\cdot F_Y(y)$.
+
+$P(a \leq x\leq b, c\leq y\leq d) =
+F_{X,Y}(b,d)
+-F_{X,Y}(a,d)
+-F_{X,Y}(b,c)
++F_{X,Y}(a,c)$
+
+Erwartungswert fuer jede Dimension einzeln normal ueber Randdichteverteilungsfunktionen berechnen.
+
+\section{Weird Stuff}
+\subsection{Leistungsdichtespektrum}
+$S_{XX}(j\omega) = Fourier(r_{XX}(\tau)) = $ r nehmen und $\phi(t)=1$.
+
+\subsection{Leistung}
+$P=r_{XX}(0)=\int\limits_{-\infty}^\infty S_{XX}(f) df$
+\end{document}
