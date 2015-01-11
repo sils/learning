@@ -1,0 +1,6 @@
+disp("eig(A(30))")
+eig(A(30))
+disp("eig(A(-30))")
+eig(A(-30))
+disp("eig(A(16))")
+eig(A(16))
