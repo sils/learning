@@ -17,6 +17,6 @@ function [eigenvector, eigenvalue] = potenzmethode(A, u, m_max, min_convergence)
 
     if abs(eigenvalue - last_ev) > min_convergence
       return;
-    end if
-  end for
+    end;
+  end;
 end
