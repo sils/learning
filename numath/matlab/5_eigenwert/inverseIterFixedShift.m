@@ -18,8 +18,7 @@ function [ lambda, steps ] = inverseIterFixedShift(shift, A, u0, m_max, min_conv
     um = vm/km;
 
     if abs(km-kold) < min_convergence
-        lambda=shift-1/km;
-        return;
+        break;
     end
   end;
   

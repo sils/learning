@@ -20,7 +20,7 @@ function [ lambda, steps ] = inverseIterVarShift(shift, A, u0, m_max, min_conver
     lambda=shift-1/km;
 
     if abs(km-kold) < min_convergence
-        return;
+      return;
     end
   end;
 end
