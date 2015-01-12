@@ -1,23 +1,27 @@
-function [ lambda ] = qr_shift(A, m_max, min_convergence)
+function [ lambda ] = qr_shift(A, m_max)
   if nargin < 3
-    min_convergence = 10^-8;
-    if nargin < 2
-      m_max = 1000;
-    end;
+    m_max = 1000;
   end;
 
-  identity = eye(size(A));
+  n = size(A, 1);
+  identity = eye(n);
+  lambda = zeros(n, 1);
   for i = 0:m_max
-    % TODO: get ki
+    ki = Ai(n, n)^i;
+    if Ai(n, n-i) <= 10^-8
+      lambda(n) = Ai(n, n)^i;
+      n = n-1;
+      Ai = Ai(1:n, 1:n);
+      if n == 1
+        lambda(1) = A(1, 1);
+        break;
+      end;
+    end;
 
     ki_id = ki*identity;
     [Qi, Ri] = qr(Ai - ki_id);
-    Aold = Ai;
     Ai = Ri*Qi + ki_id;
-    
-    if (max(abs(max(max(Ai)) - min(min(Aold))), ...
-            abs(min(min(Ai)) - max(max(Aold)))) < min_convergence)
-      return;
-    end
   end;
+
+  lambda = sort(lambda);
 end
