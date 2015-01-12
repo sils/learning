@@ -1,4 +1,2 @@
 Algorithmus enthält einen Fehler, den wir nicht finden. Stimmt bei erstem oder letztem EW nicht.
 
-t = 100:
-i = , time = ;
