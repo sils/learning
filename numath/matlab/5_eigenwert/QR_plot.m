@@ -16,11 +16,11 @@ function [ ] = QR_plot(A, m_max, min_convergence)
     colorbar;
     pause;
 
-    # Very simple metric to measure convergence: maximal difference between
-    # lowest and highest values
-    if (max(abs(max(max(Ai)) - min(min(Aold))),
+    % Very simple metric to measure convergence: maximal difference between
+    % lowest and highest values
+    if (max(abs(max(max(Ai)) - min(min(Aold))), ...
             abs(min(min(Ai)) - max(max(Aold)))) < min_convergence)
       break;
-    end if;
-  end for;
+    end;
+  end;
 end
