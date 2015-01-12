@@ -1,4 +1,4 @@
-function [] = QR_plot(A, m_max, min_convergence)
+function [ ] = QR_plot(A, m_max, min_convergence)
   if nargin < 3
     min_convergence = 10^-8;
     if nargin < 2
