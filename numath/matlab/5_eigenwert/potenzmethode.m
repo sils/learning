@@ -8,7 +8,7 @@ l=zeros(m_max,1);
 while (m<m_max && abs(k-knext)>border)
     k=knext;
     v=A*u;
-    knext=norm(v);
+    knext=norm(v)
     u=v/knext;
     l(m)=knext;
     m=m+1;
