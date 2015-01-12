@@ -1,21 +1,24 @@
-function [eigenvector, eigenvalue] = potenzmethode(A, u, m_max, min_convergence)
-  if nargin < 4
-    min_convergence = 10^-8;
-    if nargin < 3
-      m_max = 1000;
-    end;
-  end;
-
-  eigenvalue = 0;
-  eigenvector = u;
-  for m = 0:m_max
-    v = A * eigenvector;
-    last_ev = eigenvalue;
-    eigenvalue = norm(v);
-    eigenvector = v/eigenvalue;
-
-    if abs(eigenvalue - last_ev) > min_convergence
-      return;
-    end;
-  end;
+function [EW, EV] = potenzmethode (A,u)
+m_max=1000;
+border= 10^-8;
+k=0;
+knext=norm(u);
+m=1;
+l=zeros(m_max,1);
+while (m<m_max && abs(k-knext)>border)
+    k=knext;
+    v=A*u;
+    knext=norm(v);
+    u=v/knext;
+    l(m)=knext;
+    m=m+1;
 end
+EV=u;
+EW=knext;
+l=l(1:m-1);
+plot(1:m-1,l)
+hold on
+xlabel('n')
+ylabel('\lambda^n')
+grid on;
+hold off
