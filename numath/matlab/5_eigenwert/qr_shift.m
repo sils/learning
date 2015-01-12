@@ -1,9 +1,8 @@
-function [ lambda, i ] = qr_shift(A, m_max)
+function [ lambda ] = qr_shift(A, m_max)
   if nargin < 3
     m_max = 1000;
   end;
 
-  A = hess(A);
   n = size(A, 1);
   identity = eye(n);
   lambda = zeros(n, 1);
