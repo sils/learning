@@ -6,7 +6,6 @@ function [eigenvector, eigenvalue] = potenzmethode(A, u, m_max, min_convergence)
     end;
   end;
 
-  m = 0;
   eigenvalue = 0;
   eigenvector = u;
   for m = 0:m_max
