@@ -9,4 +9,13 @@ Durch dieses "Oszillieren" sinkt der Abstand |k_m+1 - k_m| deutlich langsamer.
 
 
 1.3:
-Können 
+?
+
+
+1.4:
+17: Nach 7 Iterationsschritten: 17.8208
+13: Nach 15 Schritten: 17.8208
+
+1.5:
+17: Nach 7 Iterationsschritten: 17.8208
+13: Nach 9 Schritten: 17.8208

@@ -2,7 +2,7 @@ function [ lambda, steps ] = inverseIterVarShift(shift, A, u0, m_max, min_conver
   if nargin < 5
     min_convergence = 10^-8;
     if nargin < 4
-      m_max = 1000;
+      m_max = 10000;
     end;
   end;
 
@@ -17,7 +17,8 @@ function [ lambda, steps ] = inverseIterVarShift(shift, A, u0, m_max, min_conver
     vm = (lambda*identity - A) \ um;
     km = l'*vm;
     um = vm/km;
-    lambda=shift-1/km;
+    lambda=lambda-1/km;
+    steps
 
     if abs(km-kold) < min_convergence
       return;
