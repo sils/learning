@@ -1,0 +1,14 @@
+n = 100:
+i = 337, time = 0.152728 seconds;
+
+n = 200:
+i = 671, time = 0.803792 seconds;
+
+n = 300:
+i = 1006, time = 2.619358 seconds;
+
+n = 400:
+i = 1302, time = 6.226627 seconds;
+
+n = 500:
+i = 1669, time = 13.845436 seconds;

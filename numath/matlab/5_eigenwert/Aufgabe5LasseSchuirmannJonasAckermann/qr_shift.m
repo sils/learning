@@ -7,7 +7,7 @@ function [ lambda, i ] = qr_shift(A, m_max)
   n = size(A, 1);
   lambda = zeros(n, 1);
   A = hess(A);
-  while(n > 1 && it < m_max)
+  while(n > 1)
      while (it < m_max)
         k = deflationCriterion(A);
         if k > 0
@@ -28,7 +28,7 @@ function [ lambda, i ] = qr_shift(A, m_max)
             [Qi, Ri] = qr(A - ki_id);
             A = Ri*Qi + ki_id;
             it = it+1;
-            if abs(A(n, n-1)) <= (1E-8)
+            if abs(A(n, n-1)) <= (10 ^-8)
               lambda(n) = A(n, n);
               break;
             end;
@@ -39,7 +39,7 @@ function [ lambda, i ] = qr_shift(A, m_max)
   end;
   if n == 1
       lambda(1) = A(1, 1);
-      lambda = sort(lambda);
   end;
   i = it;
+  lambda = sort(lambda);
 end
