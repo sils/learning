@@ -6,12 +6,14 @@ function [ lambda ] = qr_shift(A, m_max)
   n = size(A, 1);
   identity = eye(n);
   lambda = zeros(n, 1);
+  Ai = A;
   for i = 0:m_max
     ki = Ai(n, n)^i;
     if Ai(n, n-i) <= 10^-8
       lambda(n) = Ai(n, n)^i;
       n = n-1;
       Ai = Ai(1:n, 1:n);
+      identity = eye(n);
       if n == 1
         lambda(1) = A(1, 1);
         break;
