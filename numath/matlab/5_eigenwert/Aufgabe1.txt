@@ -1,0 +1,12 @@
+1.2:
+
+A(30): 22 Iterationsschritte
+A(-30): 670 Iterationsschritte
+
+Bei der Multiplikation des Vektors u mit der Matrix A wechselt im Fall von A(-30) das erste Element des entstehenden Vektors
+v bei jedem Iterationsschritt das Vorzeichen, was die Norm von v beeinflusst.
+Durch dieses "Oszillieren" sinkt der Abstand |k_m+1 - k_m| deutlich langsamer.
+
+
+1.3:
+Können 
