@@ -1,0 +1,34 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newcommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\begin{document}
+
+\section*{Convolution}
+$(f*g)(t) = \int\limits_{-\infty}^\infty f(\tau) g(t-\tau) d\tau$, additionally for $f, g : [0, \infty) \rightarrow \mathbb{R}$ borders are from $0$ to $t$.
+
+\section*{Laplace Transform}
+$F(s) = \mathcal{L}(f(t)) = \int\limits_0^\infty f(t) e^{-st} dt$ is the Laplace transform of $f(t)$.
+
+\subsection{Rules}
+\begin{itemize}
+\item $\mathcal{L}(y(t)) = Y(s)$
+\item $\mathcal{L}(y'(t)) = s \cdot Y(s)$
+\end{itemize}
+
+\section*{Misc}
+$y(t)$ is output, $u(t)$ is input. Transfer function: $G(s) = \frac{Y(s)}{U(s)}$
+
+\end{document}
