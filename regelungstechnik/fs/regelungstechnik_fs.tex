@@ -26,9 +26,23 @@ $F(s) = \mathcal{L}(f(t)) = \int\limits_0^\infty f(t) e^{-st} dt$ is the Laplace
 \begin{itemize}
 \item $\mathcal{L}(y(t)) = Y(s)$
 \item $\mathcal{L}(y'(t)) = s \cdot Y(s)$
+\item $\mathcal{L}(y''(t)) = s^2 \cdot Y(s)$
 \end{itemize}
 
 \section*{Misc}
 $y(t)$ is output, $u(t)$ is input. Transfer function: $G(s) = \frac{Y(s)}{U(s)}$
+
+TODO: Table 1.1
+
+Response to an input:
+
+\begin{enumerate}
+\item Given: $ay'(t) + by(t) = cu(t)$
+\item Laplace: $a\cdot s\cdot Y(s) + bY(s) = cU(s)$
+\item Transfer function: $G(s) = \frac{Y(s)}{U(s)} = \frac{c}{a\cdot s + b}$
+\item Transfer given input: $\mathcal{L}(u(t)) = U(s)$
+\item Get output: $Y(s) = G(s)\cdot U(s)$
+\item Transfer back output, hint partial fractions!
+\end{enumerate}
 
 \end{document}
