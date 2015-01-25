@@ -1,0 +1,34 @@
+Aufgabe 9
+Kalman-Filter
+
+1. Es ist nicht sinnvoll die Flughöhe alleinauf Basis der Beschleunigung zu berechnen,
+	da wie in der Aufgabenstellung beschrieben zusätlich noch Inhomogenitäten des 
+	Treibstoffgemischs und Luftdruckschwankungen berücksichtigt werden müssen.
+
+2. Mit zunehmender Flughöhe kann der aktuelle Zustand stärker durch Aktionen und 
+	Ungenauigkeiten der Sensoren beeinflusst werden, dadurch steigt auch die 
+	Varianz der Messwerte und somit die Messungenauigkeit. 
+
+3. Das Ergänzen um die GPS Messung sorgt für eine höhere Genauigkeit als in Aufgabenteil 2,
+	da nun zwei Quellen für Messwerte betrachtet werden können. Eine Messung schafft so 
+	gesehen mehr Sicherheit und kann für eine Korrektur sorgen.
+
+4. Ein Kalman-Filter schätzt den Zustand eines Prozesses auf Kenntnis früherer Beobachtungen.
+	Betrachtet werden zeitdiskrete Prozesse der Form 
+	x_t = A_t * x_(t-1) + B_t *u_t + eps_t
+	Die Messwerte werden durch den (geschätzten) Zustand z_t = C_t * x_t  delta_t beschrieben.
+	x_t bildet einen Zustandvektor zum Zeitpunkt t mit kontinuierlichen Komponenten.
+	u_t bildet einen Aktionsvektor.
+	A_t, Systemmatrix, (nxn) beschreibt den idealen Zustandsübergang von t nach t+1
+	B_t, Steuermatrix, (nxl) beschreibt den Zustandsübergang der durch die Aktion u_t bewirkt wird
+	C_t, Messmatrix, (kxn) beschreibt die Abbildung von Zustand x_t auf Beobachtung z_t
+	eps_t, delta_t beschreiben das Rauschen des Prozesses als Zufallsvariablen, unabhängig und mit
+		Kovarianzen R_t und Q_t verteilt
+	Daraus ergibt sich ein Kreislauf aus Prädiktion und Korrektur der Messungen.
+
+5. Durch den Kalman-Filter wird die Messunsicherheit mit zunehmender Flughöhe tendenziell eher nicht
+	weiter ansteigen, da immer wieder Korrekturen vorgenommen werden.
+
+
+
+
