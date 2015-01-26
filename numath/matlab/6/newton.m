@@ -7,11 +7,11 @@ function [zero, res, niter] = newton(f, df, x0, tol, nmax)
   end
 
   for niter = 0:nmax
-    zero = x_0 - f(x_0) / df(x_0);
+    zero = x0 - f(x0) / df(x0);
     res = f(zero);
-    if abs(zero - x_0) < tol
+    if abs(zero - x0) < tol
       break;
     end
-    x_0 = zero;
+    x0 = zero;
   end
 end
