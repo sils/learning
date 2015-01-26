@@ -30,6 +30,10 @@ a = -7;
 b = -4;
 [alpha_50_1, ~, iter_1] = bisektion(f_50, a, b, tol)
 
+%Result: Zero at -6.0904, 29 iterations
+
 a = 0.18;
 b = 0.2;
 [alpha_50_2, ~, iter2] = bisektion(f_50, a, b, tol)
+
+%Result: Zero at 0.1928, 21 iterations
