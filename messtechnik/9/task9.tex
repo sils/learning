@@ -42,16 +42,19 @@ Die (ideale) GPS Messung mit der bekannten Standardabweichung von $\sigma_h = 2m
 
 \section{Kalman: Grundlagen}
 Ein Kalman-Filter schätzt den Zustand eines Prozesses auf Kenntnis früherer Beobachtungen.
-Betrachtet werden zeitdiskrete Prozesse der Form 
-$x_t = A_t * x_(t-1) + B_t *u_t + eps_t$
-Die Messwerte werden durch den (geschätzten) Zustand $z_t = C_t * x_t  \delta_t$ beschrieben.
-$x_t$ bildet einen Zustandvektor zum Zeitpunkt t mit kontinuierlichen Komponenten.
-$u_t$ bildet einen Aktionsvektor.
-$A_t$, Systemmatrix, (nxn) beschreibt den idealen Zustandsübergang von $t$ nach $t+1$
-$B_t$, Steuermatrix, (nxl) beschreibt den Zustandsübergang der durch die Aktion $u_t$ bewirkt wird
-$C_t$, Messmatrix, (kxn) beschreibt die Abbildung von Zustand $x_t$ auf Beobachtung $z_t$
-$eps_t$, $delta_t$ beschreiben das Rauschen des Prozesses als Zufallsvariablen, unabhängig und mit
+
+Betrachtet werden zeitdiskrete Prozesse der Form $x_t = A_t * x_(t-1) + B_t *u_t + eps_t$. Die Messwerte werden durch den (geschätzten) Zustand $z_t = C_t * x_t  \delta_t$ beschrieben.
+
+\begin{itemize}
+\item $x_t$ bildet einen Zustandvektor zum Zeitpunkt t mit kontinuierlichen Komponenten.
+\item $u_t$ bildet einen Aktionsvektor.
+\item $A_t$, Systemmatrix, (nxn) beschreibt den idealen Zustandsübergang von $t$ nach $t+1$
+\item $B_t$, Steuermatrix, (nxl) beschreibt den Zustandsübergang der durch die Aktion $u_t$ bewirkt wird
+\item $C_t$, Messmatrix, (kxn) beschreibt die Abbildung von Zustand $x_t$ auf Beobachtung $z_t$
+\item $eps_t$, $delta_t$ beschreiben das Rauschen des Prozesses als Zufallsvariablen, unabhängig und mit
 Kovarianzen $R_t$ und $Q_t$ verteilt
+\end{itemize}
+
 Daraus ergibt sich ein Kreislauf aus Prädiktion und Korrektur der Messungen.
 
 \section{TODO}
