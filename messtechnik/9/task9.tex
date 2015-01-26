@@ -22,7 +22,6 @@
   \pagebreak
 }
 \begin{document}
-\rowcolors{2}{gray!25}{white}
 
 \maketitle
 \pagebreak
@@ -43,11 +42,11 @@ Die (ideale) GPS Messung mit der bekannten Standardabweichung von $\sigma_h = 2m
 \section{Kalman: Grundlagen}
 Ein Kalman-Filter schätzt den Zustand eines Prozesses auf Kenntnis früherer Beobachtungen.
 
-Betrachtet werden zeitdiskrete Prozesse der Form $x_t = A_t * x_{t-1} + B_t *u_t + eps_t$. Die Messwerte werden durch den (geschätzten) Zustand $z_t = C_t * x_t  \delta_t$ beschrieben.
+Betrachtet werden zeitdiskrete Prozesse der Form $x_t = A_t \cdot x_{t-1} + B_t \cdot u_t + eps_t$. Die Messwerte werden durch den (geschätzten) Zustand $z_t = C_t \cdot x_t  \Delta_t$ beschrieben.
 
 \begin{itemize}
-\item $x_t$ bildet einen Zustandvektor zum Zeitpunkt t mit kontinuierlichen Komponenten.
-\item $u_t$ bildet einen Aktionsvektor.
+\item $x_t \in \mathbb{R}^n$ bildet einen Zustandvektor zum Zeitpunkt t mit kontinuierlichen Komponenten.
+\item $u_t \in \mathbb{R}^l$ bildet einen Aktionsvektor.
 \item $A_t \in \mathbb{R}^{n \times n}$, Systemmatrix, beschreibt den idealen Zustandsübergang von $t$ nach $t+1$
 \item $B_t \in \mathbb{R} ^ {n \times l}$, Steuermatrix, beschreibt den Zustandsübergang der durch die Aktion $u_t$ bewirkt wird
 \item $C_t \in \mathbb{R} ^ {k \times n}$, Messmatrix, beschreibt die Abbildung von Zustand $x_t$ auf Beobachtung $z_t$
@@ -57,9 +56,31 @@ Kovarianzen $R_t$ und $Q_t$ verteilt
 
 Daraus ergibt sich ein Kreislauf aus Prädiktion und Korrektur der Messungen.
 
-\section{TODO}
-Durch den Kalman-Filter wird die Messunsicherheit mit zunehmender Flughöhe tendenziell eher nicht
-weiter ansteigen, da immer wieder Korrekturen vorgenommen werden.
+\section{Messunsicherheitsverlauf}
+Durch den Kalman-Filter und die damit einhergehende Kombination der vorherigen und verschiedenen Messungen ist zu vermuten, dass die Messunsicherheit wahrscheinlich weit unter der des naiven Angangs liegt.
 
+\section{Stochastischer Prozess}
+Mit $eps_t$ und $\Delta_t$ ist der gesamte Prozess abhängig von zwei stochastischen Variablen und somit selbst ein stochastischer Prozess.
+
+\section{Erwartungswert}
+Der Erwartungswert der einzelnen Messungen liegt bei den beschriebenen Grössen bei den realen Werten dieser Grössen.
+
+\section{TODO}
+
+\section{Initialisierung}
+Der initiale Zustandsvektor ist gegeben durch $x_0 = \begin{pmatrix}
+0 \\ 0 \end{pmatrix}$ also $n = 2$. Der Aktionsvektor enthält nur die Beschleunigung: $u_0 = u_t = 2.5 \frac{m}{s^2}$.
+
+\section{Zustandsübergänge}
+\[
+A = \begin{pmatrix}
+1 & dt \\
+0 & 1 \\
+\end{pmatrix} \,\,\,\,\,\,\,\,
+B = \begin{pmatrix}
+0.5 \cdot dt^2 \\
+dt \\
+\end{pmatrix}
+\]
 
 \end{document}
