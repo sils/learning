@@ -8,8 +8,8 @@ function [zero, res, niter] = newton(f, df, x0, tol, nmax)
 
   last_x = x0;
   for niter = 0:nmax
+    zero = last_x - f(last_x) / df(last_x);
     res = f(zero);
-    zero = last_x - res / df(last_x);
     if abs(zero - last_x) < tol
       break;
     end
