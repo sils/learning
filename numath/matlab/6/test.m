@@ -43,11 +43,13 @@ b = 0.2;
 x_0 = -0.1;
 
 [~, ~, iter] = newton(f_40, df_40, x_0, tol);
-errors = zeros(iter + 1, 1)
+errors = zeros(iter + 1, 1);
 for i = 1:iter
   [~, errors(i), ~] = newton(f_40, df_40, x_0, tol, i);
 end
+format long;
 errors
+format short;
 
 % TEST 3 - "Newton"
 x_0 = 2*3.1415926535/3;
