@@ -22,9 +22,10 @@ tol = 1E-8;
 x = -10:0.1:10;
 y = f_50(x);
 plot(x,y);
+grid on;
 
 % TEST 1 - "Bisektion"
-a = -6;
+a = -7;
 b = -4;
 [alpha_50_1, ~, iter_1] = bisektion(f_50, a, b, tol)
 
