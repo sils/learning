@@ -37,3 +37,20 @@ b = 0.2;
 [alpha_50_2, ~, iter2] = bisektion(f_50, a, b, tol)
 
 %Result: Zero at 0.1928, 21 iterations
+
+
+% TEST 2 - "Newton"
+x_0 = -0.1;
+
+[~, ~, iter] = newton(f_40, df_40, x_0, tol);
+errors = zeros(iter + 1, 1)
+for i = 1:iter
+  [~, errors(i), ~] = newton(f_40, df_40, x_0, tol, i);
+end
+errors
+
+% TEST 3 - "Newton"
+x_0 = 2*3.1415926535/3;
+%for k = 1:100
+  %
+%end
