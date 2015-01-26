@@ -51,6 +51,9 @@ format long;
 errors
 format short;
 
+%Result: errors for 1 to niter: 1.0e-03 * (0.517736929985357,
+%0.000300442725143, 0.000000000101474, 0.000000000000222, 0)
+
 % TEST 3 - "Newton"
 x_0 = 2*3.1415926535/3;
 [zero, ~, ~] = newton(f_70, df_70, x_0, tol);
