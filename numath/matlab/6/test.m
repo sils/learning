@@ -8,8 +8,15 @@ f = @(x, beta) a_1 / a_2 * cos(beta) - a_1 / a_4 * cos(x) - cos(beta - x) + (a_1
 df = @(x, beta) a_1 / a_4 * sin(x) + sin(x - beta);
 
 % From k directly
-f_50 = @(x) f(x, beta_k(50));
+f_k = @(x, k) f(x, beta_k(k));
+df_k = @(x, k) df(x, beta_k(k));
+
+f_50  = @(x) f_k(x, 50)
 df_50 = @(x) df(x, beta_k(50));
+f_40  = @(x) f_k(x, 40)
+df_40 = @(x) df(x, beta_k(40));
+f_70  = @(x) f_k(x, 70)
+df_70 = @(x) df(x, beta_k(70));
 
 tol = 1E-8;
 x = -10:0.1:10;
