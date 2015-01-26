@@ -6,14 +6,13 @@ function [zero, res, niter] = newton(f, df, x0, tol, nmax)
     nmax = 1000;
   end
 
-  x_alt = x0;
+  last_x = x0;
   for niter = 0:nmax
-    x_neu = x_alt - f(x_alt) / df(x_alt);
-    if abs(x_neu - x_alt) < tol
+    res = f(zero);
+    zero = last_x - res / df(last_x);
+    if abs(zero - last_x) < tol
       break;
     end
-    x_alt = x_neu;
+    last_x = zero;
   end
-  zero = x_neu;
-  res = f(zero);
 end
