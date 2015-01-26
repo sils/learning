@@ -51,6 +51,5 @@ errors
 
 % TEST 3 - "Newton"
 x_0 = 2*3.1415926535/3;
-%for k = 1:100
-  %
-%end
+[zero, ~, ~] = newton(f_70, df_70, x_0, tol);
+plotMechanicalSystem(a_1, a_2, a_3, a_4, beta_70, zero);
