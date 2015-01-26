@@ -7,11 +7,9 @@ function [zero, res, niter] = newton(f, df, x0, tol, nmax)
   end
 
   x_alt = x0;
-  niter = 0;
-  while 1
+  for niter = 0:nmax
     x_neu = x_alt - f(x_alt) / df(x_alt);
-    niter = niter + 1;
-    if abs(x_neu - x_alt) < tol || niter >= nmax
+    if abs(x_neu - x_alt) < tol
       break;
     end
     x_alt = x_neu;
