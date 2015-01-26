@@ -9,18 +9,19 @@ function [zero, res, niter] = bisektion(f, a, b, tol, nmax)
   fa = f(a);
   fb = f(b);
   niter = 0;
-  while b - a > tol && niter < nmax
-    c = 0.5 * (a + b);
-    fc = f(c);
-    if fa * fc > 0
-      a = c;
-      fa = fc;
-    else
-      b = c;
-      fb = fc;
+  for niter = 0:nmax
+    zero = 0.5 * (a + b);
+    res = f(zero);
+    if b - a > tol
+      break
     end
-    niter = niter + 1;
+
+    if res * fa <= 0
+      fb = res;
+      b = zero;
+    else
+      fa = res;
+      a = zero;
+    end
   end
-  zero = (a + b) / 2;
-  res = f(zero);
 end
