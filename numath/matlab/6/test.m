@@ -11,11 +11,12 @@ df = @(x, beta) a_1 / a_4 * sin(x) + sin(x - beta);
 f_k = @(x, k) f(x, beta_k(k));
 df_k = @(x, k) df(x, beta_k(k));
 
-f_50  = @(x) f_k(x, 50)
+% For our numbers
+f_50  = @(x) f_k(x, 50);
 df_50 = @(x) df(x, beta_k(50));
-f_40  = @(x) f_k(x, 40)
+f_40  = @(x) f_k(x, 40);
 df_40 = @(x) df(x, beta_k(40));
-f_70  = @(x) f_k(x, 70)
+f_70  = @(x) f_k(x, 70);
 df_70 = @(x) df(x, beta_k(70));
 
 tol = 1E-8;
@@ -29,6 +30,6 @@ a = -7;
 b = -4;
 [alpha_50_1, ~, iter_1] = bisektion(f_50, a, b, tol)
 
-a = -2;
-b = 2;
+a = 0.18;
+b = 0.2;
 [alpha_50_2, ~, iter2] = bisektion(f_50, a, b, tol)
