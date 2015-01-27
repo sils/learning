@@ -138,6 +138,14 @@ dt & 5 \\
 Durch den Prädikationsschritt wird die unsicherheit des Ergebnisses erhöht. Man sieht daran recht gut ein wichtiges Prinzip des Kalman-Filters: Bei der a priori Schätzung erhöht sich mit zunehmender Zeit die Unsicherheit, die durch eine Messung wieder verkleinert werden kann.
 
 \section{A Posteriori Schätzung}
-
+\[
+K_t = \bar{\Sigma}_t \cdot C^T \cdot (C \cdot \bar{\Sigma}_t \cdot C^T + R)^{-1}
+\]
+\[
+x_t = \bar{x}_t + K_t \cdot (z_t - C \cdot \bar{x}_t)
+\]
+\[
+\Sigma_t = (I - K_t \cdot C) \cdot \bar{\Sigma}_t
+\]
 
 \end{document}
