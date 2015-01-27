@@ -134,7 +134,7 @@ dt & 5 \\
 \end{pmatrix}
 \]
 
-\section{Vergleich - Schätzung/Original}
+\section{A Priori Unsicherheit}
 Durch den Prädikationsschritt wird die unsicherheit des Ergebnisses erhöht. Man sieht daran recht gut ein wichtiges Prinzip des Kalman-Filters: Bei der a priori Schätzung erhöht sich mit zunehmender Zeit die Unsicherheit, die durch eine Messung wieder verkleinert werden kann.
 
 \section{A Posteriori Schätzung}
@@ -162,5 +162,8 @@ x_t = \begin{pmatrix}
    3.4771e-05  & 2.2951e-04\\
 \end{pmatrix}
 \]
+
+\section{A Posteriori Unsicherheit}
+Wie in 14. erwähnt wird die Vorhersage nun durch Messungen gestützt und daher sicherer, die Kovarianzmatrix ist kleiner.
 
 \end{document}
