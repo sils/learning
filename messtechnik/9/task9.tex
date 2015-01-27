@@ -170,4 +170,20 @@ Die Rechnungen wurden mit einem octave script ausgerechnetm mit $C = (1)$.
 
 $kalmanf([0, 0.5, 1,1.5,2,2.5], [0.253, 0; -1.863, 2.5*0.5; 3.157, 2.5; 4.199, 2.5*1.5; 2.01, 2.5*2;9.501, 2.5*2.5])$
 
+\[
+x_{2.5} = \begin{pmatrix}
+   10.68463  \\  7.82818\\
+\end{pmatrix}
+\]
+
+\section{Visualisierung}
+\includegraphics[scale=0.7]{graph}
+
+Rot: GPS Messung, Blau: interpolierte Position, Grün: Reale Position.
+
+\section{Fazit}
+Der Kalman-Filter eignet sich durch seine Interpolations- und Echtzeitfähigkeit (durch die Rekursion) sehr gut für derartige Probleme (z.B. Positionsbestimmung). Vor allem der Vergleich der Vorhersage mit der Messung macht ihn sehr effizient.
+
+Die schlechte Qualität des eigenen Ergebnisses lässt auf einen Fehler in dem Modell oder der Implementierung des Algorithmus schliessen, der leider aus Zeitgründen nicht mehr behoben werden kann. Weiterhin ist zu vermuten, dass die Matrix $C$ nicht einfach als $1$ angenommen werden kann.
+
 \end{document}
