@@ -98,12 +98,11 @@ Q = \begin{pmatrix}
 \]
 
 \section{Zustandsgleichung}
-\[x_t = A \cdot x_{t-1} + B \cdot u_t + eps_t\]
+\[\bar{x}_t = A \cdot x_{t-1} + B \cdot u_t\]
+Ausserdem:
+\[\bar{\Sigma}_t = A \cdot \Sigma_{t-1} \cdot A^T + Q\]
 
 \section{A Priori Schätzung}
-\[\bar{x}_t = A \cdot x_t + B \cdot u_t\]
-\[\bar{\Sigma}_t = A \cdot \Sigma_t \cdot A^T + Q\]
-Also:
 \[\bar{x}_t = \begin{pmatrix}
 1 & dt \\
 0 & 1 \\
