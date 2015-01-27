@@ -84,7 +84,18 @@ dt \\
 \]
 
 \section{Kovarianz}
-Da beide Messgrössen näherungsweise nicht miteinander zusammenhängen ist die Kovarianzmatrix näherungsweise die zweidimensionale Einheitsmatrix.
+Da beide Messgrössen näherungsweise nicht miteinander zusammenhängen ist die Kovarianzmatrix näherungsweise die Diagonalmatrix mit den Varianzen der einzelnen Grössen auf der Diagonale.
+
+\[
+Q = \begin{pmatrix}
+\sigma_a^2 & 0 \\
+0 & \sigma_h^2 \\
+\end{pmatrix}
+ = \begin{pmatrix}
+0.25 & 0 \\
+0 & 4 \\
+\end{pmatrix}
+\]
 
 \section{Zustandsgleichung}
 \[x_t = A \cdot x_{t-1} + B \cdot u_t + eps_t\]
@@ -92,6 +103,40 @@ Da beide Messgrössen näherungsweise nicht miteinander zusammenhängen ist die 
 \section{A Priori Schätzung}
 \[\bar{x}_t = A \cdot x_t + B \cdot u_t\]
 \[\bar{\Sigma}_t = A \cdot \Sigma_t \cdot A^T + Q\]
+Also:
+\[\bar{x}_t = \begin{pmatrix}
+1 & dt \\
+0 & 1 \\
+\end{pmatrix} \cdot \begin{pmatrix}
+0 \\ 0 \end{pmatrix} + \begin{pmatrix}
+0.5 \cdot dt^2 \\ dt \\ \end{pmatrix} \cdot (2.5) =
+\begin{pmatrix}
+1.25 \cdot dt^2 \\
+2.5 \cdot dt \\
+\end{pmatrix}
+\]
+\[
+\bar{\Sigma}_t = \begin{pmatrix}
+1 & dt \\
+0 & 1 \\
+\end{pmatrix} \cdot \begin{pmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{pmatrix} \cdot \begin{pmatrix}
+1 & dt \\
+dt & 1 \\
+\end{pmatrix} + \begin{pmatrix}
+0.25 & 0 \\
+0 & 4 \\
+\end{pmatrix}  =
+\begin{pmatrix}
+1.25 + dt & dt \\
+dt & 5 \\
+\end{pmatrix}
+\]
+
+\section{Vergleich - Schätzung/Original}
+TODO
 
 \section*{Sources}
 
