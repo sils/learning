@@ -153,10 +153,9 @@ Mit $dt = 0.303$ und $z_t = \begin{pmatrix}
 2.5 \cdot 0.303
 \end{pmatrix}$:
 \[
-x_t = \begin{pmatrix}
-  -0.186292  & 0.075755\\
-  -0.186250  & 0.075785\\
-\end{pmatrix}, \Sigma_t = 
+x_{0.303} = \begin{pmatrix}
+  -0.186292 \\ 0.075785\\
+\end{pmatrix}, \Sigma_{0.303} = 
 \begin{pmatrix}
    5.2678e-06  & 3.4771e-05\\
    3.4771e-05  & 2.2951e-04\\
@@ -165,5 +164,10 @@ x_t = \begin{pmatrix}
 
 \section{A Posteriori Unsicherheit}
 Wie in 14. erwähnt wird die Vorhersage nun durch Messungen gestützt und daher sicherer, die Kovarianzmatrix ist kleiner.
+
+\section{Rechnung}
+Die Rechnungen wurden mit einem octave script ausgerechnetm mit $C = (1)$.
+
+$kalmanf([0, 0.5, 1,1.5,2,2.5], [0.253, 0; -1.863, 2.5*0.5; 3.157, 2.5; 4.199, 2.5*1.5; 2.01, 2.5*2;9.501, 2.5*2.5])$
 
 \end{document}
