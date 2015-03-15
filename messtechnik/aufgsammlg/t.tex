@@ -3,9 +3,10 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \begin{document}
 
-\section*{Korrelationsmesstechnik - Aufgabe 2}
+\section*{Korrelationsmesstechnik - Task 2}
 
 \[ x = (2,3,-2,4,5,-11), y = (4,5,-11,2,3,4) \]
 \[ xcorr(x, y) = (8,18,5,6,5,24,-65,-65,162,-35,-44)\]
@@ -19,7 +20,7 @@
 \[ x = (0, 2, 0, 2, 0, 0, 2, 0), y = (2, 0, 2, 0, 2, 0, 2, 0) \]
 \[ xcorr(x, y) = (0,0,4,0,8,0,8,4,8,4,4,4,0,4,0) \]
 
-\section*{Stichproben - Aufgabe 1}
+\section*{Stichproben - Task 1}
 
 \subsection*{Mittelwerte und Varianzen}
 
@@ -27,7 +28,7 @@ x Mittelwert: $5.1416666667$, x Standardabweichung: $3.084995457$.
 
 y Mittelwert: $2.5708333333$, y Standardabweichung: $1.56036976$
 
-\subsection*{Kovarianzmatrix}
+\subsection*{Covariance Matrix}
 
 \[
 \begin{pmatrix}
@@ -35,8 +36,30 @@ y Mittelwert: $2.5708333333$, y Standardabweichung: $1.56036976$
 4.7977 & 2.4348 \\
 \end{pmatrix}
 \]
+\pagebreak
+\subsection*{Correlation Coefficient}
 
-\subsection*{Korrelationskoeffizient}
+\[
+corr(x,y) = 0.99667
+\]
 
+The correlation coefficient suggests high correlation of the values, approaching linearity. A simple plot visualizes this further (see figure 1 below).
+
+\includegraphics[scale=0.7]{fig1}
+
+\pagebreak
+\subsection*{Histograms}
+
+After playing around a bit histograms with 4 bins seem to make most sense.
+
+x histogram:
+
+\includegraphics[scale=0.6]{xhist}
+
+\pagebreak
+
+y histogram:
+
+\includegraphics[scale=0.6]{yhist}
 
 \end{document}
