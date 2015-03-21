@@ -63,7 +63,23 @@ $\alpha \dot{\rightarrow} \beta \Leftrightarrow \alpha$ ist Schlüsselkandidat f
 
 \subsection*{Queries}
 
-$\sigma_c(R)$ ist eine Anfrage auf die Datenbank $R$ mit der Bedingung $c$.
+$\sigma_c(R)$ ist eine Anfrage auf die Datenbank $R$ mit der Bedingung $c$. (SELECT ... FROM $R$ WHERE $c$)
+
+$\pi_L(R)$ Projektion (SELECT something AS else FROM ...)
+
+$\cup$ Vereinigung
+
+$\cap$ Durchschnitt
+
+$-$ Differenz (SELECT $*$ FROM $T1$ WHERE $ID$ NOT IN (SELECT $ID$ FROM $T2$))
+
+$R \times L$ Kartesisches Produkt (SELECT ... FROM $R, L$)
+
+$\bowtie$ Verbund/Join (JOIN ... ON)
+
+$\gamma$ Gruppierung (GROUP BY)
+
+$\delta$ Duplikationselimination (SELECT DISTINCT)
 
 \section*{Normalformen}
 
