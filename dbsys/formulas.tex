@@ -81,6 +81,23 @@ $\gamma$ Gruppierung (GROUP BY)
 
 $\delta$ Duplikationselimination (SELECT DISTINCT)
 
+$\tau$ Sortieren (ORDER BY ... [ASC/DESC])
+
+\subsection*{Volcano-Iterator-Modell}
+
+Wie python Iteratoren.
+
+Iteratoren haben dann: open(), next(), close()
+
+Dann:
+
+\begin{enumerate}
+\item open() fuer alle operatoren durchfuehren
+\item next() fuer alle operatoren durchfuehren, ergebnisse durchreichen
+\item letzten Schritt wiederholen bis next() eof/null zurueckgibt
+\item close() fuer alle operatoren durchfuehren
+\end{enumerate}
+
 \section*{Normalformen}
 
 \subsection*{1. NF}
