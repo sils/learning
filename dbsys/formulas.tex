@@ -116,4 +116,33 @@ Eine Paritaetsplatte, kompensiert Ausfall einer Platte. Performancegewinn durch 
 Ein geclusterter B+ Baum ist im Speicher ebenso sortiert nach beliebigen Kriterien.
 
 An den Blättern sind üblicherweise Zeiger zu dem Zieldatensatz.
+
+\section*{Mergesort}
+
+\subsection*{2-Way-Mergesort}
+
+\subsection*{2-Phase-Multiway-Mergesort}
+
+\subsubsection*{Vorraussetzungen}
+
+Größe der zu sortierenden Relation $= B$ Blöcke.
+
+Anzahl der verfügbaren Seiten im Hauptspeicher $= M$.
+
+$B \leq M^2$
+
+\subsubsection*{Phase 1}
+
+Relation wird blockweise in die $M$ Seiten im Hauptspeicher gelesen und dort sortiert.
+
+Das Ergebnis wird anhand von sortierten Läufen der Länge $N$ in den Sekundärspeicher geschrieben.
+
+\subsubsection*{Phase 2}
+
+Sortierte Läufe werden gemischt.
+
+Jeder Lauf wird sukzessive in eine der Seiten gelesen und in die Ausgabeseite durch Mischen sortiert ausgegeben.
+
+Ist die Ausgabeseite voll wird sie in den Sekundärspeicher geschrieben.
+
 \end{document}
