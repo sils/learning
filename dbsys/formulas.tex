@@ -23,6 +23,22 @@
 
 \blankpage
 
+\section*{ER Diagramme}
+
+$kunst \overset{N}{-} sein \overset{M}{=} Ausstellung$
+
+Lesen wie:
+
+Kunst KANN in M Ausstellungen sein.
+
+Eine Ausstellung MUSS (1-) N Kunstgegenstände enthalten.
+
+\section*{Relationales Schema}
+
+Object: \{[ \underline{Primärschlüssel: Typ}, Andere Schluessel: Andere Typen ]\}
+
+Prädikat: \{[ PrimärschlüsselVonObjekt1: Typ, PrimärschlüsselVonObjekt2: Typ, Eigenschaften: Typ ]\}
+
 \section*{Schlüssel}
 
 \subsection*{Superschlüssel}
@@ -39,9 +55,15 @@ Ein Primärschlüssel ist der ausgewählte Schlüsselkandidat.
 
 \section*{Komische Symbole}
 
+\subsection*{Attributrelationen}
+
 $\alpha \rightarrow \beta \Leftrightarrow \alpha$ bestimmt eindeutig/ist Superschlüssel für $\beta$
 
 $\alpha \dot{\rightarrow} \beta \Leftrightarrow \alpha$ ist Schlüsselkandidat für $\beta$
+
+\subsection*{Queries}
+
+$\sigma_c(R)$ ist eine Anfrage auf die Datenbank $R$ mit der Bedingung $c$.
 
 \section*{Normalformen}
 
@@ -56,4 +78,19 @@ Attribute sind nicht abhängig von einer echten Teilmenge eines Schüsselkandida
 \subsection*{3. NF}
 
 Attribute sind ausschliesslich abhängig von dem Primärschluessel.
+
+\section*{RAID}
+
+\subsection*{RAID 0}
+
+Reissverschlussverfahren um Zugriffszeiten zu optimieren.
+
+\subsection*{RAID 1}
+
+Spiegelung - komplettbackup. Kein Performancegewinn.
+
+\subsection*{RAID 5}
+
+Eine Paritaetsplatte, kompensiert Ausfall einer Platte. Performancegewinn durch aufteilung.
+
 \end{document}
