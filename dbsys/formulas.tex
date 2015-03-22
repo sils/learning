@@ -196,4 +196,24 @@ Transaktionen verhalten sich immer so, als würden sie sequenziell Ausgeführt w
 
 Wenn etwas schlimmes passiert, kann der Zustand immer wiederhergestellt werden.
 
+\subsection*{Zweiphasensperrprotokoll}
+
+\begin{enumerate}
+\item Alle Resourcen sperren
+\item Damit arbeiten
+\item Alle Resourcen freigeben
+\end{enumerate}
+
+Im Gegensatz zu:
+
+\begin{enumerate}
+\item Erste Resource holen
+\item Damit arbeiten
+\item Erste Resource freigeben
+\item Weiter arbeiten
+\item Wenn nun ein Rollback passiert muessen evtl. andere Transaktion die inzwischen die erste Resource benutzt haben auch einen Rollback machen! Das ist Mist!
+\end{enumerate}
+
+
+
 \end{document}
