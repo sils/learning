@@ -246,4 +246,11 @@ wound/wait:
 
 In beiden Fällen wird der ältere immer zuerst fertig!
 
+\subsection*{Shadow Paging}
+
+Wenn eine Seite modifiziert werden soll, wird eine neue Seite (shadow page) allokiert, auf der gearbeitet wird.
+
+Sind alle Änderungen vollständig, werden alle Referenzen auf das Original auf die 'shadow page' umgemappt.
+
+
 \end{document}
