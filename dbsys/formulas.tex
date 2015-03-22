@@ -174,4 +174,26 @@ Ist die Ausgabeseite voll wird sie in den Sekundärspeicher geschrieben.
 
 Anzahl der Resultate durch Gesamtanzahl der Datensaetze.
 
+\section*{Datenbanktransaktionen}
+
+Eine Datenbanktransaktion führt einen Konsistenten Zustand einer Datenbank in einen anderen Konsistenten Zustand über.
+
+\subsection*{ACID}
+
+\subsubsection*{Atomicity}
+
+Die Überführung ist atomisch, d.h. wenn sie abgebrochen wird stellt sie den Originalen Zustand wieder her, sonst ist sie erfolgreich.
+
+\subsubsection*{Consistency}
+
+Die Transaktion hinterlässt, gegeben sie erhaelt einen konsistenten Zustand, immer einen konsistenten Zustand.
+
+\subsubsection*{Isolation}
+
+Transaktionen verhalten sich immer so, als würden sie sequenziell Ausgeführt werden.
+
+\subsubsection*{Durability}
+
+Wenn etwas schlimmes passiert, kann der Zustand immer wiederhergestellt werden.
+
 \end{document}
