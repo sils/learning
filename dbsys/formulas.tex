@@ -196,24 +196,34 @@ Transaktionen verhalten sich immer so, als würden sie sequenziell Ausgeführt w
 
 Wenn etwas schlimmes passiert, kann der Zustand immer wiederhergestellt werden.
 
+\subsection*{Lost Update}
+
+Zwei Transaktionen bearbeiten gleichzeitig die selbe Ressource.
+
+Änderungen der ersten Transaktion kann direkt durch die zweite Transaktion überschrieben werden.
+
+Lösung: Beim Ausführen eines Lese-/ Schreibzugriffs wird die genutzte Ressource für die Dauer der Transaktion gesperrt, damit andere Transaktionen die Ressource nicht ändern können.
+\begin{itemize}
+\item Share-Lock (Read-Lock): ermöglicht beliebig vielen Transaktionen einen Lesezugriff
+\item Exclusive-Lock (Write-Lock): ermöglicht nur einer Transaktionen einen Schreibzugriff
+\end{itemize}
+
 \subsection*{Zweiphasensperrprotokoll}
 
 \begin{enumerate}
-\item Alle Resourcen sperren
+\item Alle Ressourcen sperren
 \item Damit arbeiten
-\item Alle Resourcen freigeben
+\item Alle Ressourcen freigeben
 \end{enumerate}
 
 Im Gegensatz zu:
 
 \begin{enumerate}
-\item Erste Resource holen
+\item Erste Ressource holen
 \item Damit arbeiten
-\item Erste Resource freigeben
+\item Erste Ressource freigeben
 \item Weiter arbeiten
-\item Wenn nun ein Rollback passiert muessen evtl. andere Transaktion die inzwischen die erste Resource benutzt haben auch einen Rollback machen! Das ist Mist!
+\item Wenn nun ein Rollback passiert muessen evtl. andere Transaktion die inzwischen die erste Ressource benutzt haben auch einen Rollback machen! Das ist Mist!
 \end{enumerate}
-
-
 
 \end{document}
