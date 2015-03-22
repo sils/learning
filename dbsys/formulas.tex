@@ -226,4 +226,24 @@ Im Gegensatz zu:
 \item Wenn nun ein Rollback passiert muessen evtl. andere Transaktion die inzwischen die erste Ressource benutzt haben auch einen Rollback machen! Das ist Mist!
 \end{enumerate}
 
+\subsection*{Deadlock Avoidance}
+
+Transaktionen bekommen Startzeitstempel.
+
+wait/die:
+
+\begin{itemize}
+\item älterer wartet
+\item jüngerer wird neu gestartet (die) wenn er lock von älterem will (ergo kann der ältere im deadlockfall weiter laufen)
+\end{itemize}
+
+wound/wait:
+
+\begin{itemize}
+\item älterer schiesst jüngeren ab der seinen lock hält
+\item jüngerer wartet auf älteren
+\end{itemize}
+
+In beiden Fällen wird der ältere immer zuerst fertig!
+
 \end{document}
