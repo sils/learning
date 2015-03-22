@@ -252,5 +252,8 @@ Wenn eine Seite modifiziert werden soll, wird eine neue Seite (shadow page) allo
 
 Sind alle Änderungen vollständig, werden alle Referenzen auf das Original auf die 'shadow page' umgemappt.
 
+\subsection{Write Ahead Logging (WAL)}
+
+Modifikationen müssen vor dem eigentlichen Durchführen protokolliert werden, sind daher im Fehlerfall widerholbar.
 
 \end{document}
